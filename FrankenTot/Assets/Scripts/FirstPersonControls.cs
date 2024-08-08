@@ -26,13 +26,13 @@ public class FirstPersonControls : MonoBehaviour
     public Transform firePoint; // Point from which the projectile is fired
     public float projectileSpeed = 20f; // Speed at which the projectile is fired
    
-    private bool holdingGun = true;
 
     [Header("PICKING UP SETTINGS")]
     [Space(5)]
     public Transform holdPosition; // Position where the picked-up object will be held
     public float pickUpRange = 3f; // Range within which objects can be picked up
     private GameObject heldObject; // Reference to the currently held object
+    private bool holdingGun = false;
 
 
     private void Awake()
