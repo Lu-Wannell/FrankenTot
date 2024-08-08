@@ -145,6 +145,7 @@ public class FirstPersonControls : MonoBehaviour
     public void PickUpObject()
     {
         // Check if we are already holding an object
+        //Drops object if holding object
         if (heldObject != null)
         {
             heldObject.GetComponent<Rigidbody>().isKinematic = false; // Enable physics
