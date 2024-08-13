@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FirstPersonControls : MonoBehaviour
 {
@@ -42,6 +43,12 @@ public class FirstPersonControls : MonoBehaviour
     public float crouchSpeed = 2.5f; //speed when crouching
     private bool isCrouching = false; // check if player is crouching
 
+    [Header("SPRINT SETTINGS")]
+    [Space(5)]
+    private Button sprintInput;
+    public float sprintSpeed = 7.5f; //speed when crouching
+    private bool isSprinting = false; // check if player is sprinting
+
     private void Awake()
     {
         // Get and store the CharacterController component attached to this GameObject
@@ -74,7 +81,11 @@ public class FirstPersonControls : MonoBehaviour
         playerInput.Player.PickUp.performed += ctx => PickUpObject(); // Call the PickUpObject method when pick-up input is performed
 
         // Subscribe to the crouch input event
-        playerInput.Player.Crouch.performed += ctx => ToggleCrouch(); // Call the Crouch method when shoot input is performed
+        playerInput.Player.Crouch.performed += ctx => ToggleCrouch(); // Call the Crouch method when crouch input is performed
+
+        // Subscribe to the sprint input event
+        playerInput.Player.Sprint.performed += ctx => StartSprint(); // Call the Sprint method when sprint input is performed
+        playerInput.Player.Sprint.canceled += ctx => EndSprint(); // Reset lookInput when look input is canceled
     }
 
     private void Update()
@@ -97,6 +108,10 @@ public class FirstPersonControls : MonoBehaviour
         if (isCrouching)
         {
             currentSpeed = crouchSpeed;
+        }
+        else if(isSprinting)
+        {
+            currentSpeed = sprintSpeed;
         }
         else
         {
@@ -221,6 +236,18 @@ public class FirstPersonControls : MonoBehaviour
             characterController.height = crouchHeight;
             isCrouching = true;
         }
+    }
+
+    // performed when the sprint button is pressed
+    public void StartSprint()
+    { 
+      isSprinting = true;
+    }
+
+    //performed when sprint button is let go
+    public void EndSprint()
+    {
+       isSprinting = false;
     }
 
 }
