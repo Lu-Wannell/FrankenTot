@@ -43,9 +43,9 @@ public class FirstPersonControls : MonoBehaviour
     public float crouchSpeed = 2.5f; //speed when crouching
     private bool isCrouching = false; // check if player is crouching
 
-    [Header("SPRINT SETTINGS")]
+
+    [Header("SPRINT SETTINGSS")]
     [Space(5)]
-    private Button sprintInput;
     public float sprintSpeed = 7.5f; //speed when crouching
     private bool isSprinting = false; // check if player is sprinting
 
