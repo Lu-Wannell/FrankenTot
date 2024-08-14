@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 // Title: Raycast Interactions:Let's make a first person game in Unity
 // Author: Natty GameDev
@@ -16,12 +17,14 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField]
     private LayerMask mask;
     private PlayerUI playerUI;
+    private FirstPersonControls firstPersonControls;
 
     // Start is called before the first frame update
     void Start()
     {
         cam = cam.GetComponent<Camera>();
         playerUI = GetComponent<PlayerUI>();
+        firstPersonControls = GetComponent<FirstPersonControls>();
     }
 
     // Update is called once per frame
@@ -36,9 +39,18 @@ public class PlayerInteract : MonoBehaviour
         RaycastHit hitInfo; //stores collision information
         if( Physics.Raycast(ray, out hitInfo, interactRange, mask)) //code only runs if raycast hits something
         {
+            //Checks to see if gameobject has an interactable component
             if(hitInfo.collider.GetComponent<Interactable>() != null)
             {
-                playerUI.UpdateText(hitInfo.collider.GetComponent<Interactable>().promptMessage);
+                //Stores interactable in a variable
+                Interactable interactable = hitInfo.collider.GetComponent<Interactable>();
+                //updates onscreen text to match the prompt message of the interactable
+                playerUI.UpdateText(interactable.promptMessage);
+
+                if(firstPersonControls.playerActions.Interact.triggered)
+                {
+                    interactable.BaseInteract();
+                }
             }
         }
     }

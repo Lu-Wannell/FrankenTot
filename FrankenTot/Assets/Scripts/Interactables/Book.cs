@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Book : Interactable
 {
+    [SerializeField]
+    private GameObject bookShelf;
+    private bool bookShelfOpen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +22,7 @@ public class Book : Interactable
 
     protected override void Interact()
     {
-        Debug.Log("Interacted with " +gameObject.name);
+        bookShelfOpen = !bookShelfOpen;
+        bookShelf.GetComponent<Animator>().SetBool("isOpen", bookShelfOpen);
     }
 }

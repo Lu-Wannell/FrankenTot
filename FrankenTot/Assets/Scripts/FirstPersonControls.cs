@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class FirstPersonControls : MonoBehaviour
 {
+    private Controls controls;
+    public Controls.PlayerActions playerActions;
 
     [Header("MOVEMENT SETTINGS")]
     [Space(5)]
@@ -53,39 +56,42 @@ public class FirstPersonControls : MonoBehaviour
     {
         // Get and store the CharacterController component attached to this GameObject
         characterController = GetComponent<CharacterController>();
+
+        // Create a new instance of the input actions
+        controls = new Controls();
+        playerActions = controls.Player;
     }
 
     private void OnEnable()
     {
-        // Create a new instance of the input actions
-        var playerInput = new Controls();
+       
 
         // Enable the input actions
-        playerInput.Player.Enable();
+        controls.Player.Enable();
 
         // Subscribe to the movement input events
-        playerInput.Player.Movement.performed += ctx => moveInput = ctx.ReadValue<Vector2>(); // Update moveInput when movement input is performed
-        playerInput.Player.Movement.canceled += ctx => moveInput = Vector2.zero; // Reset moveInput when movement input is canceled
+        controls.Player.Movement.performed += ctx => moveInput = ctx.ReadValue<Vector2>(); // Update moveInput when movement input is performed
+        controls.Player.Movement.canceled += ctx => moveInput = Vector2.zero; // Reset moveInput when movement input is canceled
 
         // Subscribe to the look input events
-        playerInput.Player.LookAround.performed += ctx => lookInput = ctx.ReadValue<Vector2>(); // Update lookInput when look input is performed
-        playerInput.Player.LookAround.canceled += ctx => lookInput = Vector2.zero; // Reset lookInput when look input is canceled
+        controls    .Player.LookAround.performed += ctx => lookInput = ctx.ReadValue<Vector2>(); // Update lookInput when look input is performed
+        controls.Player.LookAround.canceled += ctx => lookInput = Vector2.zero; // Reset lookInput when look input is canceled
 
         // Subscribe to the jump input event
-        playerInput.Player.Jump.performed += ctx => Jump(); // Call the Jump method when jump input is performed
+        controls.Player.Jump.performed += ctx => Jump(); // Call the Jump method when jump input is performed
 
         // Subscribe to the shoot input event
-        playerInput.Player.Shoot.performed += ctx => Shoot(); // Call the Shoot method when shoot input is performed
+        controls.Player.Shoot.performed += ctx => Shoot(); // Call the Shoot method when shoot input is performed
 
         // Subscribe to the pick-up input event
-        playerInput.Player.PickUp.performed += ctx => PickUpObject(); // Call the PickUpObject method when pick-up input is performed
+        controls.Player.PickUp.performed += ctx => PickUpObject(); // Call the PickUpObject method when pick-up input is performed
 
         // Subscribe to the crouch input event
-        playerInput.Player.Crouch.performed += ctx => ToggleCrouch(); // Call the Crouch method when crouch input is performed
+        controls.Player.Crouch.performed += ctx => ToggleCrouch(); // Call the Crouch method when crouch input is performed
 
         // Subscribe to the sprint input event
-        playerInput.Player.Sprint.performed += ctx => StartSprint(); // Call the Sprint method when sprint input is performed
-        playerInput.Player.Sprint.canceled += ctx => EndSprint(); // Reset lookInput when look input is canceled
+        controls.Player.Sprint.performed += ctx => StartSprint(); // Call the Sprint method when sprint input is performed
+        controls.Player.Sprint.canceled += ctx => EndSprint(); // Reset lookInput when look input is canceled
     }
 
     private void Update()
