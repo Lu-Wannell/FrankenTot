@@ -26,7 +26,10 @@ public class PlayerInteract : MonoBehaviour
         RaycastHit hitInfo; //stores collision information
         if( Physics.Raycast(ray, out hitInfo, interactRange, mask)) //code only runs if raycast hits something
         {
-
+            if(hitInfo.collider.GetComponent<Interactable>() != null)
+            {
+                Debug.Log(hitInfo.collider.GetComponent<Interactable>().promptMessage);
+            }
         }
     }
 }
