@@ -8,18 +8,6 @@ public class Book : Interactable
     private GameObject bookShelf;
     private bool bookShelfOpen;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     protected override void Interact()
     {
         bookShelfOpen = !bookShelfOpen;

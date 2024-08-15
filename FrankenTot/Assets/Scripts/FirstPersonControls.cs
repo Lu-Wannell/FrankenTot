@@ -35,7 +35,7 @@ public class FirstPersonControls : MonoBehaviour
     [Space(5)]
     public Transform holdPosition; // Position where the picked-up object will be held
     public float pickUpRange = 3f; // Range within which objects can be picked up
-    private GameObject heldObject; // Reference to the currently held object
+    public GameObject heldObject; // Reference to the currently held object
     private bool holdingGun = false;
 
 
