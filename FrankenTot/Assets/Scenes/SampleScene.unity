@@ -2069,8 +2069,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0536a84c994b9429eb17fe8b083bf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptMessage: Open Chest
+  promptMessage: Unlock Chest
   chest: {fileID: 225089529}
+  firstPersonControls: {fileID: 1708256608}
   chestKey: {fileID: 1414533497}
 --- !u!1 &1045460450 stripped
 GameObject:

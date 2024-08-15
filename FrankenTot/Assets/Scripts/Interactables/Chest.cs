@@ -16,10 +16,14 @@ public class Chest : Interactable
     {
        // Debug.Log(firstPersonControls.heldObject);
         if (!chestLocked)
-            {
-               chestOpen = !chestOpen;
-               chest.GetComponent<Animator>().SetBool("isOpen", chestOpen);
-            }
+        {
+             chestOpen = !chestOpen;
+             chest.GetComponent<Animator>().SetBool("isOpen", chestOpen);
+             if(chestOpen)
+             { promptMessage = "Close Chest"; }
+             else
+             { promptMessage = "Open Chest"; }
+        }
         else
         {
              if (firstPersonControls.heldObject != null && firstPersonControls.heldObject == chestKey)
@@ -27,11 +31,12 @@ public class Chest : Interactable
                 chestOpen = !chestOpen;
                 chest.GetComponent<Animator>().SetBool("isOpen", chestOpen);
                 chestLocked = false;
+                promptMessage = "Close Chest";
 
              }
             else
             {
-
+                promptMessage = "Key Needed";
             }
         }
 
