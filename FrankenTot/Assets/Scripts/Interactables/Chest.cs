@@ -8,13 +8,13 @@ public class Chest : Interactable
     private GameObject chest;
     private bool chestLocked = true;
     private bool chestOpen;
-    private FirstPersonControls firstPersonControls;
+    public FirstPersonControls firstPersonControls;
     [SerializeField]
     private GameObject chestKey;
 
     protected override void Interact()
     {
-        Debug.Log(firstPersonControls.heldObject);
+       // Debug.Log(firstPersonControls.heldObject);
         if (!chestLocked)
             {
                chestOpen = !chestOpen;
@@ -22,12 +22,13 @@ public class Chest : Interactable
             }
         else
         {
-           if ( firstPersonControls.heldObject == chestKey)
-            {
+             if (firstPersonControls.heldObject != null && firstPersonControls.heldObject == chestKey)
+             {
                 chestOpen = !chestOpen;
                 chest.GetComponent<Animator>().SetBool("isOpen", chestOpen);
                 chestLocked = false;
-            }
+
+             }
             else
             {
 

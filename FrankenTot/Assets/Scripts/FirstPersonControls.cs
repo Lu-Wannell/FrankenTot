@@ -207,7 +207,7 @@ public class FirstPersonControls : MonoBehaviour
             {
                 // Pick up the object
                 heldObject = hit.collider.gameObject;
-                Debug.Log(heldObject);
+                Debug.Log(heldObject.name);
                 heldObject.GetComponent<Rigidbody>().isKinematic = true; // Disable physics
 
                 // Attach the object to the hold position
@@ -228,6 +228,7 @@ public class FirstPersonControls : MonoBehaviour
 
                 holdingGun = true;
             }
+            Debug.Log(heldObject.name);
         }
     }
 
