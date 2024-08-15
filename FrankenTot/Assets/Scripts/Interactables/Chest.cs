@@ -6,7 +6,7 @@ public class Chest : Interactable
 {
     [SerializeField]
     private GameObject chest;
-    private bool chestLocked;
+    private bool chestLocked = true;
     private bool chestOpen;
     private FirstPersonControls firstPersonControls;
     [SerializeField]
@@ -14,18 +14,19 @@ public class Chest : Interactable
 
     protected override void Interact()
     {
-
-            if (!chestLocked)
-        {
-            chestOpen = !chestOpen;
-            chest.GetComponent<Animator>().SetBool("isOpen", chestOpen);
-        }
+        Debug.Log(firstPersonControls.heldObject);
+        if (!chestLocked)
+            {
+               chestOpen = !chestOpen;
+               chest.GetComponent<Animator>().SetBool("isOpen", chestOpen);
+            }
         else
         {
-            if (firstPersonControls.heldObject == chestKey)
+           if ( firstPersonControls.heldObject == chestKey)
             {
                 chestOpen = !chestOpen;
                 chest.GetComponent<Animator>().SetBool("isOpen", chestOpen);
+                chestLocked = false;
             }
             else
             {

@@ -207,6 +207,7 @@ public class FirstPersonControls : MonoBehaviour
             {
                 // Pick up the object
                 heldObject = hit.collider.gameObject;
+                Debug.Log(heldObject);
                 heldObject.GetComponent<Rigidbody>().isKinematic = true; // Disable physics
 
                 // Attach the object to the hold position
