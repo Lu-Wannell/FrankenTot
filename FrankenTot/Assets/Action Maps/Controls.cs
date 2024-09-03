@@ -98,6 +98,33 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Inspect"",
+                    ""type"": ""Button"",
+                    ""id"": ""155bb15c-26b9-4605-9c13-c6ed64498566"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RotateObject"",
+                    ""type"": ""Value"",
+                    ""id"": ""60af7a2b-8ad1-4b95-9132-474e83754221"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""GrabObject"",
+                    ""type"": ""Button"",
+                    ""id"": ""6d116f77-6f6e-45bb-980c-c8306e4c1e8f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -373,6 +400,72 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""44cb2df1-3de6-4716-8252-54b7ec26278a"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Inspect"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""59021d7d-bef4-4a83-b499-b5027644a21c"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Inspect"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f8f4409f-7449-4a4a-9b96-9e1643576cfa"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""RotateObject"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9f4625d1-dff3-4926-9345-408125717b0f"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""RotateObject"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""600a65e5-55ec-49ee-b166-029883fad2f7"",
+                    ""path"": ""<Keyboard>/g"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""GrabObject"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""949c885b-7aab-42f5-bf95-627ccba25edc"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GrabObject"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -930,6 +1023,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+        m_Player_Inspect = m_Player.FindAction("Inspect", throwIfNotFound: true);
+        m_Player_RotateObject = m_Player.FindAction("RotateObject", throwIfNotFound: true);
+        m_Player_GrabObject = m_Player.FindAction("GrabObject", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1011,6 +1107,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Crouch;
     private readonly InputAction m_Player_Sprint;
     private readonly InputAction m_Player_Interact;
+    private readonly InputAction m_Player_Inspect;
+    private readonly InputAction m_Player_RotateObject;
+    private readonly InputAction m_Player_GrabObject;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -1023,6 +1122,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
+        public InputAction @Inspect => m_Wrapper.m_Player_Inspect;
+        public InputAction @RotateObject => m_Wrapper.m_Player_RotateObject;
+        public InputAction @GrabObject => m_Wrapper.m_Player_GrabObject;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1056,6 +1158,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
+            @Inspect.started += instance.OnInspect;
+            @Inspect.performed += instance.OnInspect;
+            @Inspect.canceled += instance.OnInspect;
+            @RotateObject.started += instance.OnRotateObject;
+            @RotateObject.performed += instance.OnRotateObject;
+            @RotateObject.canceled += instance.OnRotateObject;
+            @GrabObject.started += instance.OnGrabObject;
+            @GrabObject.performed += instance.OnGrabObject;
+            @GrabObject.canceled += instance.OnGrabObject;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1084,6 +1195,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
+            @Inspect.started -= instance.OnInspect;
+            @Inspect.performed -= instance.OnInspect;
+            @Inspect.canceled -= instance.OnInspect;
+            @RotateObject.started -= instance.OnRotateObject;
+            @RotateObject.performed -= instance.OnRotateObject;
+            @RotateObject.canceled -= instance.OnRotateObject;
+            @GrabObject.started -= instance.OnGrabObject;
+            @GrabObject.performed -= instance.OnGrabObject;
+            @GrabObject.canceled -= instance.OnGrabObject;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1247,6 +1367,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnCrouch(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnInspect(InputAction.CallbackContext context);
+        void OnRotateObject(InputAction.CallbackContext context);
+        void OnGrabObject(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -68,6 +69,7 @@ public class FirstPersonControls : MonoBehaviour
 
         // Enable the input actions
         controls.Player.Enable();
+        controls.Player.RotateObject.Disable(); //Disables Rotating Objects when not in Inspect Mode
 
         // Subscribe to the movement input events
         controls.Player.Movement.performed += ctx => moveInput = ctx.ReadValue<Vector2>(); // Update moveInput when movement input is performed
@@ -91,7 +93,10 @@ public class FirstPersonControls : MonoBehaviour
 
         // Subscribe to the sprint input event
         controls.Player.Sprint.performed += ctx => StartSprint(); // Call the Sprint method when sprint input is performed
-        controls.Player.Sprint.canceled += ctx => EndSprint(); // Reset lookInput when look input is canceled
+        controls.Player.Sprint.canceled += ctx => EndSprint(); // End Sprint Input when sprint input is canceled
+
+        // Subscribe to the Inspect Input
+        controls.Player.Inspect.performed += ctx => ToggleInspect(); // Call the Inspect method when inspect input is performed
     }
 
     private void Update()
@@ -258,4 +263,8 @@ public class FirstPersonControls : MonoBehaviour
        isSprinting = false;
     }
 
+    public void ToggleInspect()
+    {
+
+    }
 }
