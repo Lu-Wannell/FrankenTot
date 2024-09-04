@@ -366,9 +366,9 @@ public class FirstPersonControls : MonoBehaviour
     public void RotateObject()
     {
         
-        rotateInput = rotateInput * rotationSpeed;
-        heldObject.transform.Rotate(Vector3.up, rotateInput.x, Space.World);
-        heldObject.transform.Rotate(Vector3.right, rotateInput.y, Space.World);
+        rotateInput = rotateInput * rotationSpeed; //rotates the object based on rotation spped
+        heldObject.transform.Rotate(playerCamera.up, rotateInput.x, Space.World);//allows for up and down rotation
+        heldObject.transform.Rotate(-playerCamera.right, rotateInput.y, Space.World); // allows for left and right rotation
  
     }
 }
