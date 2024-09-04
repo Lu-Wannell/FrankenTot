@@ -7484,7 +7484,8 @@ MonoBehaviour:
   player: {fileID: 1708256607}
   sprintSpeed: 13
   isInspecting: 0
-  inspectPosition: {fileID: 0}
+  inspectPosition: {fileID: 1774303683}
+  rotationSpeed: 0.4
 --- !u!114 &1708256609
 MonoBehaviour:
   m_ObjectHideFlags: 0

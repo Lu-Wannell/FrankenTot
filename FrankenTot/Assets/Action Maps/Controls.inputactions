@@ -96,6 +96,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "RotateObjectPressed",
+                    "type": "Button",
+                    "id": "d10cf56a-2b5b-447d-8da5-7903be3eb93d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "GrabObject",
                     "type": "Button",
                     "id": "6d116f77-6f6e-45bb-980c-c8306e4c1e8f",
@@ -444,6 +453,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "GrabObject",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1ae7829b-4345-40f3-95c1-f85fe4c5a77c",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard & Mouse",
+                    "action": "RotateObjectPressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0b3a6a6c-6605-4979-9765-04b7962da57b",
+                    "path": "<Gamepad>/rightStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "RotateObjectPressed",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

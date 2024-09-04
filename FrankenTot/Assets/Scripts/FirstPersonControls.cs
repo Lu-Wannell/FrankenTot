@@ -115,9 +115,13 @@ public class FirstPersonControls : MonoBehaviour
         // Subscribe to the Inspect Input
         controls.Player.Inspect.performed += ctx => ToggleInspect(); // Call the Inspect method when inspect input is performed
 
+
         // Subscribe to the Rotate Input
-        controls.Player.RotateObject.performed += ctx => RotateObject(); // Call the RotateObject method when rotate input is performed
-        controls.Player.RotateObject.canceled += ctx => { rotateAllowed = false; }; // Sets it so rotating is not allowed when not performing rotate action
+        controls.Player.RotateObjectPressed.performed += ctx => { rotateAllowed = true; }; // Call the RotateObject method when rotate input is performed
+        controls.Player.RotateObjectPressed.canceled += ctx => { rotateAllowed = false; }; // Sets it so rotating is not allowed when not performing rotate action
+
+        controls.Player.RotateObject.performed += ctx => rotateInput = ctx.ReadValue<Vector2>(); // Update rotate Input when rotate input is performed
+        controls.Player.RotateObject.canceled += ctx => rotateInput = Vector2.zero; // Reset rotateInput when rotate input is canceled
     }
 
     private void Update()
@@ -127,10 +131,10 @@ public class FirstPersonControls : MonoBehaviour
         LookAround();
         ApplyGravity();
 
-       /* if (isInspecting)     
+        if (rotateAllowed)     
         {
             RotateObject();
-        }*/
+        }
     }
 
     public void Move()
@@ -357,15 +361,14 @@ public class FirstPersonControls : MonoBehaviour
         }
     }
 
+   
+
     public void RotateObject()
     {
-        rotateAllowed = true;
-        while (rotateAllowed)
-        {
-            rotateInput = rotateInput * rotationSpeed;
-            heldObject.transform.Rotate(Vector3.up, rotateInput.x, Space.World);
-            heldObject.transform.Rotate(Vector3.right, rotateInput.y, Space.World);
-        }
         
+        rotateInput = rotateInput * rotationSpeed;
+        heldObject.transform.Rotate(Vector3.up, rotateInput.x, Space.World);
+        heldObject.transform.Rotate(Vector3.right, rotateInput.y, Space.World);
+ 
     }
 }
