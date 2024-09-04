@@ -64,6 +64,7 @@ public class FirstPersonControls : MonoBehaviour
     [Header("Rotation SETTINGS")]
     [Space(5)]
     private Vector2 rotateInput; //Stores the Rotation Input from the player
+    private bool rotateAllowed;
     [SerializeField]
     private float rotationSpeed = 1f;//Speed of rotation
 
@@ -115,8 +116,8 @@ public class FirstPersonControls : MonoBehaviour
         controls.Player.Inspect.performed += ctx => ToggleInspect(); // Call the Inspect method when inspect input is performed
 
         // Subscribe to the Rotate Input
-        controls.Player.RotateObject.performed += ctx => rotateInput = ctx.ReadValue<Vector2>(); // Update lookInput when look input is performed
-        controls.Player.RotateObject.canceled += ctx => rotateInput = Vector2.zero; // Reset lookInput when look input is canceled
+        controls.Player.RotateObject.performed += ctx => RotateObject(); // Call the RotateObject method when rotate input is performed
+        controls.Player.RotateObject.canceled += ctx => { rotateAllowed = false; }; // Sets it so rotating is not allowed when not performing rotate action
     }
 
     private void Update()
@@ -126,10 +127,10 @@ public class FirstPersonControls : MonoBehaviour
         LookAround();
         ApplyGravity();
 
-        if (isInspecting)
+       /* if (isInspecting)     
         {
             RotateObject();
-        }
+        }*/
     }
 
     public void Move()
@@ -358,9 +359,13 @@ public class FirstPersonControls : MonoBehaviour
 
     public void RotateObject()
     {
-        rotateInput = rotateInput * rotationSpeed;
-        heldObject.transform.Rotate(Vector3.up, rotateInput.x, Space.World);
-        heldObject.transform.Rotate(Vector3.right, rotateInput.y, Space.World);
-
+        rotateAllowed = true;
+        while (rotateAllowed)
+        {
+            rotateInput = rotateInput * rotationSpeed;
+            heldObject.transform.Rotate(Vector3.up, rotateInput.x, Space.World);
+            heldObject.transform.Rotate(Vector3.right, rotateInput.y, Space.World);
+        }
+        
     }
 }
