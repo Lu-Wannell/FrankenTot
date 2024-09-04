@@ -46,12 +46,20 @@ public class FirstPersonControls : MonoBehaviour
     public float standingHeight = 2f; //make normal
     public float crouchSpeed = 2.5f; //speed when crouching
     private bool isCrouching = false; // check if player is crouching
+    private bool CanUncrouch = false; // Checks if player can Uncrouch
+    public float crouchCheck = 1f; // Range above head needed to Uncrouch
+    public Transform player; // Player's transform
 
 
     [Header("SPRINT SETTINGSS")]
     [Space(5)]
     public float sprintSpeed = 7.5f; //speed when crouching
     private bool isSprinting = false; // check if player is sprinting
+
+    [Header("INSPECT SETTINGS")]
+    [Space(5)]
+    public bool isInspecting = false;
+    public Transform inspectPosition;
 
     private void Awake()
     {
@@ -70,6 +78,8 @@ public class FirstPersonControls : MonoBehaviour
         // Enable the input actions
         controls.Player.Enable();
         controls.Player.RotateObject.Disable(); //Disables Rotating Objects when not in Inspect Mode
+        controls.Player.Inspect.Disable(); //player can't Enter Inspect mode at the beginning of the game as they aren't holding an object
+
 
         // Subscribe to the movement input events
         controls.Player.Movement.performed += ctx => moveInput = ctx.ReadValue<Vector2>(); // Update moveInput when movement input is performed
@@ -97,6 +107,9 @@ public class FirstPersonControls : MonoBehaviour
 
         // Subscribe to the Inspect Input
         controls.Player.Inspect.performed += ctx => ToggleInspect(); // Call the Inspect method when inspect input is performed
+
+        // Subscribe to the Rotate Input
+        controls.Player.RotateObject.performed += ctx => Rotate(); // Call the Rotate method when Rotate input is performed
     }
 
     private void Update()
@@ -195,6 +208,7 @@ public class FirstPersonControls : MonoBehaviour
             heldObject.GetComponent<Rigidbody>().isKinematic = false; // Enable physics
             heldObject.transform.parent = null;
             holdingGun = false;
+            controls.Player.Inspect.Disable(); // Disables Inspect action as the player can't Inspect when not holding an Object.
         }
 
         // Perform a raycast from the camera's position forward
@@ -234,15 +248,36 @@ public class FirstPersonControls : MonoBehaviour
                 holdingGun = true;
             }
             Debug.Log(heldObject.name);
+            controls.Player.Inspect.Enable(); //Player can now Inpect a held Object
         }
     }
 
     public void ToggleCrouch()
     {
+        Ray ray = new Ray(player.position, player.up);
+        RaycastHit hit;
+
+        // Debugging: Draw the ray in the Scene view
+        Debug.DrawRay(player.position, player.up * crouchCheck, Color.green, 2f);
+
+
+        if (Physics.Raycast(ray, out hit, crouchCheck))// Checks if an object is above player
+        {
+            CanUncrouch = false;
+        }
+        else 
+            CanUncrouch = true;
+
         if (isCrouching)
         {
-            characterController.height = standingHeight;
-            isCrouching = false;
+            //if player is crouching it needs to do an Uncrouch check
+            if (CanUncrouch)
+            {
+                characterController.height = standingHeight;
+                isCrouching = false;
+            }
+            else
+            { return; }
         }
         else
         {
@@ -264,6 +299,42 @@ public class FirstPersonControls : MonoBehaviour
     }
 
     public void ToggleInspect()
+    {
+        if (isInspecting)
+        {
+            //Disable rotating
+            controls.Player.RotateObject.Disable();
+
+            // Enable all other input actions while in Inspect Mode
+            controls.Player.Movement.Enable();
+            controls.Player.LookAround.Enable();
+            controls.Player.Sprint.Enable();
+            controls.Player.Jump.Enable();
+            controls.Player.Crouch.Enable();
+            controls.Player.PickUp.Enable();
+            controls.Player.Shoot.Enable();
+
+            isInspecting = false;
+        }
+        else
+        {
+            //enable Rotating
+            controls.Player.RotateObject.Enable();
+
+            // Disable all other input actions while in Inspect Mode
+            controls.Player.Movement.Disable();
+            controls.Player.LookAround.Disable();
+            controls.Player.Sprint.Disable();
+            controls.Player.Jump.Disable();
+            controls.Player.Crouch.Disable();
+            controls.Player.PickUp.Disable();
+            controls.Player.Shoot.Disable();
+
+            isInspecting = true;
+        }
+    }
+
+    public void Rotate()
     {
 
     }

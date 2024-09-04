@@ -36,6 +36,7 @@ public class Chest : Interactable
              }
             else
             {
+                chestLocked = true;
                 promptMessage = "Key Needed";
             }
         }

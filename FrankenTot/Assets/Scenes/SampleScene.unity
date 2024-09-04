@@ -7479,7 +7479,11 @@ MonoBehaviour:
   crouchHeight: 1
   standingHeight: 2
   crouchSpeed: 4
+  crouchCheck: 2.5
+  player: {fileID: 1708256607}
   sprintSpeed: 13
+  isInspecting: 0
+  inspectPosition: {fileID: 0}
 --- !u!114 &1708256609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7494,6 +7498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 330585545}
   interactRange: 4
+  interactBuffer: 1
   mask:
     serializedVersion: 2
     m_Bits: 128
