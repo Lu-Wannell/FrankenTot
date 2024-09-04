@@ -61,6 +61,12 @@ public class FirstPersonControls : MonoBehaviour
     public bool isInspecting = false;
     public Transform inspectPosition;
 
+    [Header("Rotation SETTINGS")]
+    [Space(5)]
+    private Vector2 rotateInput; //Stores the Rotation Input from the player
+    [SerializeField]
+    private float rotationSpeed = 1f;//Speed of rotation
+
     private void Awake()
     {
         // Get and store the CharacterController component attached to this GameObject
@@ -86,7 +92,7 @@ public class FirstPersonControls : MonoBehaviour
         controls.Player.Movement.canceled += ctx => moveInput = Vector2.zero; // Reset moveInput when movement input is canceled
 
         // Subscribe to the look input events
-        controls    .Player.LookAround.performed += ctx => lookInput = ctx.ReadValue<Vector2>(); // Update lookInput when look input is performed
+        controls.Player.LookAround.performed += ctx => lookInput = ctx.ReadValue<Vector2>(); // Update lookInput when look input is performed
         controls.Player.LookAround.canceled += ctx => lookInput = Vector2.zero; // Reset lookInput when look input is canceled
 
         // Subscribe to the jump input event
@@ -109,7 +115,8 @@ public class FirstPersonControls : MonoBehaviour
         controls.Player.Inspect.performed += ctx => ToggleInspect(); // Call the Inspect method when inspect input is performed
 
         // Subscribe to the Rotate Input
-        controls.Player.RotateObject.performed += ctx => Rotate(); // Call the Rotate method when Rotate input is performed
+        controls.Player.RotateObject.performed += ctx => rotateInput = ctx.ReadValue<Vector2>(); // Update lookInput when look input is performed
+        controls.Player.RotateObject.canceled += ctx => rotateInput = Vector2.zero; // Reset lookInput when look input is canceled
     }
 
     private void Update()
@@ -118,6 +125,11 @@ public class FirstPersonControls : MonoBehaviour
         Move();
         LookAround();
         ApplyGravity();
+
+        if (isInspecting)
+        {
+            RotateObject();
+        }
     }
 
     public void Move()
@@ -344,8 +356,11 @@ public class FirstPersonControls : MonoBehaviour
         }
     }
 
-    public void Rotate()
+    public void RotateObject()
     {
+        rotateInput = rotateInput * rotationSpeed;
+        heldObject.transform.Rotate(Vector3.up, rotateInput.x, Space.World);
+        heldObject.transform.Rotate(Vector3.right, rotateInput.y, Space.World);
 
     }
 }
