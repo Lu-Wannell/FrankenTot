@@ -315,6 +315,11 @@ public class FirstPersonControls : MonoBehaviour
             controls.Player.Shoot.Enable();
 
             isInspecting = false;
+
+            //Return Object to Holding Position
+            heldObject.transform.position = holdPosition.position;
+            heldObject.transform.rotation = holdPosition.rotation;
+            heldObject.transform.parent = holdPosition;
         }
         else
         {
@@ -331,6 +336,11 @@ public class FirstPersonControls : MonoBehaviour
             controls.Player.Shoot.Disable();
 
             isInspecting = true;
+
+            //Move Object to Inspect Position
+            heldObject.transform.position = inspectPosition.position;
+            heldObject.transform.rotation = inspectPosition.rotation;
+            heldObject.transform.parent = inspectPosition;
         }
     }
 
