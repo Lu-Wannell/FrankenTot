@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.PackageManager;
 using UnityEngine;
+using UnityEngine.Experimental.AI;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class FirstPersonControls : MonoBehaviour
 {
@@ -61,12 +64,21 @@ public class FirstPersonControls : MonoBehaviour
     public bool isInspecting = false;
     public Transform inspectPosition;
 
-    [Header("Rotation SETTINGS")]
+    [Header("ROTATION SETTINGS")]
     [Space(5)]
     private Vector2 rotateInput; //Stores the Rotation Input from the player
     private bool rotateAllowed;
     [SerializeField]
     private float rotationSpeed = 1f;//Speed of rotation
+
+    [Header("GRAB SETTINGS")]
+    [Space(5)]
+    private Vector2 grabInput; //Stores the Grab Input from the player
+    private bool grabAllowed;
+    private Vector3 offset; //distance from cam to Object
+    private float zPoint;
+    
+    
 
     private void Awake()
     {
@@ -122,6 +134,16 @@ public class FirstPersonControls : MonoBehaviour
 
         controls.Player.RotateObject.performed += ctx => rotateInput = ctx.ReadValue<Vector2>(); // Update rotate Input when rotate input is performed
         controls.Player.RotateObject.canceled += ctx => rotateInput = Vector2.zero; // Reset rotateInput when rotate input is canceled
+
+
+        // Subscribe to the Grab Input
+        controls.Player.GrabObject.performed += ctx => { grabAllowed = true; }; // Call the GrabObject method when rotate input is performed
+        controls.Player.GrabObject.canceled += ctx => { grabAllowed = false; }; // Sets it so grabbing is not allowed when not performing grab action
+
+        controls.Player.MoveGrabbedObject.performed += ctx => grabInput = ctx.ReadValue<Vector2>(); // Update grab Input when grab input is performed
+        controls.Player.MoveGrabbedObject.canceled += ctx => grabInput = Vector2.zero; // Reset grabInput when grab input is canceled
+
+
     }
 
     private void Update()
@@ -130,6 +152,11 @@ public class FirstPersonControls : MonoBehaviour
         Move();
         LookAround();
         ApplyGravity();
+
+        if (grabAllowed)
+        {
+            MoveGrabbedObject();
+        }
 
         if (rotateAllowed)     
         {
@@ -265,7 +292,7 @@ public class FirstPersonControls : MonoBehaviour
                 holdingGun = true;
             }
             Debug.Log(heldObject.name);
-            controls.Player.Inspect.Enable(); //Player can now Inpect a held Object
+            controls.Player.Inspect.Enable(); //Player can now Inspect a held Object
         }
     }
 
@@ -371,4 +398,36 @@ public class FirstPersonControls : MonoBehaviour
         heldObject.transform.Rotate(-playerCamera.right, rotateInput.y, Space.World); // allows for left and right rotation
  
     }
+
+    public void GrabObject()
+    {
+        Ray ray = new Ray(playerCamera.position, playerCamera.forward);
+        RaycastHit hit;
+
+        // Debugging: Draw the ray in the Scene view
+        Debug.DrawRay(playerCamera.position, playerCamera.forward * pickUpRange, Color.yellow, 2f);
+
+
+        if (Physics.Raycast(ray, out hit, pickUpRange))
+        {
+            if (hit.collider.CompareTag("Grabbable"))
+            {
+
+                offset = hit.transform.position - playerCamera.transform.position;// The offset is the difference between the object and the start of the 
+                Transform grabbedObject = hit.transform;
+                Debug.Log(grabbedObject);
+            }
+            else
+            {
+
+            }
+        }
+    }
+
+    public void MoveGrabbedObject()
+    {
+       // grabbedObject.transform.position = grabbedObject.position + offset;
+        
+    }
+    
 }

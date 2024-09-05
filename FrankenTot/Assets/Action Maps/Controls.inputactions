@@ -112,6 +112,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "MoveGrabbedObject",
+                    "type": "Value",
+                    "id": "6a5443b2-f3fb-4074-9f0f-292643550365",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -437,7 +446,7 @@
                 {
                     "name": "",
                     "id": "600a65e5-55ec-49ee-b166-029883fad2f7",
-                    "path": "<Keyboard>/g",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard & Mouse",
@@ -475,6 +484,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "RotateObjectPressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "58083e67-6e53-4956-95e4-9647f105f0fd",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveGrabbedObject",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "47720f72-5f76-4476-97c7-55bbaea01641",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "MoveGrabbedObject",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
