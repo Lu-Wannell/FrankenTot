@@ -355,6 +355,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 8000663785984917217, guid: afc02fb579696b344833bf82edb32abd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grabbable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8905393723238049578, guid: afc02fb579696b344833bf82edb32abd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grabbable
+      objectReference: {fileID: 0}
     - target: {fileID: 8973620386205634823, guid: afc02fb579696b344833bf82edb32abd,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

@@ -7,6 +7,7 @@ TagManager:
   - Bullet
   - Gun
   - PickUp
+  - Grabbable
   layers:
   - Default
   - TransparentFX
