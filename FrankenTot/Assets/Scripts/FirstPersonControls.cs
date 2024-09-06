@@ -14,7 +14,7 @@ public class FirstPersonControls : MonoBehaviour
     public Controls.PlayerActions playerActions;
 
     [Header("MOVEMENT SETTINGS")]
-    [Space(5)]
+    [Space(7)]
     // Public variables to set movement and look speed, and the player camera
     public float moveSpeed; // Speed at which the player moves
     public float lookSpeed; // Sensitivity of the camera movement
@@ -29,14 +29,14 @@ public class FirstPersonControls : MonoBehaviour
     private CharacterController characterController; // Reference to the CharacterController component
 
     [Header("SHOOTING SETTINGS")]
-    [Space(5)]
+    [Space(7)]
     public GameObject projectilePrefab; // Projectile prefab for shooting
     public Transform firePoint; // Point from which the projectile is fired
     public float projectileSpeed = 20f; // Speed at which the projectile is fired
    
 
     [Header("PICKING UP SETTINGS")]
-    [Space(5)]
+    [Space(7)]
     public Transform holdPosition; // Position where the picked-up object will be held
     public float pickUpRange = 3f; // Range within which objects can be picked up
     public GameObject heldObject; // Reference to the currently held object
@@ -44,7 +44,7 @@ public class FirstPersonControls : MonoBehaviour
 
 
     [Header("CROUCH SETTINGS")]
-    [Space(5)]
+    [Space(7)]
     public float crouchHeight = 1f; //make short
     public float standingHeight = 2f; //make normal
     public float crouchSpeed = 2.5f; //speed when crouching
@@ -55,29 +55,32 @@ public class FirstPersonControls : MonoBehaviour
 
 
     [Header("SPRINT SETTINGSS")]
-    [Space(5)]
+    [Space(7)]
     public float sprintSpeed = 7.5f; //speed when crouching
     private bool isSprinting = false; // check if player is sprinting
 
     [Header("INSPECT SETTINGS")]
-    [Space(5)]
+    [Space(7)]
     public bool isInspecting = false;
     public Transform inspectPosition;
 
     [Header("ROTATION SETTINGS")]
-    [Space(5)]
+    [Space(7)]
     private Vector2 rotateInput; //Stores the Rotation Input from the player
     private bool rotateAllowed;
     [SerializeField]
     private float rotationSpeed = 1f;//Speed of rotation
 
     [Header("GRAB SETTINGS")]
-    [Space(5)]
+    [Space(7)]
     private Vector2 grabInput; //Stores the Grab Input from the player
     private bool grabAllowed;
     private Vector3 offset; //distance from cam to Object
     private float zPoint;
-    
+    public Transform grabbedObject;
+
+
+
     
 
     private void Awake()
@@ -137,8 +140,8 @@ public class FirstPersonControls : MonoBehaviour
 
 
         // Subscribe to the Grab Input
-        controls.Player.GrabObject.performed += ctx => { grabAllowed = true; }; // Call the GrabObject method when rotate input is performed
-        controls.Player.GrabObject.canceled += ctx => { grabAllowed = false; }; // Sets it so grabbing is not allowed when not performing grab action
+        controls.Player.GrabObject.performed += ctx => GrabObject(); // Call the GrabObject method when rotate input is performed
+        
 
         controls.Player.MoveGrabbedObject.performed += ctx => grabInput = ctx.ReadValue<Vector2>(); // Update grab Input when grab input is performed
         controls.Player.MoveGrabbedObject.canceled += ctx => grabInput = Vector2.zero; // Reset grabInput when grab input is canceled
@@ -401,6 +404,14 @@ public class FirstPersonControls : MonoBehaviour
 
     public void GrabObject()
     {
+        if (grabbedObject != null)
+        {
+           
+            grabAllowed = false;
+        }
+
+        grabAllowed = true;
+
         Ray ray = new Ray(playerCamera.position, playerCamera.forward);
         RaycastHit hit;
 
@@ -408,14 +419,18 @@ public class FirstPersonControls : MonoBehaviour
         Debug.DrawRay(playerCamera.position, playerCamera.forward * pickUpRange, Color.yellow, 2f);
 
 
-        if (Physics.Raycast(ray, out hit, pickUpRange))
+        if (Physics.Raycast(ray, out hit, pickUpRange +2))
         {
             if (hit.collider.CompareTag("Grabbable"))
             {
 
-                offset = hit.transform.position - playerCamera.transform.position;// The offset is the difference between the object and the start of the 
-                Transform grabbedObject = hit.transform;
+                grabbedObject = hit.transform;
                 Debug.Log(grabbedObject);
+
+                zPoint = Camera.main.WorldToScreenPoint(grabbedObject.position).z;// Store offset = gameobject world pos - mouse world pos
+                offset = grabbedObject.position - ClickPointAsWorldPoint();
+
+                
             }
             else
             {
@@ -426,8 +441,22 @@ public class FirstPersonControls : MonoBehaviour
 
     public void MoveGrabbedObject()
     {
-       // grabbedObject.transform.position = grabbedObject.position + offset;
-        
+        grabbedObject.position = ClickPointAsWorldPoint() + offset;
     }
+
+        private Vector3 ClickPointAsWorldPoint()
+
+        {
+
+            // Pixel coordinates of mouse (x,y)
+            Vector3 clickPoint = playerCamera.position;
+
+            // z coordinate of game object on screen
+            clickPoint.z = zPoint;
+
+            return clickPoint;
+
+        }
+
     
 }
