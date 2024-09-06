@@ -7503,7 +7503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
-  lookSpeed: 0.35
+  lookSpeed: 0.25
   gravity: -14
   jumpHeight: 1.7
   playerCamera: {fileID: 330585546}
@@ -7523,8 +7523,7 @@ MonoBehaviour:
   isInspecting: 0
   inspectPosition: {fileID: 1774303683}
   rotationSpeed: 0.4
-  grabbedObject: {fileID: 0}
-  movable: {fileID: 0}
+  camera: {fileID: 330585545}
 --- !u!114 &1708256609
 MonoBehaviour:
   m_ObjectHideFlags: 0

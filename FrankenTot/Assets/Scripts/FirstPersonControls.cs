@@ -73,11 +73,20 @@ public class FirstPersonControls : MonoBehaviour
 
     [Header("GRAB SETTINGS")]
     [Space(7)]
-    private Vector2 grabInput; //Stores the Grab Input from the player
-    private bool grabAllowed;
-    private Vector3 offset; //distance from cam to Object
-    private float zPoint;
-    public Transform grabbedObject;
+    private Vector3 grabMoveInput;
+    private bool isMoving;
+    private bool isGrabbed;
+    private Transform grabbedObject;
+    public Camera camera;
+
+    private Vector3 WorldPos
+    {
+        get 
+        {
+            float z = camera.WorldToScreenPoint(transform.position).z;
+           return camera.ScreenToWorldPoint(grabMoveInput + new Vector3(0, 0, z));
+        }
+    }
 
 
 
@@ -140,13 +149,10 @@ public class FirstPersonControls : MonoBehaviour
 
 
         // Subscribe to the Grab Input
-        controls.Player.GrabObject.performed += ctx => GrabObject(); // Call the GrabObject method when rotate input is performed
-        
+        controls.Player.MoveGrabbedObject.performed += ctx =>  grabMoveInput = ctx.ReadValue<Vector2>();  // Call the RotateObject method when rotate input is performed
 
-        controls.Player.MoveGrabbedObject.performed += ctx => grabInput = ctx.ReadValue<Vector2>(); // Update grab Input when grab input is performed
-        controls.Player.MoveGrabbedObject.canceled += ctx => grabInput = Vector2.zero; // Reset grabInput when grab input is canceled
-
-
+        controls.Player.GrabObject.performed += ctx => { GrabObject(); if(isGrabbed)StartCoroutine(MoveGrabbedObject()); } ; // Call the RotateObject method when rotate input is performed
+        controls.Player.GrabObject.canceled += ctx => { isMoving = false; }; // Call the RotateObject method when rotate input is performed
     }
 
     private void Update()
@@ -156,10 +162,10 @@ public class FirstPersonControls : MonoBehaviour
         LookAround();
         ApplyGravity();
 
-        if (grabAllowed)
-        {
-            MoveGrabbedObject();
-        }
+        //if (grabAllowed)
+       // {
+        //    MoveGrabbedObject();
+       // }
 
         if (rotateAllowed)     
         {
@@ -403,14 +409,7 @@ public class FirstPersonControls : MonoBehaviour
     }
 
     public void GrabObject()
-    {
-        if (grabbedObject != null)
-        {
-           
-            grabAllowed = false;
-        }
-
-        grabAllowed = true;
+    { 
 
         Ray ray = new Ray(playerCamera.position, playerCamera.forward);
         RaycastHit hit;
@@ -419,44 +418,37 @@ public class FirstPersonControls : MonoBehaviour
         Debug.DrawRay(playerCamera.position, playerCamera.forward * pickUpRange, Color.yellow, 2f);
 
 
-        if (Physics.Raycast(ray, out hit, pickUpRange +2))
+        if (Physics.Raycast(ray, out hit, pickUpRange))
         {
             if (hit.collider.CompareTag("Grabbable"))
             {
 
-                grabbedObject = hit.transform;
-                Debug.Log(grabbedObject);
-
-                zPoint = Camera.main.WorldToScreenPoint(grabbedObject.position).z;// Store offset = gameobject world pos - mouse world pos
-                offset = grabbedObject.position - ClickPointAsWorldPoint();
-
-                
+                isGrabbed = true;
+                grabbedObject =hit.transform;
             }
             else
             {
-
+                isGrabbed= false;
+                grabbedObject = null;
             }
         }
     }
 
-    public void MoveGrabbedObject()
+    private IEnumerator  MoveGrabbedObject()
     {
-        grabbedObject.position = ClickPointAsWorldPoint() + offset;
+        //grab
+        isMoving = true;
+        Vector3 offset = grabbedObject.position- WorldPos;
+        while(isMoving)
+        {
+            //dragging
+            grabbedObject.position = WorldPos + offset;
+            yield return null;
+        }
+        //drop
     }
 
-        private Vector3 ClickPointAsWorldPoint()
-
-        {
-
-            // Pixel coordinates of mouse (x,y)
-            Vector3 clickPoint = playerCamera.position;
-
-            // z coordinate of game object on screen
-            clickPoint.z = zPoint;
-
-            return clickPoint;
-
-        }
+        
 
     
 }
