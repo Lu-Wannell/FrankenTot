@@ -140,8 +140,8 @@ public class FirstPersonControls : MonoBehaviour
 
         // Subscribe to the Grab Input
 
-       // controls.Player.GrabObject.performed += ctx => GrabObject()  ; // Call the GrabObject method when grab input is performed
-        //controls.Player.GrabObject.canceled += ctx => DropObject(); // Call the DropObject method when drop input is performed
+        controls.Player.GrabObject.performed += ctx => GrabObject()  ; // Call the GrabObject method when grab input is performed
+        controls.Player.GrabObject.canceled += ctx => DropObject(); // Call the DropObject method when drop input is performed
     }
 
     private void Update()
@@ -415,7 +415,7 @@ public class FirstPersonControls : MonoBehaviour
     // Availability: www.youtube.com/watch?v=gPPGnpV1Y1c
 
 
-    /*public void GrabObject()
+    public void GrabObject()
     { 
 
         Ray ray = new Ray(playerCamera.position, playerCamera.forward);
@@ -431,7 +431,7 @@ public class FirstPersonControls : MonoBehaviour
             {
                 grabbedObject = hit.collider.gameObject;
                 Debug.Log(grabbedObject.name);
-                grabbedObject.GetComponent<Rigidbody>().isKinematic = true; // Disable physics
+                grabbedObject.GetComponent<Rigidbody>().useGravity = true; 
 
                 // Attach the object to the hold position
                 grabPosition.position = grabbedObject.transform.position;
@@ -445,10 +445,10 @@ public class FirstPersonControls : MonoBehaviour
 
     public void DropObject()
     {
-        grabbedObject.GetComponent<Rigidbody>().isKinematic = false; // Enable physics
+        grabbedObject.GetComponent<Rigidbody>().useGravity = false; 
         grabbedObject.transform.parent = null;
         grabbedObject = null;
         isGrabbing = false;
-    }*/
+    }
         
 }
