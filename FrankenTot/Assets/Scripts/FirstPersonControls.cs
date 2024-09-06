@@ -73,24 +73,14 @@ public class FirstPersonControls : MonoBehaviour
 
     [Header("GRAB SETTINGS")]
     [Space(7)]
-    private Vector3 grabMoveInput;
-    private bool isMoving;
-    private bool isGrabbed;
-    private Transform grabbedObject;
-    public Camera camera;
+    public Transform grabPosition; // Position where the picked-up object will be held
+    public float grabRange = 3f; // Range within which objects can be picked up
+    public GameObject grabbedObject; // Reference to the currently held object
+    public bool isGrabbing; //checks if player is grabbing
+    public float grabJumpHeight = 1f; // Jump Height while grabbing
+    private float grabSpeed;//Speed while grabbing
+    public float grabSpeedModifier = 3f; //Modifier of movespeed when Grabbing
 
-    private Vector3 WorldPos
-    {
-        get 
-        {
-            float z = camera.WorldToScreenPoint(transform.position).z;
-           return camera.ScreenToWorldPoint(grabMoveInput + new Vector3(0, 0, z));
-        }
-    }
-
-
-
-    
 
     private void Awake()
     {
@@ -149,10 +139,9 @@ public class FirstPersonControls : MonoBehaviour
 
 
         // Subscribe to the Grab Input
-        controls.Player.MoveGrabbedObject.performed += ctx =>  grabMoveInput = ctx.ReadValue<Vector2>();  // Call the RotateObject method when rotate input is performed
 
-        controls.Player.GrabObject.performed += ctx => { GrabObject(); if(isGrabbed)StartCoroutine(MoveGrabbedObject()); } ; // Call the RotateObject method when rotate input is performed
-        controls.Player.GrabObject.canceled += ctx => { isMoving = false; }; // Call the RotateObject method when rotate input is performed
+       // controls.Player.GrabObject.performed += ctx => GrabObject()  ; // Call the GrabObject method when grab input is performed
+        //controls.Player.GrabObject.canceled += ctx => DropObject(); // Call the DropObject method when drop input is performed
     }
 
     private void Update()
@@ -161,11 +150,6 @@ public class FirstPersonControls : MonoBehaviour
         Move();
         LookAround();
         ApplyGravity();
-
-        //if (grabAllowed)
-       // {
-        //    MoveGrabbedObject();
-       // }
 
         if (rotateAllowed)     
         {
@@ -182,7 +166,12 @@ public class FirstPersonControls : MonoBehaviour
         move = transform.TransformDirection(move);
 
         float currentSpeed;
-        if (isCrouching)
+        if (isGrabbing)
+        {
+            grabSpeed = moveSpeed - grabSpeedModifier;
+            currentSpeed = grabSpeed;
+        }
+        else if (isCrouching)
         {
             currentSpeed = crouchSpeed;
         }
@@ -231,8 +220,17 @@ public class FirstPersonControls : MonoBehaviour
     {
         if (characterController.isGrounded)
         {
-            // Calculate the jump velocity
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            if ((isGrabbing))
+            {
+                
+                velocity.y = Mathf.Sqrt(grabJumpHeight * -2f * gravity);
+            }
+            else
+            {
+                // Calculate the jump velocity
+                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            }
+           
         }
     }
 
@@ -408,7 +406,16 @@ public class FirstPersonControls : MonoBehaviour
  
     }
 
-    public void GrabObject()
+
+    //Parts of the Grab code were Influenced by
+    // Title: Drag and Drop with New Input system! ( Touch and Mouse )
+    // Author: Game Dev Geeks
+    // Date: 9 September 2024
+    // Code Version: 1.0
+    // Availability: www.youtube.com/watch?v=gPPGnpV1Y1c
+
+
+    /*public void GrabObject()
     { 
 
         Ray ray = new Ray(playerCamera.position, playerCamera.forward);
@@ -422,33 +429,26 @@ public class FirstPersonControls : MonoBehaviour
         {
             if (hit.collider.CompareTag("Grabbable"))
             {
+                grabbedObject = hit.collider.gameObject;
+                Debug.Log(grabbedObject.name);
+                grabbedObject.GetComponent<Rigidbody>().isKinematic = true; // Disable physics
 
-                isGrabbed = true;
-                grabbedObject =hit.transform;
+                // Attach the object to the hold position
+                grabPosition.position = grabbedObject.transform.position;
+                grabPosition.rotation = grabbedObject.transform.rotation;
+                grabbedObject.transform.parent = grabPosition;
+                isGrabbing = true;
             }
-            else
-            {
-                isGrabbed= false;
-                grabbedObject = null;
-            }
+            
         }
     }
 
-    private IEnumerator  MoveGrabbedObject()
+    public void DropObject()
     {
-        //grab
-        isMoving = true;
-        Vector3 offset = grabbedObject.position- WorldPos;
-        while(isMoving)
-        {
-            //dragging
-            grabbedObject.position = WorldPos + offset;
-            yield return null;
-        }
-        //drop
-    }
-
+        grabbedObject.GetComponent<Rigidbody>().isKinematic = false; // Enable physics
+        grabbedObject.transform.parent = null;
+        grabbedObject = null;
+        isGrabbing = false;
+    }*/
         
-
-    
 }

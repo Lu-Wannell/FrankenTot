@@ -200,6 +200,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: -5406050760381237099, guid: afc02fb579696b344833bf82edb32abd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grabbable
+      objectReference: {fileID: 0}
     - target: {fileID: -5298861152377790149, guid: afc02fb579696b344833bf82edb32abd,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -320,6 +325,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1da48f6fd9aa5204db757bcdd533d365, type: 2}
+    - target: {fileID: 5293554105075578986, guid: afc02fb579696b344833bf82edb32abd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grabbable
+      objectReference: {fileID: 0}
     - target: {fileID: 5306188181052310105, guid: afc02fb579696b344833bf82edb32abd,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1418,6 +1428,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 162729257}
   m_CullTransparentMesh: 1
+--- !u!1 &182243522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 182243523}
+  m_Layer: 0
+  m_Name: GrabPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &182243523
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182243522}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 330585546}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &192440634 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8700617353114198275, guid: afc02fb579696b344833bf82edb32abd,
@@ -2499,6 +2540,7 @@ Transform:
   m_Children:
   - {fileID: 951722471}
   - {fileID: 1774303683}
+  - {fileID: 182243523}
   m_Father: {fileID: 1708256607}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &330585547
@@ -6742,7 +6784,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -4752345733136559398, guid: afc02fb579696b344833bf82edb32abd, type: 3}
 --- !u!4 &1512271326 stripped
@@ -7058,7 +7100,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2261747735505442298, guid: afc02fb579696b344833bf82edb32abd, type: 3}
 --- !u!1 &1656719463
@@ -7523,7 +7565,12 @@ MonoBehaviour:
   isInspecting: 0
   inspectPosition: {fileID: 1774303683}
   rotationSpeed: 0.4
-  camera: {fileID: 330585545}
+  grabPosition: {fileID: 182243523}
+  grabRange: 3
+  grabbedObject: {fileID: 0}
+  isGrabbing: 0
+  grabJumpHeight: 1
+  grabSpeedModifier: 3
 --- !u!114 &1708256609
 MonoBehaviour:
   m_ObjectHideFlags: 0
