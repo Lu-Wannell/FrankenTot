@@ -259,6 +259,7 @@ public class FirstPersonControls : MonoBehaviour
             heldObject.GetComponent<Rigidbody>().isKinematic = false; // Enable physics
             heldObject.transform.parent = null;
             holdingGun = false;
+            heldObject = null;
             controls.Player.Inspect.Disable(); // Disables Inspect action as the player can't Inspect when not holding an Object.
         }
 
