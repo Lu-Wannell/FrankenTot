@@ -434,6 +434,7 @@ public class FirstPersonControls : MonoBehaviour
                 grabbedObject = hit.collider.gameObject;
                 Debug.Log(grabbedObject.name);
                 //grabbedObject.GetComponent<Rigidbody>().useGravity = false; 
+                grabbedObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
 
                 // Attach the object to the hold position
                 grabPosition.position = grabbedObject.transform.position;
@@ -448,6 +449,8 @@ public class FirstPersonControls : MonoBehaviour
     public void DropObject()
     {
         //grabbedObject.GetComponent<Rigidbody>().useGravity = true; 
+        grabbedObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+
         grabbedObject.transform.parent = null;
         grabbedObject = null;
         isGrabbing = false;
