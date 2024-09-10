@@ -364,6 +364,7 @@ public class FirstPersonControls : MonoBehaviour
             controls.Player.Crouch.Enable();
             controls.Player.PickUp.Enable();
             controls.Player.Shoot.Enable();
+            controls.Player.GrabObject.Enable();
 
             isInspecting = false;
 
@@ -385,6 +386,7 @@ public class FirstPersonControls : MonoBehaviour
             controls.Player.Crouch.Disable();
             controls.Player.PickUp.Disable();
             controls.Player.Shoot.Disable();
+            controls.Player.GrabObject.Disable();
 
             isInspecting = true;
 
@@ -431,7 +433,7 @@ public class FirstPersonControls : MonoBehaviour
             {
                 grabbedObject = hit.collider.gameObject;
                 Debug.Log(grabbedObject.name);
-                grabbedObject.GetComponent<Rigidbody>().useGravity = false; 
+                //grabbedObject.GetComponent<Rigidbody>().useGravity = false; 
 
                 // Attach the object to the hold position
                 grabPosition.position = grabbedObject.transform.position;
@@ -445,7 +447,7 @@ public class FirstPersonControls : MonoBehaviour
 
     public void DropObject()
     {
-        grabbedObject.GetComponent<Rigidbody>().useGravity = true; 
+        //grabbedObject.GetComponent<Rigidbody>().useGravity = true; 
         grabbedObject.transform.parent = null;
         grabbedObject = null;
         isGrabbing = false;
