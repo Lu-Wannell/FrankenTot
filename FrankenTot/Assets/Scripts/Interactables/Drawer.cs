@@ -11,7 +11,7 @@ public class Drawer : Interactable
     protected override void Interact()
     {
         drawOpen = !drawOpen;
-        draw.GetComponent<Animator>().SetBool("isOpen", drawOpen);
+        draw.GetComponent<Animator>().SetBool("drawOpen", drawOpen);
 
         if (drawOpen)
         { promptMessage = "Close Draw"; }
