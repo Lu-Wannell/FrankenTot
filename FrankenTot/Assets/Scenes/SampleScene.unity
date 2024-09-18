@@ -1904,6 +1904,41 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1943412992633844222, guid: 13b871c84f2ab0247b6dcfd222d02d6e, type: 3}
+--- !u!114 &174000698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174000693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71abda51819c39949b9181cb107227c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptMessage: Open Draw
+  draw: {fileID: 174000693}
+--- !u!95 &174000699
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174000693}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d1c6f27ce2beeab4598f749f3f9f33d1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &174602936 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6335001899129708807, guid: 4644cf48752da0c43a7d8477f7e01de8,
@@ -4119,6 +4154,41 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2966096949651797896, guid: 13b871c84f2ab0247b6dcfd222d02d6e, type: 3}
+--- !u!114 &434629956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434629951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71abda51819c39949b9181cb107227c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptMessage: Open Draw
+  draw: {fileID: 434629951}
+--- !u!95 &434629957
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434629951}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d1c6f27ce2beeab4598f749f3f9f33d1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &445931342 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6145403176552054886, guid: 4644cf48752da0c43a7d8477f7e01de8,
@@ -5895,7 +5965,7 @@ Transform:
   m_GameObject: {fileID: 724984639}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 18.4, y: 1.67, z: 97.1}
+  m_LocalPosition: {x: 18.4, y: 19.5, z: 81.4}
   m_LocalScale: {x: 0.67054814, y: 0.97999996, z: 2.5978158}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -6053,17 +6123,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 13b871c84f2ab0247b6dcfd222d02d6e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -83.38
+      value: -77.44
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13b871c84f2ab0247b6dcfd222d02d6e,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13b871c84f2ab0247b6dcfd222d02d6e,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.5
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13b871c84f2ab0247b6dcfd222d02d6e,
         type: 3}
@@ -6088,7 +6158,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 13b871c84f2ab0247b6dcfd222d02d6e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -270
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 13b871c84f2ab0247b6dcfd222d02d6e,
         type: 3}
@@ -6134,10 +6204,26 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 434629955}
+    - targetCorrespondingSourceObject: {fileID: -8938619599293179921, guid: 13b871c84f2ab0247b6dcfd222d02d6e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 434629957}
+    - targetCorrespondingSourceObject: {fileID: -8938619599293179921, guid: 13b871c84f2ab0247b6dcfd222d02d6e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 434629956}
     - targetCorrespondingSourceObject: {fileID: 1178452752418804156, guid: 13b871c84f2ab0247b6dcfd222d02d6e,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 174000697}
+    - targetCorrespondingSourceObject: {fileID: 1178452752418804156, guid: 13b871c84f2ab0247b6dcfd222d02d6e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 174000699}
+    - targetCorrespondingSourceObject: {fileID: 1178452752418804156, guid: 13b871c84f2ab0247b6dcfd222d02d6e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 174000698}
   m_SourcePrefab: {fileID: 100100000, guid: 13b871c84f2ab0247b6dcfd222d02d6e, type: 3}
 --- !u!1 &758641046 stripped
 GameObject:
@@ -7250,7 +7336,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 95d97a42f3082c24abbe5af5a9614c97,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -84.42
+      value: -76.76
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 95d97a42f3082c24abbe5af5a9614c97,
         type: 3}
@@ -12164,7 +12250,7 @@ Animator:
   m_GameObject: {fileID: 2010438380}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3144303755e1d8946ae7fabda6eff7cc, type: 2}
+  m_Controller: {fileID: 9100000, guid: d1c6f27ce2beeab4598f749f3f9f33d1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
