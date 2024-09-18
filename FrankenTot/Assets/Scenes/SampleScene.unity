@@ -9156,7 +9156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12ce9230b28a75e4eade8ee907748143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 8
   lookSpeed: 0.25
   gravity: -14
   jumpHeight: 1.7
@@ -9170,10 +9170,10 @@ MonoBehaviour:
   heldObject: {fileID: 0}
   crouchHeight: 1
   standingHeight: 2
-  crouchSpeed: 6
+  crouchSpeed: 4
   crouchCheck: 2.5
   player: {fileID: 1708256607}
-  sprintSpeed: 15
+  sprintSpeed: 12
   isInspecting: 0
   inspectPosition: {fileID: 1774303683}
   rotationSpeed: 0.4
