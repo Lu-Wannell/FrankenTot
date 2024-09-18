@@ -283,7 +283,7 @@ public class FirstPersonControls : MonoBehaviour
 
                 // Attach the object to the hold position
                 heldObject.transform.position = holdPosition.position;
-                heldObject.transform.rotation = holdPosition.rotation;
+                //heldObject.transform.rotation = holdPosition.rotation;
                 heldObject.transform.parent = holdPosition;
             }
             else if (hit.collider.CompareTag("Gun"))
@@ -393,7 +393,7 @@ public class FirstPersonControls : MonoBehaviour
 
             //Move Object to Inspect Position
             heldObject.transform.position = inspectPosition.position;
-            heldObject.transform.rotation = inspectPosition.rotation;
+           // heldObject.transform.rotation = inspectPosition.rotation;
             heldObject.transform.parent = inspectPosition;
         }
     }
