@@ -372,7 +372,7 @@ public class FirstPersonControls : MonoBehaviour
 
             //Return Object to Holding Position
             heldObject.transform.position = holdPosition.position;
-            heldObject.transform.rotation = holdPosition.rotation;
+            //heldObject.transform.rotation = holdPosition.rotation;
             heldObject.transform.parent = holdPosition;
         }
         else
