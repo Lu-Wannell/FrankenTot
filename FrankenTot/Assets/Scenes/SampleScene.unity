@@ -5152,17 +5152,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 35594ef3bab9eb744a303b420ce6f761,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.0481993
+      value: 0.82584476
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 35594ef3bab9eb744a303b420ce6f761,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.0481993
+      value: 0.82584476
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 35594ef3bab9eb744a303b420ce6f761,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.0481993
+      value: 0.82584476
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 35594ef3bab9eb744a303b420ce6f761,
         type: 3}
@@ -5172,7 +5172,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 35594ef3bab9eb744a303b420ce6f761,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.35636
+      value: -0.10975
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 35594ef3bab9eb744a303b420ce6f761,
         type: 3}
@@ -5222,7 +5222,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 35594ef3bab9eb744a303b420ce6f761,
         type: 3}
       propertyPath: m_TagString
-      value: Grabbable
+      value: PickUp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6034,7 +6034,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 95d97a42f3082c24abbe5af5a9614c97,
         type: 3}
       propertyPath: m_TagString
-      value: Grabbable
+      value: PickUp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8839,7 +8839,7 @@ MonoBehaviour:
   grabbedObject: {fileID: 0}
   isGrabbing: 0
   grabJumpHeight: 1
-  grabSpeedModifier: 2
+  grabSpeedModifier: 5
 --- !u!114 &1708256609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8882,32 +8882,32 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 26c96e5669b1307469d1101b5dcd0fd4,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.2505047
+      value: 1.0382816
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26c96e5669b1307469d1101b5dcd0fd4,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.2505047
+      value: 1.0382816
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26c96e5669b1307469d1101b5dcd0fd4,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.2505047
+      value: 1.0382816
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26c96e5669b1307469d1101b5dcd0fd4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.826
+      value: 33.787
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26c96e5669b1307469d1101b5dcd0fd4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.23
+      value: 5.15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26c96e5669b1307469d1101b5dcd0fd4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -93.572
+      value: -93.558
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26c96e5669b1307469d1101b5dcd0fd4,
         type: 3}
@@ -8957,7 +8957,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 26c96e5669b1307469d1101b5dcd0fd4,
         type: 3}
       propertyPath: m_TagString
-      value: Grabbable
+      value: PickUp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11226,7 +11226,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 25fb17c3a9b01c0479c36f4dc6c5425a,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Grabbable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

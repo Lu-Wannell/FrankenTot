@@ -261,6 +261,7 @@ public class FirstPersonControls : MonoBehaviour
             holdingGun = false;
             heldObject = null;
             controls.Player.Inspect.Disable(); // Disables Inspect action as the player can't Inspect when not holding an Object.
+            return;
         }
 
         // Perform a raycast from the camera's position forward
