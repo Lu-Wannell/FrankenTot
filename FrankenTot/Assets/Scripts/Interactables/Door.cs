@@ -31,13 +31,13 @@ public class Door : Interactable
                 doorOpen = !doorOpen;
                 door.GetComponent<Animator>().SetBool("isOpen", doorOpen);
                 doorLocked = false;
-                promptMessage = "Close Chest";
+                promptMessage = "Close Door";
 
             }
             else
             {
                 doorLocked = true;
-                promptMessage = doorKey+ " Needed";
+                promptMessage = doorKey.name+ " Needed";
             }
         }
 
