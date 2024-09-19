@@ -6,14 +6,18 @@ public class Door : Interactable
 {
     [SerializeField]
     private GameObject door;
+    [SerializeField]
     private bool doorLocked = true;
     private bool doorOpen;
     public FirstPersonControls firstPersonControls;
     [SerializeField]
     private GameObject doorKey;
+    
 
     protected override void Interact()
     {
+
+
         // Debug.Log(firstPersonControls.heldObject);
         if (!doorLocked)
         {
