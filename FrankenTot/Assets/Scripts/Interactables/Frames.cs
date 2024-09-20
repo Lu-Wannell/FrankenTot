@@ -35,17 +35,19 @@ public class Frames : Interactable
             if (firstPersonControls.heldObject != null && firstPersonControls.heldObject == (fTotFrame || harvardFrame)) 
                 
             {
-                //if holding the Ftot Frame sets the bool to true
+                //if placing the Ftot Frame at the 1962 plaque sets the bool to true
                 if(firstPersonControls.heldObject == fTotFrame && gameObject == plaque1962)
                 {
                     tutorialRoomPuzzleController.isFTotFrameCorrect = true;
                     placedFrame = fTotFrame;
                 }
+                //if placing the Harvard Frame at the 1948 plaque it sets the bool to true
                 else if(firstPersonControls.heldObject == harvardFrame && gameObject == plaque1948)
                 {
                     tutorialRoomPuzzleController.isDegreeFrameCorrect = true;
                     placedFrame = harvardFrame;
                 }
+                //if the frames are placed at the wrong position it doesnt change the bool
                 else if (firstPersonControls.heldObject == fTotFrame)
                 {
                     placedFrame = fTotFrame;
@@ -66,6 +68,7 @@ public class Frames : Interactable
                 framePlaced = true;
                 promptMessage = "Take Frame";
 
+                //Every time a frame is placed it updates the puzzlecontroller bools
                 tutorialRoomPuzzleController.TutorialPuzzleChecker();
 
             }
@@ -74,6 +77,8 @@ public class Frames : Interactable
                 promptMessage = "Frame Needed";
             }
         }
+
+        //If the player Interacts with a placed frame and are not holding anything they can then take the frame
         else
         {
             if(firstPersonControls.heldObject == null)
@@ -87,7 +92,7 @@ public class Frames : Interactable
 
                 // set new held Object
                 firstPersonControls.heldObject = placedFrame;
-                // Attach the object to the hold position
+                // Attach the frame to the hold position
                 placedFrame.transform.position = firstPersonControls.holdPosition.position;
                 //heldObject.transform.rotation = holdPosition.rotation;
                 placedFrame.transform.parent = firstPersonControls.holdPosition;
@@ -96,8 +101,9 @@ public class Frames : Interactable
                 //frame is no longer placed
                 framePlaced = false;
 
-                promptMessage = "Frame Needed";
+                promptMessage = "Place Frame";
 
+                //Every time a frame is Taken it updates the puzzlecontroller bools
                 tutorialRoomPuzzleController.TutorialPuzzleChecker();
             }
             else

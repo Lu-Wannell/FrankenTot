@@ -14,7 +14,7 @@ public class Chest : Interactable
 
     protected override void Interact()
     {
-       // Debug.Log(firstPersonControls.heldObject);
+       //if a chest is unlocked it switches between the open and closed state
         if (!chestLocked)
         {
              chestOpen = !chestOpen;
@@ -24,6 +24,8 @@ public class Chest : Interactable
              else
              { promptMessage = "Open Chest"; }
         }
+
+        //You can only open the chest if it is locked while holding the key
         else
         {
              if (firstPersonControls.heldObject != null && firstPersonControls.heldObject == chestKey)
