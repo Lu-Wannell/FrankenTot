@@ -28,11 +28,11 @@ public class FirstPersonControls : MonoBehaviour
     private Vector3 velocity; // Velocity of the player
     private CharacterController characterController; // Reference to the CharacterController component
 
-    [Header("SHOOTING SETTINGS")]
+   /* [Header("SHOOTING SETTINGS")]
     [Space(7)]
     public GameObject projectilePrefab; // Projectile prefab for shooting
     public Transform firePoint; // Point from which the projectile is fired
-    public float projectileSpeed = 20f; // Speed at which the projectile is fired
+    public float projectileSpeed = 20f; // Speed at which the projectile is fired*/
    
 
     [Header("PICKING UP SETTINGS")]
@@ -114,7 +114,7 @@ public class FirstPersonControls : MonoBehaviour
         controls.Player.Jump.performed += ctx => Jump(); // Call the Jump method when jump input is performed
 
         // Subscribe to the shoot input event
-        controls.Player.Shoot.performed += ctx => Shoot(); // Call the Shoot method when shoot input is performed
+        //controls.Player.Shoot.performed += ctx => Shoot(); // Call the Shoot method when shoot input is performed
 
         // Subscribe to the pick-up input event
         controls.Player.PickUp.performed += ctx => PickUpObject(); // Call the PickUpObject method when pick-up input is performed
@@ -234,7 +234,7 @@ public class FirstPersonControls : MonoBehaviour
         }
     }
 
-    public void Shoot()
+    /*public void Shoot()
     {
         if (holdingGun == true)
         {
@@ -248,7 +248,7 @@ public class FirstPersonControls : MonoBehaviour
             // Destroy the projectile after 3 seconds
             Destroy(projectile, 3f);
         }
-    }
+    }*/
 
     public void PickUpObject()
     {
@@ -258,7 +258,7 @@ public class FirstPersonControls : MonoBehaviour
         {
             heldObject.GetComponent<Rigidbody>().isKinematic = false; // Enable physics
             heldObject.transform.parent = null;
-            holdingGun = false;
+            //holdingGun = false;
             heldObject = null;
             controls.Player.Inspect.Disable(); // Disables Inspect action as the player can't Inspect when not holding an Object.
             return;
@@ -287,7 +287,7 @@ public class FirstPersonControls : MonoBehaviour
                 //heldObject.transform.rotation = holdPosition.rotation;
                 heldObject.transform.parent = holdPosition;
             }
-            else if (hit.collider.CompareTag("Gun"))
+            /*else if (hit.collider.CompareTag("Gun"))
             {
                 // Pick up the object
                 heldObject = hit.collider.gameObject;
@@ -299,7 +299,7 @@ public class FirstPersonControls : MonoBehaviour
                 heldObject.transform.parent = holdPosition;
 
                 holdingGun = true;
-            }
+            }*/
             Debug.Log(heldObject.name);
             controls.Player.Inspect.Enable(); //Player can now Inspect a held Object
         }

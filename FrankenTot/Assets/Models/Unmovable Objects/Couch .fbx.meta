@@ -3,7 +3,12 @@ guid: b6999af7543c11449b9c5fc8bd930667
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brown Cashmere
+    second: {fileID: 2100000, guid: e6a5924f91497334f92706b3d301cff0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
