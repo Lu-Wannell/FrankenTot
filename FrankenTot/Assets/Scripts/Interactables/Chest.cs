@@ -32,12 +32,15 @@ public class Chest : Interactable
              {
                 chestOpen = !chestOpen;
                 chest.GetComponent<Animator>().SetBool("isOpen", chestOpen);
+
+                //Chest is unlocked
                 chestLocked = false;
                 promptMessage = "Close Chest";
 
              }
             else
             {
+                //chest remains locked
                 chestLocked = true;
                 promptMessage = "Key Needed";
             }

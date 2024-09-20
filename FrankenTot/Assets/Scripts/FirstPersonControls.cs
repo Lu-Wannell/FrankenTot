@@ -165,6 +165,7 @@ public class FirstPersonControls : MonoBehaviour
         // Transform direction from local to world space
         move = transform.TransformDirection(move);
 
+        //players speed is dependant on actions they may be performing
         float currentSpeed;
         if (isGrabbing)
         {
