@@ -417,7 +417,7 @@ public class FirstPersonControls : MonoBehaviour
     // Author: Game Dev Geeks
     // Date: 9 September 2024
     // Code Version: 1.0
-    // Availability: www.youtube.com/watch?v=gPPGnpV1Y1c
+    // Availability: www.youtube.com/watch?v=zo1dkYfIJVg&t=2s
 
 
     public void GrabObject()
