@@ -8,7 +8,7 @@ public class Book : Interactable
     private GameObject bookShelf;
     private bool bookShelfOpen;
 
-    protected override void Interact()
+    protected override void Interact() // interacting with book moves a bookshelf
     {
         bookShelfOpen = !bookShelfOpen;
         bookShelf.GetComponent<Animator>().SetBool("isOpen", bookShelfOpen);

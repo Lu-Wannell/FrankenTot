@@ -8,7 +8,9 @@ public class TutorialRoomPuzzleController : MonoBehaviour
     public bool isDegreeFrameCorrect = false;
     public GameObject movingFrame;
 
-    public bool isAtOrigin;
+    public bool isAtOrigin; //Tracks if the frame is at it's starting point
+
+
     //public GameObject target;
     public Vector3 startPos;
     //public Vector3 endPos;
@@ -22,14 +24,16 @@ public class TutorialRoomPuzzleController : MonoBehaviour
 
     public void TutorialPuzzleChecker()
     {
+        // checks if both frames are placed in the correct target position then the puzzle frame moves to reveal a key
         if (isFTotFrameCorrect && isDegreeFrameCorrect)
         {
-            isAtOrigin = false;
+            isAtOrigin = false; 
             movingFrame.GetComponent<Animator>().SetBool("isAtOrigin", isAtOrigin);
 
             Debug.Log("Frame Moved");
         }
 
+        // checks if both frames are placed in the correct target position then the puzzle frame moves to reveal a key
         if (movingFrame.transform.position != startPos)
         {
             if (!isFTotFrameCorrect || !isDegreeFrameCorrect)

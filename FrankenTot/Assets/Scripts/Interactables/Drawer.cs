@@ -10,7 +10,7 @@ public class Drawer : Interactable
 
     protected override void Interact()
     {
-        drawOpen = !drawOpen;
+        drawOpen = !drawOpen;//Changes the bool whenever the draw is interacted with
         draw.GetComponent<Animator>().SetBool("drawOpen", drawOpen);
 
         if (drawOpen)

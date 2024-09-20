@@ -19,6 +19,8 @@ public class Door : Interactable
 
 
         // Debug.Log(firstPersonControls.heldObject);
+
+        //if a door isn't locked it switches between opened and closed
         if (!doorLocked)
         {
             doorOpen = !doorOpen;
@@ -30,17 +32,18 @@ public class Door : Interactable
         }
         else
         {
+            //if the player is holding the correct key for a locked door then they can unlock it and open it
             if (firstPersonControls.heldObject != null && firstPersonControls.heldObject == doorKey)
             {
                 doorOpen = !doorOpen;
                 door.GetComponent<Animator>().SetBool("isOpen", doorOpen);
-                doorLocked = false;
+                doorLocked = false; //  door is now unlocked
                 promptMessage = "Close Door";
 
             }
             else
             {
-                doorLocked = true;
+                doorLocked = true; //door remains locked if you dont have the correct key
                 promptMessage = doorKey.name+ " Needed";
             }
         }

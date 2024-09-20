@@ -14,10 +14,13 @@ public class PlayerInteract : MonoBehaviour
     public Camera cam;
     [SerializeField]
     private float interactRange = 3f;
+
     [SerializeField]
     private float interactBuffer = 1f;
+
     [SerializeField]
     private LayerMask mask;
+
     private PlayerUI playerUI;
     private FirstPersonControls firstPersonControls;
 
