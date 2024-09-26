@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Experimental.AI;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using TMPro;
 //using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class FirstPersonControls : MonoBehaviour
@@ -80,6 +81,10 @@ public class FirstPersonControls : MonoBehaviour
     public float grabJumpHeight = 1f; // Jump Height while grabbing
     private float grabSpeed;//Speed while grabbing
     public float grabSpeedModifier = 3f; //Modifier of movespeed when Grabbing
+
+   // [Header("UI Settings")]
+   // [space(7)]
+   // public TMPro Prompttext;
 
 
     private void Awake()
@@ -258,6 +263,7 @@ public class FirstPersonControls : MonoBehaviour
         if (heldObject != null)
         {
             heldObject.GetComponent<Rigidbody>().isKinematic = false; // Enable physics
+           // heldObject.transform.position = player.position;
             heldObject.transform.parent = null;
             //holdingGun = false;
             heldObject = null;
