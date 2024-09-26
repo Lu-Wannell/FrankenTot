@@ -1275,7 +1275,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &57511963
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3311,7 +3311,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!4 &294366295 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bcf4dc3ca096d9e4e86f23aef2b795f7,
@@ -25106,7 +25106,7 @@ PrefabInstance:
     - target: {fileID: 6379145986482114618, guid: e8d47af4e19298449a3f184b5b642702,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -71.1
+      value: -72.21
       objectReference: {fileID: 0}
     - target: {fileID: 6379145986482114618, guid: e8d47af4e19298449a3f184b5b642702,
         type: 3}
