@@ -12,41 +12,116 @@ public class Door : Interactable
     public FirstPersonControls firstPersonControls;
     [SerializeField]
     private GameObject doorKey;
+    [SerializeField]
+    private float rotateAmount = 90f;
+    [SerializeField]
+    private float rotationSpeed;
+    private bool isRotating;
+
     
 
     protected override void Interact()
     {
 
-
-        // Debug.Log(firstPersonControls.heldObject);
-
-        //if a door isn't locked it switches between opened and closed
-        if (!doorLocked)
+        if (!isRotating) // Prevent triggering multiple rotations simultaneously
         {
-            doorOpen = !doorOpen;
-            door.GetComponent<Animator>().SetBool("isOpen", doorOpen);
-            if (doorOpen)
-            { promptMessage = "Close Door"; }
+            //if a door isn't locked it switches between opened and closed
+            if (!doorLocked)
+            {
+                doorOpen = !doorOpen;
+                // door.GetComponent<Animator>().SetBool("isOpen", doorOpen);
+                if (doorOpen)
+                {
+                    OpenDoor();
+                    promptMessage = "Close Door";
+                }
+                else
+                {
+                    CloseDoor();
+                    promptMessage = "Open Door";
+                }
+            }
             else
-            { promptMessage = "Open Door"; }
+            {
+                //if the player is holding the correct key for a locked door then they can unlock it and open it
+                if (firstPersonControls.heldObject != null && firstPersonControls.heldObject == doorKey)
+                {
+                    doorOpen = !doorOpen;
+                    // door.GetComponent<Animator>().SetBool("isOpen", doorOpen);
+                    OpenDoor();
+                    doorLocked = false; //  door is now unlocked
+                    promptMessage = "Close Door";
+
+                }
+                else
+                {
+                    doorLocked = true; //door remains locked if you dont have the correct key
+                    promptMessage = doorKey.name + " Needed";
+                }
+            }
         }
         else
         {
-            //if the player is holding the correct key for a locked door then they can unlock it and open it
-            if (firstPersonControls.heldObject != null && firstPersonControls.heldObject == doorKey)
-            {
-                doorOpen = !doorOpen;
-                door.GetComponent<Animator>().SetBool("isOpen", doorOpen);
-                doorLocked = false; //  door is now unlocked
-                promptMessage = "Close Door";
-
-            }
-            else
-            {
-                doorLocked = true; //door remains locked if you dont have the correct key
-                promptMessage = doorKey.name+ " Needed";
-            }
+            return;
         }
+            // Debug.Log(firstPersonControls.heldObject);
+
+            
+
+    }
+
+    public void OpenDoor()
+    {
+        
+            StartCoroutine(RotateDoorOpen(door, rotateAmount));
+        
+    }
+
+    public void CloseDoor()
+    {
+        
+            StartCoroutine(RotateDoorClosed(door, rotateAmount));
+        
+    }
+
+    private IEnumerator RotateDoorOpen(GameObject door, float angle)
+    {
+
+        isRotating = true;
+        Quaternion startRotation = door.transform.rotation; // Initial  rotation
+        Quaternion endRotation = startRotation * Quaternion.Euler(0, 0, angle);
+        // Target rotation
+        float rotationProgress = 0f;
+
+        while (rotationProgress < 1f)
+        {
+            rotationProgress += Time.deltaTime * (rotationSpeed / angle); // Normalize the rotation speed based on angle
+            door.transform.rotation = Quaternion.Lerp(startRotation,
+            endRotation, rotationProgress); // Smoothly interpolate rotation
+            yield return null;
+        }
+        door.transform.rotation = endRotation; // Ensure exact final rotation
+        isRotating = false;
+
+    }
+
+    private IEnumerator RotateDoorClosed(GameObject door, float angle)
+    {
+        isRotating = true;
+        Quaternion startRotation = door.transform.rotation; // Initial  rotation
+        Quaternion endRotation = startRotation * Quaternion.Euler(0, 0, -angle);
+        // Target rotation
+        float rotationProgress = 0f;
+
+        while (rotationProgress < 1f)
+        {
+            rotationProgress += Time.deltaTime * (rotationSpeed / angle); // Normalize the rotation speed based on angle
+            door.transform.rotation = Quaternion.Lerp(startRotation,
+            endRotation, rotationProgress); // Smoothly interpolate rotation
+            yield return null;
+        }
+        door.transform.rotation = endRotation; // Ensure exact final rotation
+        isRotating = false;
 
     }
 }
