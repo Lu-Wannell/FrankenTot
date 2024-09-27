@@ -86,7 +86,7 @@ public class Door : Interactable
 
     private IEnumerator RotateDoorOpen(GameObject door, float angle)
     {
-
+        promptMessage = "";
         isRotating = true;
         Quaternion startRotation = door.transform.rotation; // Initial  rotation
         Quaternion endRotation = startRotation * Quaternion.Euler(0, 0, angle);
@@ -107,6 +107,7 @@ public class Door : Interactable
 
     private IEnumerator RotateDoorClosed(GameObject door, float angle)
     {
+        promptMessage = "";
         isRotating = true;
         Quaternion startRotation = door.transform.rotation; // Initial  rotation
         Quaternion endRotation = startRotation * Quaternion.Euler(0, 0, -angle);

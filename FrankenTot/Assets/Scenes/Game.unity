@@ -1421,6 +1421,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dryer
       objectReference: {fileID: 0}
+    - target: {fileID: 5092708244707826562, guid: 88601634125a076449bce20a0339c133,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1432,15 +1437,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5092708244707826562, guid: 88601634125a076449bce20a0339c133,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 989303783}
-    - targetCorrespondingSourceObject: {fileID: 5092708244707826562, guid: 88601634125a076449bce20a0339c133,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 989303782}
     - targetCorrespondingSourceObject: {fileID: 5092708244707826562, guid: 88601634125a076449bce20a0339c133,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 989303781}
+    - targetCorrespondingSourceObject: {fileID: 5092708244707826562, guid: 88601634125a076449bce20a0339c133,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 989303783}
   m_SourcePrefab: {fileID: 100100000, guid: 88601634125a076449bce20a0339c133, type: 3}
 --- !u!4 &132514632 stripped
 Transform:
