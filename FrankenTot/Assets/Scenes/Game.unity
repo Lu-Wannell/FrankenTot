@@ -3489,7 +3489,7 @@ MonoBehaviour:
   firstPersonControls: {fileID: 0}
   doorKey: {fileID: 0}
   rotateAmount: 70
-  rotationSpeed: 0
+  rotationSpeed: 40
 --- !u!1 &324187696 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5834831125852674856, guid: 4644cf48752da0c43a7d8477f7e01de8,
@@ -9424,7 +9424,7 @@ MonoBehaviour:
   firstPersonControls: {fileID: 0}
   doorKey: {fileID: 0}
   rotateAmount: 70
-  rotationSpeed: 0
+  rotationSpeed: 40
 --- !u!1 &994044732 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2002777796866828490, guid: 4644cf48752da0c43a7d8477f7e01de8,
