@@ -160,6 +160,11 @@ public class FirstPersonControls : MonoBehaviour
         {
             RotateObject();
         }
+
+        if(isGrabbing)
+        {
+            
+        }
     }
 
     public void Move()
@@ -203,9 +208,19 @@ public class FirstPersonControls : MonoBehaviour
         // Horizontal rotation: Rotate the player object around the y-axis
         transform.Rotate(0, LookX, 0);
 
-        // Vertical rotation: Adjust the vertical look rotation and clamp it to prevent flipping
-        verticalLookRotation -= LookY;
-        verticalLookRotation = Mathf.Clamp(verticalLookRotation, -90f, 90f);
+        if(isGrabbing)
+        {
+            // Vertical rotation: Adjust the vertical look rotation and clamp it to prevent flipping
+            verticalLookRotation -= LookY;
+            verticalLookRotation = Mathf.Clamp(verticalLookRotation, -60f, 60f);
+        }
+        else
+        {
+            // Vertical rotation: Adjust the vertical look rotation and clamp it to prevent flipping
+            verticalLookRotation -= LookY;
+            verticalLookRotation = Mathf.Clamp(verticalLookRotation, -90f, 90f);
+        }
+       
 
         // Apply the clamped vertical rotation to the player camera
         playerCamera.localEulerAngles = new Vector3(verticalLookRotation, 0, 0);
@@ -435,7 +450,7 @@ public class FirstPersonControls : MonoBehaviour
         // Debugging: Draw the ray in the Scene view
         Debug.DrawRay(playerCamera.position, playerCamera.forward * pickUpRange, Color.yellow, 2f);
 
-
+        
         if (Physics.Raycast(ray, out hit, pickUpRange))
         {
             if (hit.collider.CompareTag("Grabbable"))
