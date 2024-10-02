@@ -3,17 +3,7 @@ guid: a09156a958c2b914eb5ddbcf499acf03
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Franken Drawing
-    second: {fileID: 2100000, guid: 51eb4cc59be044248b2dfd2379a3b26c, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Frankentot Family
-    second: {fileID: 2800000, guid: c9c938112fc738e4e94db12764f49964, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
