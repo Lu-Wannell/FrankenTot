@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
 
     public void Start()
     {
-        cursorScript.ShowCursor();
+      
     }
 
     // Method to rotate the camera left by 90 degrees
@@ -32,7 +32,7 @@ public class UIManager : MonoBehaviour
     public void LoadScene(string scenename)
     {
         SceneManager.LoadScene(scenename);
-        cursorScript.HideCursor();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void OnApplicationQuit()

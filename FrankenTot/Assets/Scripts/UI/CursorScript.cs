@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class CursorScript : MonoBehaviour
 {
-    //locks the cursor to the centre of the screen and hides it
-    public void HideCursor()
+    private bool cursorLocked;
+    private void Awake()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        DontDestroyOnLoad(this);
+    }
+    public void Start()
+    {
+       Cursor.visible = true;
+       
     }
 
-    // makes the cursor visible  and confines it to the game screen
-    public void ShowCursor()
-    {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.Confined;
-    }
+
+   
+    
+
+    
 }

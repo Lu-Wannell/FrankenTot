@@ -396,6 +396,7 @@ public class FirstPersonControls : MonoBehaviour
             heldObject.transform.position = holdPosition.position;
             //heldObject.transform.rotation = holdPosition.rotation;
             heldObject.transform.parent = holdPosition;
+
         }
         else
         {
@@ -418,6 +419,7 @@ public class FirstPersonControls : MonoBehaviour
             heldObject.transform.position = inspectPosition.position;
            // heldObject.transform.rotation = inspectPosition.rotation;
             heldObject.transform.parent = inspectPosition;
+
         }
     }
 
