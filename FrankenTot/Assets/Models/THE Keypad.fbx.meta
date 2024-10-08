@@ -3,7 +3,97 @@ guid: 8705dc8c942ecab449a93ed2914aad75
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: beep beeper
+    second: {fileID: 2100000, guid: 3488c3b037e5f2144844bfa2d482dd50, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: button 0
+    second: {fileID: 2100000, guid: f38effe6ce5aeb243b818aa4407e2da5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: button 1
+    second: {fileID: 2100000, guid: ff32523ca15dc954e8be8d88cc67cdcf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: button 2
+    second: {fileID: 2100000, guid: 80b4da6d7e83d1c46ba526ef802cdb97, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: button 3
+    second: {fileID: 2100000, guid: 5f5672ead6bfbd84ea78b049fec0260e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: button 4
+    second: {fileID: 2100000, guid: 145808aaf58a0ef41a61294759270e0d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: button 5
+    second: {fileID: 2100000, guid: f7c51bd4af694494ba7c62b0142402f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: button 6
+    second: {fileID: 2100000, guid: 7c7d63105b455f0429b1a6f4ba42e416, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: button 7
+    second: {fileID: 2100000, guid: e7c34b2bd49a0634fac7aace5799499a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: button 8
+    second: {fileID: 2100000, guid: badcf4cc684326149864da5a77b48690, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: button 9
+    second: {fileID: 2100000, guid: 2b5c22a6d79f0f44c8f89f43d6a4a991, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cancel button
+    second: {fileID: 2100000, guid: 1c1b45ca47b809d4aac404267166a9f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: enter button
+    second: {fileID: 2100000, guid: 071b7e0cbf759474ea1479f8037f43cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: keypad
+    second: {fileID: 2100000, guid: 9130da5f65c823f42923f27c5dd80708, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Keypad Base MAT MAP
+    second: {fileID: 2800000, guid: 5059a783623377041816784644476d1b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MAPS ENTER CAN
+    second: {fileID: 2800000, guid: fd6b1d3ef7a39664b9a79f86c9d45ca7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: button 1 MAT  MAP
+    second: {fileID: 2800000, guid: c2bfe000a23f22b48abe49b2004bc776, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: gold metal
+    second: {fileID: 2800000, guid: 12c0e3b7ed27d06468743fdf308fde86, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
