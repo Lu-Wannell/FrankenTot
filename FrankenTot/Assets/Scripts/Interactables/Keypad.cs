@@ -28,5 +28,6 @@ public class Keypad : Interactable
                 keypadController.input = keypadController.input + gameObject.name;
             }
         }
+     keypadController.keypadText.text = keypadController.input;
     }
 }

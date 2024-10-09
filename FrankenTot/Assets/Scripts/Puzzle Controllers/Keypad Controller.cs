@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class KeypadController : MonoBehaviour
 {
     [SerializeField]
     public string password = "811822";
     public string input = "";
+    [SerializeField]
+    public TextMeshProUGUI keypadText;
+
 
     [SerializeField]
     private GameObject secretWall;
