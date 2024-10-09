@@ -49,6 +49,7 @@ public class PlayerInteract : MonoBehaviour
             {
                 //Stores interactable in a variable
                 Interactable interactable = hitInfo.collider.GetComponent<Interactable>();
+          
                 //updates onscreen text to match the prompt message of the interactable
                 playerUI.UpdateText(interactable.promptMessage);
 
