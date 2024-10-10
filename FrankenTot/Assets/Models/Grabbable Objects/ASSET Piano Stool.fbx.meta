@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 88601634125a076449bce20a0339c133
+guid: 072fb68149ed36a468cdd2f78dfabf25
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: piano stool MAT map
+    second: {fileID: 2800000, guid: e7407c23856fee841afd67aeb31cfed2, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -70,8 +75,8 @@ ModelImporter:
     useFileScale: 1
     strictVertexDataChecks: 0
   tangentSpace:
-    normalSmoothAngle: 15
-    normalImportMode: 1
+    normalSmoothAngle: 60
+    normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0

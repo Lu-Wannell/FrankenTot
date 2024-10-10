@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: 88601634125a076449bce20a0339c133
+guid: 840c9f26fea73ac4aa36dd57e5a68dd1
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flashlight
+    second: {fileID: 2100000, guid: ca54a7de04e175d46b910397941ada56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: globe
+    second: {fileID: 2100000, guid: 434306fe14dda054b9b18b597fac49d3, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Flashlight Torch MAT MAP
+    second: {fileID: 2800000, guid: 9c4c6bc9b1570ba46b9e8d62648360ad, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -70,8 +85,8 @@ ModelImporter:
     useFileScale: 1
     strictVertexDataChecks: 0
   tangentSpace:
-    normalSmoothAngle: 15
-    normalImportMode: 1
+    normalSmoothAngle: 60
+    normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0

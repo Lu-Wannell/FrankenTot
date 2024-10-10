@@ -134,6 +134,24 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""FlashLight"",
+                    ""type"": ""Button"",
+                    ""id"": ""c2040e84-1f82-4dea-8eb4-8a7237fe225d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause Menu button"",
+                    ""type"": ""Button"",
+                    ""id"": ""3c042050-22e8-45a7-9f79-75b47e0d74f2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -497,6 +515,50 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""RotateObjectPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""378f5799-f6ce-4b8d-aeaa-5b3cf72ac301"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""FlashLight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8d053dd7-1ad0-4c85-bbe9-06a3c330469a"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""FlashLight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fbc50ad1-2997-4342-ac6a-a08d12405beb"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Pause Menu button"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d0a4461b-1963-49b1-a570-459126030179"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Pause Menu button"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1058,6 +1120,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_RotateObject = m_Player.FindAction("RotateObject", throwIfNotFound: true);
         m_Player_RotateObjectPressed = m_Player.FindAction("RotateObjectPressed", throwIfNotFound: true);
         m_Player_GrabObject = m_Player.FindAction("GrabObject", throwIfNotFound: true);
+        m_Player_FlashLight = m_Player.FindAction("FlashLight", throwIfNotFound: true);
+        m_Player_PauseMenubutton = m_Player.FindAction("Pause Menu button", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1143,6 +1207,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_RotateObject;
     private readonly InputAction m_Player_RotateObjectPressed;
     private readonly InputAction m_Player_GrabObject;
+    private readonly InputAction m_Player_FlashLight;
+    private readonly InputAction m_Player_PauseMenubutton;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -1159,6 +1225,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @RotateObject => m_Wrapper.m_Player_RotateObject;
         public InputAction @RotateObjectPressed => m_Wrapper.m_Player_RotateObjectPressed;
         public InputAction @GrabObject => m_Wrapper.m_Player_GrabObject;
+        public InputAction @FlashLight => m_Wrapper.m_Player_FlashLight;
+        public InputAction @PauseMenubutton => m_Wrapper.m_Player_PauseMenubutton;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1204,6 +1272,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @GrabObject.started += instance.OnGrabObject;
             @GrabObject.performed += instance.OnGrabObject;
             @GrabObject.canceled += instance.OnGrabObject;
+            @FlashLight.started += instance.OnFlashLight;
+            @FlashLight.performed += instance.OnFlashLight;
+            @FlashLight.canceled += instance.OnFlashLight;
+            @PauseMenubutton.started += instance.OnPauseMenubutton;
+            @PauseMenubutton.performed += instance.OnPauseMenubutton;
+            @PauseMenubutton.canceled += instance.OnPauseMenubutton;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1244,6 +1318,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @GrabObject.started -= instance.OnGrabObject;
             @GrabObject.performed -= instance.OnGrabObject;
             @GrabObject.canceled -= instance.OnGrabObject;
+            @FlashLight.started -= instance.OnFlashLight;
+            @FlashLight.performed -= instance.OnFlashLight;
+            @FlashLight.canceled -= instance.OnFlashLight;
+            @PauseMenubutton.started -= instance.OnPauseMenubutton;
+            @PauseMenubutton.performed -= instance.OnPauseMenubutton;
+            @PauseMenubutton.canceled -= instance.OnPauseMenubutton;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1411,6 +1491,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnRotateObject(InputAction.CallbackContext context);
         void OnRotateObjectPressed(InputAction.CallbackContext context);
         void OnGrabObject(InputAction.CallbackContext context);
+        void OnFlashLight(InputAction.CallbackContext context);
+        void OnPauseMenubutton(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
