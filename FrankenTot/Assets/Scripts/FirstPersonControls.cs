@@ -89,6 +89,8 @@ public class FirstPersonControls : MonoBehaviour
     public Light myLight;
     [SerializeField]
     private float lightIntensity;
+    [SerializeField]
+    private float InspectIntensity;
 
     [Header("Pause SETTINGS")]
     [Space(7)]
@@ -431,6 +433,9 @@ public class FirstPersonControls : MonoBehaviour
             //enable Rotating
             controls.Player.RotateObject.Enable();
 
+            if (myLight.intensity != 0)
+            { myLight.intensity = InspectIntensity; }
+
             // Disable all other input actions while in Inspect Mode
             controls.Player.Movement.Disable();
             controls.Player.LookAround.Disable();
@@ -519,7 +524,14 @@ public class FirstPersonControls : MonoBehaviour
         }
         else
         {
-            myLight.intensity = lightIntensity;
+            if (isInspecting)
+            {
+                myLight.intensity = InspectIntensity;
+            }
+            else
+            {
+                myLight.intensity = lightIntensity;
+            }
             isFlashlightOn = true;
         }
     }
