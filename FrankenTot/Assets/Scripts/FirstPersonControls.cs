@@ -82,9 +82,19 @@ public class FirstPersonControls : MonoBehaviour
     private float grabSpeed;//Speed while grabbing
     public float grabSpeedModifier = 3f; //Modifier of movespeed when Grabbing
 
-   // [Header("UI Settings")]
-   // [space(7)]
-   // public TMPro Prompttext;
+    [Header("Flashlight SETTINGS")]
+    [Space(7)]
+    public bool isFlashlightOn = false;
+    public bool hasTorch = false;
+    public Light Flashlight;
+
+    [Header("Pause SETTINGS")]
+    [Space(7)]
+    public bool isPaused;
+
+    // [Header("UI Settings")]
+    // [space(7)]
+    // public TMPro Prompttext;
 
 
     private void Awake()
@@ -105,6 +115,7 @@ public class FirstPersonControls : MonoBehaviour
         controls.Player.Enable();
         controls.Player.RotateObject.Disable(); //Disables Rotating Objects when not in Inspect Mode
         controls.Player.Inspect.Disable(); //player can't Enter Inspect mode at the beginning of the game as they aren't holding an object
+        controls.Player.FlashLight.Disable(); // Player can't Use Flashlight until they have picked up the flashlight
 
 
         // Subscribe to the movement input events
@@ -147,6 +158,12 @@ public class FirstPersonControls : MonoBehaviour
 
         controls.Player.GrabObject.performed += ctx => GrabObject()  ; // Call the GrabObject method when grab input is performed
         controls.Player.GrabObject.canceled += ctx => DropObject(); // Call the DropObject method when drop input is performed
+
+        //subscribe to flashlight Input
+        controls.Player.FlashLight.performed += ctx => ToggleFlashlight();
+
+        //Subscribe to pause Input
+        controls.Player.PauseMenubutton.performed += ctx => TogglePause();
     }
 
     private void Update()
@@ -481,5 +498,59 @@ public class FirstPersonControls : MonoBehaviour
         grabbedObject = null;
         isGrabbing = false;
     }
-        
+
+    public void ToggleFlashlight()
+    {
+
+    }
+
+    public void Togglepause()
+    {
+        if (isPaused)
+        {
+            //Disable controls
+            controls.Player.Disable();
+
+            // Enable all other input actions while in Inspect Mode
+            controls.Player.Movement.Enable();
+            controls.Player.LookAround.Enable();
+            controls.Player.Sprint.Enable();
+            controls.Player.Jump.Enable();
+            controls.Player.Crouch.Enable();
+            controls.Player.PickUp.Enable();
+            controls.Player.Shoot.Enable();
+            controls.Player.GrabObject.Enable();
+
+            isInspecting = false;
+
+            //Return Object to Holding Position
+            heldObject.transform.position = holdPosition.position;
+            //heldObject.transform.rotation = holdPosition.rotation;
+            heldObject.transform.parent = holdPosition;
+
+        }
+        else
+        {
+            //enable Rotating
+            controls.Player.RotateObject.Enable();
+
+            // Disable all other input actions while in Inspect Mode
+            controls.Player.Movement.Disable();
+            controls.Player.LookAround.Disable();
+            controls.Player.Sprint.Disable();
+            controls.Player.Jump.Disable();
+            controls.Player.Crouch.Disable();
+            controls.Player.PickUp.Disable();
+            controls.Player.Shoot.Disable();
+            controls.Player.GrabObject.Disable();
+
+            isInspecting = true;
+
+            //Move Object to Inspect Position
+            heldObject.transform.position = inspectPosition.position;
+           // heldObject.transform.rotation = inspectPosition.rotation;
+            heldObject.transform.parent = inspectPosition;
+
+        }
+    }
 }
