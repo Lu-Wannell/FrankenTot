@@ -27042,7 +27042,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 840c9f26fea73ac4aa36dd57e5a68dd1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 101.56058
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 840c9f26fea73ac4aa36dd57e5a68dd1,
         type: 3}
@@ -27107,7 +27107,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 840c9f26fea73ac4aa36dd57e5a68dd1,
         type: 3}
       propertyPath: m_TagString
-      value: PickUp
+      value: Flashlight
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28280,7 +28280,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.66031593, b: 0.26226407, a: 1}
-  m_Intensity: 612.6
+  m_Intensity: 400
   m_Range: 28.402233
   m_SpotAngle: 43.367752
   m_InnerSpotAngle: 8.832293
@@ -32912,6 +32912,11 @@ MonoBehaviour:
   isGrabbing: 0
   grabJumpHeight: 1
   grabSpeedModifier: 5
+  isFlashlightOn: 0
+  flashlight: {fileID: 1218244743}
+  myLight: {fileID: 1218244746}
+  lightIntensity: 40
+  isPaused: 0
 --- !u!114 &1708256609
 MonoBehaviour:
   m_ObjectHideFlags: 0

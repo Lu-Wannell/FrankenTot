@@ -8,6 +8,7 @@ TagManager:
   - Gun
   - PickUp
   - Grabbable
+  - Flashlight
   layers:
   - Default
   - TransparentFX

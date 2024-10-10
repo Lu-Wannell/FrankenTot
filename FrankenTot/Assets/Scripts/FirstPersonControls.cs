@@ -85,8 +85,10 @@ public class FirstPersonControls : MonoBehaviour
     [Header("Flashlight SETTINGS")]
     [Space(7)]
     public bool isFlashlightOn = false;
-    public bool hasTorch = false;
-    public Light Flashlight;
+    public GameObject flashlight;
+    public Light myLight;
+    [SerializeField]
+    private float lightIntensity;
 
     [Header("Pause SETTINGS")]
     [Space(7)]
@@ -105,6 +107,10 @@ public class FirstPersonControls : MonoBehaviour
         // Create a new instance of the input actions
         controls = new Controls();
         playerActions = controls.Player;
+
+        // Start with Flashlight being off
+        myLight = flashlight.GetComponent<Light>();
+        myLight.intensity = 0;
     }
 
     private void OnEnable()
@@ -163,7 +169,7 @@ public class FirstPersonControls : MonoBehaviour
         controls.Player.FlashLight.performed += ctx => ToggleFlashlight();
 
         //Subscribe to pause Input
-        controls.Player.PauseMenubutton.performed += ctx => TogglePause();
+        //controls.Player.PauseMenubutton.performed += ctx => TogglePause();
     }
 
     private void Update()
@@ -339,6 +345,11 @@ public class FirstPersonControls : MonoBehaviour
 
                 holdingGun = true;
             }*/
+            else if (hit.collider.CompareTag("Flashlight"))
+            {
+               Destroy(hit.collider.gameObject);
+                controls.Player.FlashLight.Enable();
+            }
             Debug.Log(heldObject.name);
             controls.Player.Inspect.Enable(); //Player can now Inspect a held Object
         }
@@ -501,10 +512,19 @@ public class FirstPersonControls : MonoBehaviour
 
     public void ToggleFlashlight()
     {
-
+        if (isFlashlightOn) 
+        {
+            myLight.intensity = 0;
+            isFlashlightOn = false;
+        }
+        else
+        {
+            myLight.intensity = lightIntensity;
+            isFlashlightOn = true;
+        }
     }
 
-    public void Togglepause()
+   /* public void TogglePause()
     {
         if (isPaused)
         {
@@ -552,5 +572,5 @@ public class FirstPersonControls : MonoBehaviour
             heldObject.transform.parent = inspectPosition;
 
         }
-    }
+    }*/
 }
