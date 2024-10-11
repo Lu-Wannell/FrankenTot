@@ -214,6 +214,7 @@ public class FirstPersonControls : MonoBehaviour
         else if (isCrouching)
         {
             currentSpeed = crouchSpeed;
+            playerUI.UpdateFStateCrouch();
         }
         else if(isSprinting)
         {
@@ -222,6 +223,7 @@ public class FirstPersonControls : MonoBehaviour
         else
         {
             currentSpeed = moveSpeed;
+            playerUI.UpdateFStateStand();
         }
 
         // Move the character controller based on the movement vector and speed

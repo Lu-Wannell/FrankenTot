@@ -35,6 +35,19 @@ public class PlayerUI : MonoBehaviour
     private Vector3 MouseButtonsScale = new Vector3(1.3f, 1.3f, 1.3f);
     private Vector3 EButtonScale = new Vector3(2.5f, 2.5f, 2.5f);
 
+    [Header("FrankenTot State UI Images")]
+    [Space(7)]
+    [SerializeField]
+    public GameObject frankentotState;
+    [SerializeField]
+    public Image frankentotStateImage;
+    [SerializeField]
+    public Sprite Crouching;
+    [SerializeField]
+    public Sprite Standing;
+    //[SerializeField]
+   // public Sprite Sprinting;
+
 
 
     // Start is called before the first frame update
@@ -43,6 +56,7 @@ public class PlayerUI : MonoBehaviour
         InspectingUI.SetActive(false);
         HoldingUI.SetActive(false);
         UIPrompt.SetActive(false);
+        frankentotState.SetActive(true);
 
         
     }
@@ -80,6 +94,20 @@ public class PlayerUI : MonoBehaviour
         UIPrompt.SetActive(false);
     }
 
+
+
+    //States of FtotImage
+    public void UpdateFStateCrouch()
+    {
+        frankentotStateImage.sprite = Crouching;
+    }
+    public void UpdateFStateStand()
+    {
+        frankentotStateImage.sprite = Standing;
+    }
+
+
+
     //Called when a player Enters Inspect Mode
     public void EnterInspectUI()
     {
@@ -87,6 +115,7 @@ public class PlayerUI : MonoBehaviour
        
 
         HoldingUI.SetActive(false);
+
         
     }
 
