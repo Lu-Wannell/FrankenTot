@@ -38810,10 +38810,11 @@ MonoBehaviour:
   promptText: {fileID: 162729259}
   HoldingUI: {fileID: 697356845}
   InspectingUI: {fileID: 1476351183}
-  UIPromptImage: {fileID: 0}
-  EKey: {fileID: 0}
-  RMB: {fileID: 0}
-  LMB: {fileID: 0}
+  UIPrompt: {fileID: 1987330373}
+  UIPromptImage: {fileID: 26519883}
+  EKey: {fileID: 21300000, guid: eedda2aaed506ff4394c75d748dfa96a, type: 3}
+  RMB: {fileID: 21300000, guid: 315fac6df43157c4eab2f528c1597baf, type: 3}
+  LMB: {fileID: 21300000, guid: 20354700daca06d4a9f64e371b93e997, type: 3}
 --- !u!1001 &1719820746
 PrefabInstance:
   m_ObjectHideFlags: 0

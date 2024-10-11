@@ -19,9 +19,9 @@ public class PlayerUI : MonoBehaviour
     [Header("INTERACT UI Images")]
     [Space(7)]
     [SerializeField]
-    public Image UIPromptImage;
+    public GameObject UIPrompt;
     [SerializeField]
-    public Sprite None;
+    public Image UIPromptImage;
     [SerializeField]
     public Sprite EKey;
     [SerializeField]
@@ -37,7 +37,9 @@ public class PlayerUI : MonoBehaviour
     {
         InspectingUI.SetActive(false);
         HoldingUI.SetActive(false);
-        UIPromptImage.sprite = null;
+        UIPrompt.SetActive(false);
+
+        
     }
 
     public void UpdateText(string promptMessage)
@@ -50,21 +52,24 @@ public class PlayerUI : MonoBehaviour
     public void UpdateUItoE()
     {
         UIPromptImage.sprite = EKey;
+        UIPrompt.SetActive(true);
     }
 
     public void UpdateUItoLMB()
     {
         UIPromptImage.sprite = LMB;
+        UIPrompt.SetActive(true);
     }
 
     public void UpdateUItoRMB()
     {
         UIPromptImage.sprite = RMB;
+        UIPrompt.SetActive(true);
     }
 
     public void UpdateUItoEmpty()
     {
-        UIPromptImage.sprite = None;
+        UIPrompt.SetActive(false);
     }
 
     //Called when a player Enters Inspect Mode
