@@ -11,8 +11,12 @@ using TMPro;
 
 public class FirstPersonControls : MonoBehaviour
 {
+
     private Controls controls;
     public Controls.PlayerActions playerActions;
+
+    [SerializeField]
+    private PlayerUI playerUI;
 
     [Header("MOVEMENT SETTINGS")]
     [Space(7)]
@@ -308,6 +312,7 @@ public class FirstPersonControls : MonoBehaviour
             //holdingGun = false;
             heldObject = null;
             controls.Player.Inspect.Disable(); // Disables Inspect action as the player can't Inspect when not holding an Object.
+            playerUI.PutDownObjectUI();//Sets UI to not show holding UI
             return;
         }
 
@@ -333,6 +338,7 @@ public class FirstPersonControls : MonoBehaviour
                 heldObject.transform.position = holdPosition.position;
                 //heldObject.transform.rotation = holdPosition.rotation;
                 heldObject.transform.parent = holdPosition;
+                playerUI.PickUpObjectUI();//Sets UI to Holding ObjectUI
             }
             /*else if (hit.collider.CompareTag("Gun"))
             {
@@ -407,6 +413,7 @@ public class FirstPersonControls : MonoBehaviour
     {
         if (isInspecting)
         {
+
             //Disable rotating
             controls.Player.RotateObject.Disable();
 
@@ -427,9 +434,13 @@ public class FirstPersonControls : MonoBehaviour
             //heldObject.transform.rotation = holdPosition.rotation;
             heldObject.transform.parent = holdPosition;
 
+            //Disable Inspect UI and Enable Holding UI
+            playerUI.ExitInspectUI();
+
         }
         else
         {
+
             //enable Rotating
             controls.Player.RotateObject.Enable();
 
@@ -452,6 +463,9 @@ public class FirstPersonControls : MonoBehaviour
             heldObject.transform.position = inspectPosition.position;
            // heldObject.transform.rotation = inspectPosition.rotation;
             heldObject.transform.parent = inspectPosition;
+
+            //Enable Inspect UI and Disable Holding UI
+            playerUI.EnterInspectUI();
 
         }
     }
