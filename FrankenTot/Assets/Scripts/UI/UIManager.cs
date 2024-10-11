@@ -43,7 +43,7 @@ public class UIManager : MonoBehaviour
     // Coroutine to smoothly rotate the camera
     private IEnumerator RotateCameraCoroutine(float angle)
     {
-        isRotating = true;
+        /*isRotating = true;
         Quaternion startRotation = mainCamera.transform.rotation; // Initial  rotation
         Quaternion endRotation = startRotation * Quaternion.Euler(0, -angle, 0);
         // Target rotation
@@ -53,11 +53,11 @@ public class UIManager : MonoBehaviour
         {
             rotationProgress += Time.deltaTime * (rotationSpeed / angle); // Normalize the rotation speed based on angle
             mainCamera.transform.rotation = Quaternion.Lerp(startRotation,
-            endRotation, rotationProgress); // Smoothly interpolate rotation
+            endRotation, rotationProgress); // Smoothly interpolate rotation*/
             yield return null;
-        }
+       /* }
         mainCamera.transform.rotation = endRotation; // Ensure exact final rotation
-        isRotating = false;
+        isRotating = false;*/
         initialButton.SetActive(false);
 
         foreach (GameObject UIelement in UIElements)
