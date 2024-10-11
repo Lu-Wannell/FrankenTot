@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Diagnostics.Tracing;
 
 public class PlayerUI : MonoBehaviour
 {
@@ -14,18 +15,56 @@ public class PlayerUI : MonoBehaviour
 
     [SerializeField]
     public GameObject InspectingUI;
-    
+
+    [Header("INTERACT UI Images")]
+    [Space(7)]
+    [SerializeField]
+    public Image UIPromptImage;
+    [SerializeField]
+    public Sprite None;
+    [SerializeField]
+    public Sprite EKey;
+    [SerializeField]
+    public Sprite RMB;
+    [SerializeField]
+    public Sprite LMB;
+
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         InspectingUI.SetActive(false);
         HoldingUI.SetActive(false);
+        UIPromptImage.sprite = null;
     }
 
     public void UpdateText(string promptMessage)
     {
         promptText.text = promptMessage;
+    }
+
+
+
+    public void UpdateUItoE()
+    {
+        UIPromptImage.sprite = EKey;
+    }
+
+    public void UpdateUItoLMB()
+    {
+        UIPromptImage.sprite = LMB;
+    }
+
+    public void UpdateUItoRMB()
+    {
+        UIPromptImage.sprite = RMB;
+    }
+
+    public void UpdateUItoEmpty()
+    {
+        UIPromptImage.sprite = None;
     }
 
     //Called when a player Enters Inspect Mode

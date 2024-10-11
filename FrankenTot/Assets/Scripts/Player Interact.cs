@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 // Title: Raycast Interactions:Let's make a first person game in Unity
 // Author: Natty GameDev
@@ -24,6 +25,8 @@ public class PlayerInteract : MonoBehaviour
     private PlayerUI playerUI;
     private FirstPersonControls firstPersonControls;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +39,7 @@ public class PlayerInteract : MonoBehaviour
     void Update()
     {
         playerUI.UpdateText(string.Empty);
+        playerUI.UpdateUItoEmpty();
 
         //creates ray at the center of the camera, shooting forwards.
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
@@ -52,6 +56,8 @@ public class PlayerInteract : MonoBehaviour
           
                 //updates onscreen text to match the prompt message of the interactable
                 playerUI.UpdateText(interactable.promptMessage);
+                playerUI.UpdateUItoLMB();
+
 
                 if(firstPersonControls.playerActions.Interact.triggered)
                 {

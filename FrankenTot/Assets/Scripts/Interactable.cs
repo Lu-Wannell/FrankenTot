@@ -1,6 +1,8 @@
+using Microsoft.Unity.VisualStudio.Editor;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 
 // Title: Raycast Interactions:Let's make a first person game in Unity
@@ -14,6 +16,8 @@ public abstract class Interactable : MonoBehaviour
 {
     //message displayed to the player when looking at an interactable.
     public string promptMessage;
+    //
+    public Image UIButtonPrompt;
 
     //This function will be called from the player script
     public void BaseInteract()
