@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 7039306810884782702}
   - component: {fileID: 1589222200201279461}
   - component: {fileID: 675137493069201918}
-  m_Layer: 0
+  - component: {fileID: -3388405190832442073}
+  m_Layer: 7
   m_Name: 'ASSET Fire wood '
   m_TagString: PickUp
   m_Icon: {fileID: 0}
@@ -135,3 +136,16 @@ CapsuleCollider:
   m_Height: 4.3554645
   m_Direction: 0
   m_Center: {x: -0.027071316, y: -0.065606594, z: 0.079397}
+--- !u!114 &-3388405190832442073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8840663167293578171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2e5573ca866cf43bbd275238ad72e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptMessage: Pick-Up

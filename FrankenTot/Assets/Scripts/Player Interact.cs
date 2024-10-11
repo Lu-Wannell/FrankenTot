@@ -38,6 +38,12 @@ public class PlayerInteract : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (firstPersonControls.isInspecting || firstPersonControls.isGrabbing)
+        {
+            playerUI.UpdateUItoEmpty();
+            return;
+        }
+
         playerUI.UpdateText(string.Empty);
         playerUI.UpdateUItoEmpty();
 
@@ -46,17 +52,56 @@ public class PlayerInteract : MonoBehaviour
         Debug.DrawRay(cam.transform.position, cam.transform.forward * interactRange, Color.blue);
 
         RaycastHit hitInfo; //stores collision information
-        if( Physics.Raycast(ray, out hitInfo, interactRange, mask)) //code only runs if raycast hits something
+        if( Physics.Raycast(ray, out hitInfo, firstPersonControls.pickUpRange, mask)) //code only runs if raycast hits something
         {
+
             //Checks to see if gameobject has an interactable component
             if(hitInfo.collider.GetComponent<Interactable>() != null)
             {
                 //Stores interactable in a variable
                 Interactable interactable = hitInfo.collider.GetComponent<Interactable>();
           
-                //updates onscreen text to match the prompt message of the interactable
-                playerUI.UpdateText(interactable.promptMessage);
-                playerUI.UpdateUItoLMB();
+                
+                if(hitInfo.collider.tag == "PickUp" || hitInfo.collider.tag == "Flashlight")
+                {
+                    if(firstPersonControls.heldObject == null) //player must not be holding anything in order to pickup an object
+                    {
+                        playerUI.UpdateUItoE();
+
+                        //updates onscreen text to match the prompt message of the interactable
+                        playerUI.UpdateText(interactable.promptMessage);
+                    }
+                   
+                }
+
+                else if(hitInfo.collider.tag == "Grabbable")
+                {
+                    if (Physics.Raycast(ray, out hitInfo, firstPersonControls.grabRange, mask))
+                    {
+                        if (interactable == hitInfo.collider.GetComponent<Interactable>())
+                        {
+                        
+                            playerUI.UpdateUItoRMB();
+                            //updates onscreen text to match the prompt message of the interactable
+                            playerUI.UpdateText(interactable.promptMessage);
+                            
+                        }
+                        
+                    }
+                }
+                else
+                {
+                    if (Physics.Raycast(ray, out hitInfo, interactRange, mask))
+                    {
+                        if (interactable == hitInfo.collider.GetComponent<Interactable>())
+                        {
+                            playerUI.UpdateUItoLMB();
+                            //updates onscreen text to match the prompt message of the interactable
+                            playerUI.UpdateText(interactable.promptMessage);
+                        }
+                    }
+                }
+                
 
 
                 if(firstPersonControls.playerActions.Interact.triggered)

@@ -427,8 +427,6 @@ public class FirstPersonControls : MonoBehaviour
             controls.Player.Shoot.Enable();
             controls.Player.GrabObject.Enable();
 
-            isInspecting = false;
-
             //Return Object to Holding Position
             heldObject.transform.position = holdPosition.position;
             //heldObject.transform.rotation = holdPosition.rotation;
@@ -436,6 +434,8 @@ public class FirstPersonControls : MonoBehaviour
 
             //Disable Inspect UI and Enable Holding UI
             playerUI.ExitInspectUI();
+
+            isInspecting = false;
 
         }
         else
@@ -471,6 +471,7 @@ public class FirstPersonControls : MonoBehaviour
     }
 
    
+
 
     public void RotateObject()
     {
@@ -550,53 +551,54 @@ public class FirstPersonControls : MonoBehaviour
         }
     }
 
-   /* public void TogglePause()
-    {
-        if (isPaused)
-        {
-            //Disable controls
-            controls.Player.Disable();
+    /* public void TogglePause()
+     {
+         if (isPaused)
+         {
+             //Disable controls
+             controls.Player.Disable();
 
-            // Enable all other input actions while in Inspect Mode
-            controls.Player.Movement.Enable();
-            controls.Player.LookAround.Enable();
-            controls.Player.Sprint.Enable();
-            controls.Player.Jump.Enable();
-            controls.Player.Crouch.Enable();
-            controls.Player.PickUp.Enable();
-            controls.Player.Shoot.Enable();
-            controls.Player.GrabObject.Enable();
+             // Enable all other input actions while in Inspect Mode
+             controls.Player.Movement.Enable();
+             controls.Player.LookAround.Enable();
+             controls.Player.Sprint.Enable();
+             controls.Player.Jump.Enable();
+             controls.Player.Crouch.Enable();
+             controls.Player.PickUp.Enable();
+             controls.Player.Shoot.Enable();
+             controls.Player.GrabObject.Enable();
 
-            isInspecting = false;
+             isInspecting = false;
 
-            //Return Object to Holding Position
-            heldObject.transform.position = holdPosition.position;
-            //heldObject.transform.rotation = holdPosition.rotation;
-            heldObject.transform.parent = holdPosition;
+             //Return Object to Holding Position
+             heldObject.transform.position = holdPosition.position;
+             //heldObject.transform.rotation = holdPosition.rotation;
+             heldObject.transform.parent = holdPosition;
 
-        }
-        else
-        {
-            //enable Rotating
-            controls.Player.RotateObject.Enable();
+         }
+         else
+         {
+             //enable Rotating
+             controls.Player.RotateObject.Enable();
 
-            // Disable all other input actions while in Inspect Mode
-            controls.Player.Movement.Disable();
-            controls.Player.LookAround.Disable();
-            controls.Player.Sprint.Disable();
-            controls.Player.Jump.Disable();
-            controls.Player.Crouch.Disable();
-            controls.Player.PickUp.Disable();
-            controls.Player.Shoot.Disable();
-            controls.Player.GrabObject.Disable();
+             // Disable all other input actions while in Inspect Mode
+             controls.Player.Movement.Disable();
+             controls.Player.LookAround.Disable();
+             controls.Player.Sprint.Disable();
+             controls.Player.Jump.Disable();
+             controls.Player.Crouch.Disable();
+             controls.Player.PickUp.Disable();
+             controls.Player.Shoot.Disable();
+             controls.Player.GrabObject.Disable();
 
-            isInspecting = true;
+             isInspecting = true;
 
-            //Move Object to Inspect Position
-            heldObject.transform.position = inspectPosition.position;
-           // heldObject.transform.rotation = inspectPosition.rotation;
-            heldObject.transform.parent = inspectPosition;
+             //Move Object to Inspect Position
+             heldObject.transform.position = inspectPosition.position;
+            // heldObject.transform.rotation = inspectPosition.rotation;
+             heldObject.transform.parent = inspectPosition;
 
-        }
-    }*/
+         }
+     }*/
+
 }

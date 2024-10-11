@@ -11,6 +11,9 @@ public class PlayerUI : MonoBehaviour
     private TextMeshProUGUI promptText;
 
     [SerializeField]
+    public GameObject interactingUI;
+
+    [SerializeField]
     public GameObject HoldingUI;
 
     [SerializeField]
@@ -29,6 +32,8 @@ public class PlayerUI : MonoBehaviour
     [SerializeField]
     public Sprite LMB;
 
+    private Vector3 MouseButtonsScale = new Vector3(1.3f, 1.3f, 1.3f);
+    private Vector3 EButtonScale = new Vector3(2.5f, 2.5f, 2.5f);
 
 
 
@@ -52,18 +57,21 @@ public class PlayerUI : MonoBehaviour
     public void UpdateUItoE()
     {
         UIPromptImage.sprite = EKey;
+        UIPromptImage.transform.localScale = EButtonScale;
         UIPrompt.SetActive(true);
     }
 
     public void UpdateUItoLMB()
     {
         UIPromptImage.sprite = LMB;
+        UIPromptImage.transform.localScale = MouseButtonsScale;
         UIPrompt.SetActive(true);
     }
 
     public void UpdateUItoRMB()
     {
         UIPromptImage.sprite = RMB;
+        UIPromptImage.transform.localScale = MouseButtonsScale;
         UIPrompt.SetActive(true);
     }
 
@@ -77,6 +85,7 @@ public class PlayerUI : MonoBehaviour
     {
         InspectingUI.SetActive(true);
        
+
         HoldingUI.SetActive(false);
         
     }
@@ -87,6 +96,8 @@ public class PlayerUI : MonoBehaviour
         InspectingUI.SetActive(false);
 
         HoldingUI.SetActive(true);
+
+        
     }
 
     //Called when a player Picks up an object
