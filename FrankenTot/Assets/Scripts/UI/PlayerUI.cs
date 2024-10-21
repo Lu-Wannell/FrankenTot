@@ -173,10 +173,12 @@ public class PlayerUI : MonoBehaviour
     {
         GameUI.SetActive(false);
         PauseMenuUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void UnpauseGame()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         GameUI.SetActive(true);
         PauseMenuUI.SetActive(false);
     }
