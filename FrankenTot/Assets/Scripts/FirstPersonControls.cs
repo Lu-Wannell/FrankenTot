@@ -359,6 +359,7 @@ public class FirstPersonControls : MonoBehaviour
             {
                Destroy(hit.collider.gameObject);
                 controls.Player.FlashLight.Enable();
+                playerUI.hasFlashlight = true;  
             }
             Debug.Log(heldObject.name);
             controls.Player.Inspect.Enable(); //Player can now Inspect a held Object
@@ -553,12 +554,11 @@ public class FirstPersonControls : MonoBehaviour
         }
     }
 
-    /* public void TogglePause()
+     public void TogglePause()
      {
          if (isPaused)
          {
-             //Disable controls
-             controls.Player.Disable();
+             playerUI.UnpauseGame();
 
              // Enable all other input actions while in Inspect Mode
              controls.Player.Movement.Enable();
@@ -567,40 +567,49 @@ public class FirstPersonControls : MonoBehaviour
              controls.Player.Jump.Enable();
              controls.Player.Crouch.Enable();
              controls.Player.PickUp.Enable();
-             controls.Player.Shoot.Enable();
              controls.Player.GrabObject.Enable();
+             if( heldObject != null)
+             {
+                controls.Player.Inspect.Enable();
+             }
+             if(isInspecting)
+             {
+                controls.Player.Inspect.Enable();
+                controls.Player.RotateObject.Enable();
+            }
+             if(playerUI.hasFlashlight == true)
+             {
+                controls.Player.FlashLight.Enable();
+             }
+                
 
-             isInspecting = false;
+             isPaused = false;
 
-             //Return Object to Holding Position
-             heldObject.transform.position = holdPosition.position;
-             //heldObject.transform.rotation = holdPosition.rotation;
-             heldObject.transform.parent = holdPosition;
+             
 
          }
          else
          {
-             //enable Rotating
-             controls.Player.RotateObject.Enable();
 
-             // Disable all other input actions while in Inspect Mode
+             playerUI.PauseGame();
+
+             // Disable all other input actions while paused
              controls.Player.Movement.Disable();
              controls.Player.LookAround.Disable();
              controls.Player.Sprint.Disable();
              controls.Player.Jump.Disable();
              controls.Player.Crouch.Disable();
              controls.Player.PickUp.Disable();
-             controls.Player.Shoot.Disable();
              controls.Player.GrabObject.Disable();
+             controls.Player.RotateObject.Disable();
+             controls.Player.FlashLight.Disable();
+             controls.Player.Inspect.Disable();
 
-             isInspecting = true;
+            isPaused = true;
 
-             //Move Object to Inspect Position
-             heldObject.transform.position = inspectPosition.position;
-            // heldObject.transform.rotation = inspectPosition.rotation;
-             heldObject.transform.parent = inspectPosition;
+             
 
          }
-     }*/
+     }
 
 }

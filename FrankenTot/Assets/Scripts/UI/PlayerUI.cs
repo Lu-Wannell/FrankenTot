@@ -11,6 +11,12 @@ public class PlayerUI : MonoBehaviour
     private TextMeshProUGUI promptText;
 
     [SerializeField]
+    public GameObject GameUI;
+
+    [SerializeField]
+    public GameObject PauseMenuUI;
+
+    [SerializeField]
     public GameObject interactingUI;
 
     [SerializeField]
@@ -18,6 +24,15 @@ public class PlayerUI : MonoBehaviour
 
     [SerializeField]
     public GameObject InspectingUI;
+
+
+    [Header("Flashlight UI Images")]
+    [Space(7)]
+    [SerializeField]
+    public GameObject FlashLightUI;
+
+    [SerializeField]
+    public bool hasFlashlight = false;
 
     [Header("INTERACT UI Images")]
     [Space(7)]
@@ -57,8 +72,18 @@ public class PlayerUI : MonoBehaviour
         HoldingUI.SetActive(false);
         UIPrompt.SetActive(false);
         frankentotState.SetActive(true);
+        FlashLightUI.SetActive(false);
+        PauseMenuUI.SetActive(false);
 
         
+    }
+
+    public void Update()
+    {
+        if (hasFlashlight)
+        {
+            FlashLightUI.SetActive(true);
+        }
     }
 
     public void UpdateText(string promptMessage)
@@ -68,6 +93,7 @@ public class PlayerUI : MonoBehaviour
 
 
 
+    //control which UI image is shown
     public void UpdateUItoE()
     {
         UIPromptImage.sprite = EKey;
@@ -96,6 +122,7 @@ public class PlayerUI : MonoBehaviour
 
 
 
+
     //States of FtotImage
     public void UpdateFStateCrouch()
     {
@@ -115,6 +142,7 @@ public class PlayerUI : MonoBehaviour
        
 
         HoldingUI.SetActive(false);
+
 
         
     }
@@ -140,4 +168,17 @@ public class PlayerUI : MonoBehaviour
     {
         HoldingUI.SetActive(false);
     }
+
+    public void PauseGame()
+    {
+        GameUI.SetActive(false);
+        PauseMenuUI.SetActive(true);
+    }
+
+    public void UnpauseGame()
+    {
+        GameUI.SetActive(true);
+        PauseMenuUI.SetActive(false);
+    }
+
 }
