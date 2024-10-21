@@ -108,7 +108,7 @@ public class Frames : Interactable
             }
             else
             {
-                promptMessage = "Drop Items to Take Frame";
+                promptMessage = "Drop Item to Take Frame";
             }
                 
         }
