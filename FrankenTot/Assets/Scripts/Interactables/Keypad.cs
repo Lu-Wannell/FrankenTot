@@ -7,6 +7,19 @@ public class Keypad : Interactable
 {
     [SerializeField]
     private KeypadController keypadController;
+
+    [SerializeField]
+    private GameObject keypadLight;
+    [SerializeField]
+    private Light mylight;
+
+    [SerializeField]
+    private Light mylight2;
+
+    public void Start()
+    {
+        keypadLight.SetActive(false);
+    }
     protected override void Interact()
     {
      if (gameObject.name == "ENTER")
@@ -15,11 +28,23 @@ public class Keypad : Interactable
             if (keypadController.input == keypadController.password)
             {
                 keypadController.MoveWall();
+                keypadLight.SetActive(true);
+                mylight.color = Color.green;
+                mylight2.color = Color.green;
+
             }
+            else
+            {
+                keypadLight.SetActive(true);
+                mylight.color = Color.red;
+                mylight2.color = Color.red;
+            }
+
         }
      else if (gameObject.name == "CANCEL")
         {
             keypadController.input = "";
+            keypadLight.SetActive(false);
         }
         else
         {
