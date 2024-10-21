@@ -175,7 +175,7 @@ public class FirstPersonControls : MonoBehaviour
         controls.Player.FlashLight.performed += ctx => ToggleFlashlight();
 
         //Subscribe to pause Input
-        //controls.Player.PauseMenubutton.performed += ctx => TogglePause();
+        controls.Player.PauseMenubutton.performed += ctx => TogglePause();
     }
 
     private void Update()
