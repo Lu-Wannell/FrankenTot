@@ -40923,8 +40923,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1346889998056699304, guid: 5b48f1736493f2744a08365313c7d131,
         type: 3}
+      propertyPath: m_Name
+      value: Gramophone lines for base
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346889998056699304, guid: 5b48f1736493f2744a08365313c7d131,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9047769385084398358, guid: 5b48f1736493f2744a08365313c7d131,
+        type: 3}
+      propertyPath: m_Name
+      value: Gramophone Top
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
