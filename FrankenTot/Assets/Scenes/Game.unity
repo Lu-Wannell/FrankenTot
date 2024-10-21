@@ -40926,26 +40926,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    - target: {fileID: 1850818504825155101, guid: 5b48f1736493f2744a08365313c7d131,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.92502815
-      objectReference: {fileID: 0}
-    - target: {fileID: 1850818504825155101, guid: 5b48f1736493f2744a08365313c7d131,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1850818504825155101, guid: 5b48f1736493f2744a08365313c7d131,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.37989864
-      objectReference: {fileID: 0}
-    - target: {fileID: 1850818504825155101, guid: 5b48f1736493f2744a08365313c7d131,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 44.655
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
