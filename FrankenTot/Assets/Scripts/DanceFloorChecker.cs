@@ -26,6 +26,7 @@ public class DanceFloorChecker : MonoBehaviour
             {                
                 string currentStep = collider.name;
                 danceFloorController.currentDance = danceFloorController.currentDance + currentStep;
+                danceFloorController.DanceSequenceCheck();
             }
             else
             {

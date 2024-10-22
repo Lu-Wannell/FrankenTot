@@ -19,14 +19,54 @@ public class DanceFloorController : MonoBehaviour
 
     public string currentDance = "";
 
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public void DanceSequenceCheck()
     {
-        
+        //Check first sequence
+        if (!isPuzzleOneDone)
+        {
+            if (currentDance == sequenceOne)
+            {
+                isPuzzleOneDone = true;
+            }
+        }
+
+        // check second sequence
+        if (!isPuzzleTwoDone)
+        {
+            if (currentDance == sequenceTwo)
+            {
+                isPuzzleTwoDone = true;
+            }
+        }
+
+        // check third Sequence
+        if (!isPuzzleThree_OneDone)
+        {
+            if (currentDance == sequenceThree)
+            {
+                isPuzzleThree_OneDone = true;
+                currentDance = "";
+            }
+        }
+
+        // check fourth Sequence
+        if (!isPuzzleThree_TwoDone)
+        {
+            if (currentDance == sequenceFour)
+            {
+                isPuzzleThree_TwoDone = true;
+                currentDance = "";
+            }
+        }
+
+        // check fifth Sequence
+        if (!isPuzzleThree_ThreeDone)
+        {
+            if (currentDance == sequenceFive)
+            {
+                isPuzzleThree_ThreeDone = true;
+            }    
+        }
     }
 }
