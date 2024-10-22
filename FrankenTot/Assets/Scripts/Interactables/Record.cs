@@ -47,7 +47,7 @@ public class Record : Interactable
                 promptMessage = "Place Record";
             }
         }
-        //If the player Interacts with a placed frame and are not holding anything they can then take the frame
+        //If the player Interacts with the gramophone and it has the record
         else
         {
             if (isPlaying == false)
