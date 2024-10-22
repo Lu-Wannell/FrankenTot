@@ -23,9 +23,14 @@ public class DanceFloorChecker : MonoBehaviour
             }
 
             if (isDancing)
-            {                
+            {  
+                collider.gameObject.GetComponent<Light>().enabled = true;
+
+                // add current dance step to current dance
                 string currentStep = collider.name;
                 danceFloorController.currentDance = danceFloorController.currentDance + currentStep;
+
+                //Check if the current dance sequence matches the required sequence.
                 danceFloorController.DanceSequenceCheck();
             }
             else
