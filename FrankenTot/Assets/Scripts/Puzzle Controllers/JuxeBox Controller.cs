@@ -33,14 +33,16 @@ public class JuxeBoxController : Interactable
         if (hasAllGears)
         {
             isJukeboxOn = true;
+            danceFloorChecker.isDanceFloorOn = true;
 
         }
         else
-        { isJukeboxOn = false; }
-
-        if (isJukeboxOn)
-        {
-            danceFloorChecker.isDanceFloorOn = true;
+        { 
+            isJukeboxOn = false;
+            danceFloorChecker.isDanceFloorOn = false;
         }
+
+        
+            
     }
 }

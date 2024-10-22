@@ -5,34 +5,39 @@ using UnityEngine;
 
 public class DanceFloorChecker : MonoBehaviour
 {
+    [SerializeField]
     private DanceFloorController danceFloorController;
+    [SerializeField]
     private bool isDancing;
     public bool isDanceFloorOn = false;
 
     public void OnTriggerEnter(Collider collider)
     {
-        if (!isDancing)
-        { return; }
 
+        if (isDanceFloorOn)
+        {
+            if (collider.name == "DanceFloor")
+            {
+                isDancing = true;
+                return;
+            }
 
-         if (gameObject.name == "DanceFloor")
-         {
-            isDancing = true;
-         }
-          
-         if(isDancing)
-         {
-            danceFloorController.currentDance = danceFloorController.currentDance + gameObject.name;
+            if (isDancing)
+            {                
+                string currentStep = collider.name;
+                danceFloorController.currentDance = danceFloorController.currentDance + currentStep;
+            }
+            else
+            {
+
+            }
+
         }
-         else
-         {
-             
-         }
          
     }
     public void OnTriggerExit(Collider collider)
     {
-        if (gameObject.name == "DanceFloor")
+        if (collider.name == "DanceFloor")
         {
             danceFloorController.currentDance = "" ;
             isDancing = false ;

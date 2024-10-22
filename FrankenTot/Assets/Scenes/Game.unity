@@ -14155,7 +14155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptMessage: Insert Gear
-  firstPersonControls: {fileID: 0}
+  firstPersonControls: {fileID: 1708256608}
   jukeBoxController: {fileID: 1688930970}
   hasGearOne: 0
   hasGearTwo: 0
@@ -42724,8 +42724,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptMessage: Play Music
-  firstPersonControls: {fileID: 0}
-  danceFloorChecker: {fileID: 0}
+  firstPersonControls: {fileID: 1708256608}
+  danceFloorChecker: {fileID: 1708256611}
   isJukeboxOn: 0
   hasAllGears: 0
 --- !u!65 &1688930971
@@ -43351,6 +43351,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be03f167212a7dc46962ecf8001136f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  danceFloorController: {fileID: 1766581941}
+  isDancing: 0
   isDanceFloorOn: 0
 --- !u!1001 &1712636449
 PrefabInstance:
@@ -44900,6 +44902,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -4632868227979353284, guid: 3c02ac4f3cc2ba348b124737e6d44434,
+        type: 3}
+      propertyPath: m_Name
+      value: DanceFloor
       objectReference: {fileID: 0}
     - target: {fileID: -4632868227979353284, guid: 3c02ac4f3cc2ba348b124737e6d44434,
         type: 3}
