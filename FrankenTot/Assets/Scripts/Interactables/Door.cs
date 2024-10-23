@@ -8,6 +8,7 @@ public class Door : Interactable
     private GameObject door;
     [SerializeField]
     private bool doorLocked = true;
+    [SerializeField]
     private bool doorOpen;
     public FirstPersonControls firstPersonControls;
     [SerializeField]
@@ -18,10 +19,18 @@ public class Door : Interactable
     private float rotationSpeed;
     private bool isRotating;
 
-    
+
+    public void Start()
+    {
+        gameObject.GetComponent<Door>().enabled = true;
+    }
 
     protected override void Interact()
     {
+        if (gameObject.GetComponent<Door>().enabled == false)
+        {
+            return;
+        }
 
         if (!isRotating) // Prevent triggering multiple rotations simultaneously
         {

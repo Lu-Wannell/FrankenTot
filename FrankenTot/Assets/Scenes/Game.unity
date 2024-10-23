@@ -7877,6 +7877,7 @@ MonoBehaviour:
   promptMessage: Open Door
   door: {fileID: 317901471}
   doorLocked: 0
+  doorOpen: 0
   firstPersonControls: {fileID: 0}
   doorKey: {fileID: 0}
   rotateAmount: 70
@@ -11901,7 +11902,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &485567450
 Transform:
@@ -12856,7 +12857,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &517783319
 Transform:
@@ -13207,6 +13208,7 @@ MonoBehaviour:
   promptMessage: 
   door: {fileID: 656088457}
   doorLocked: 1
+  doorOpen: 0
   firstPersonControls: {fileID: 1708256608}
   doorKey: {fileID: 384691352}
   rotateAmount: 90
@@ -17324,6 +17326,7 @@ MonoBehaviour:
   promptMessage: 
   door: {fileID: 656088457}
   doorLocked: 1
+  doorOpen: 0
   firstPersonControls: {fileID: 1708256608}
   doorKey: {fileID: 384691352}
   rotateAmount: 90
@@ -17364,6 +17367,7 @@ MonoBehaviour:
   promptMessage: Open Door
   door: {fileID: 656088457}
   doorLocked: 0
+  doorOpen: 0
   firstPersonControls: {fileID: 1708256608}
   doorKey: {fileID: 0}
   rotateAmount: 80
@@ -17916,6 +17920,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4564577464659487881, guid: c1d3c998cad115d46b1c0e5ae0088098,
         type: 3}
       insertIndex: -1
+      addedObject: {fileID: 682995745}
+    - targetCorrespondingSourceObject: {fileID: 4564577464659487881, guid: c1d3c998cad115d46b1c0e5ae0088098,
+        type: 3}
+      insertIndex: -1
       addedObject: {fileID: 682995736}
     - targetCorrespondingSourceObject: {fileID: -8739532257357432685, guid: c1d3c998cad115d46b1c0e5ae0088098,
         type: 3}
@@ -17965,6 +17973,7 @@ MonoBehaviour:
   promptMessage: 
   door: {fileID: 682995733}
   doorLocked: 1
+  doorOpen: 0
   firstPersonControls: {fileID: 1708256608}
   doorKey: {fileID: 384691352}
   rotateAmount: 90
@@ -17997,14 +18006,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682995732}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea4378fe2eb7de943a40fd3a4f1d3e60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptMessage: Open Door
+  promptMessage: Close Door
   door: {fileID: 682995733}
   doorLocked: 0
+  doorOpen: 1
   firstPersonControls: {fileID: 1708256608}
   doorKey: {fileID: 384691352}
   rotateAmount: 80
@@ -18051,6 +18061,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.007942429, y: 0.09572711, z: 0.15431854}
   m_Center: {x: 0.00019713829, y: 0.045856174, z: 0.0002670809}
+--- !u!114 &682995745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682995732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77fb4476cf04c7445bf751e465098769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptMessage: Open Door
+  danceFloorController: {fileID: 1766581941}
+  danceRoomDoorController: {fileID: 682995745}
+  door: {fileID: 682995736}
 --- !u!1 &688318612
 GameObject:
   m_ObjectHideFlags: 0
@@ -22241,6 +22267,7 @@ MonoBehaviour:
   promptMessage: 
   door: {fileID: 901707010}
   doorLocked: 1
+  doorOpen: 0
   firstPersonControls: {fileID: 1708256608}
   doorKey: {fileID: 384691352}
   rotateAmount: 90
@@ -22260,6 +22287,7 @@ MonoBehaviour:
   promptMessage: Open Door
   door: {fileID: 901707010}
   doorLocked: 1
+  doorOpen: 0
   firstPersonControls: {fileID: 1708256608}
   doorKey: {fileID: 384691352}
   rotateAmount: 80
@@ -23439,6 +23467,7 @@ MonoBehaviour:
   promptMessage: Open Door
   door: {fileID: 989303777}
   doorLocked: 0
+  doorOpen: 0
   firstPersonControls: {fileID: 0}
   doorKey: {fileID: 0}
   rotateAmount: 70
@@ -25010,6 +25039,7 @@ MonoBehaviour:
   promptMessage: 
   door: {fileID: 682995733}
   doorLocked: 1
+  doorOpen: 0
   firstPersonControls: {fileID: 1708256608}
   doorKey: {fileID: 384691352}
   rotateAmount: 90
@@ -26349,6 +26379,7 @@ MonoBehaviour:
   promptMessage: 
   door: {fileID: 901707010}
   doorLocked: 1
+  doorOpen: 0
   firstPersonControls: {fileID: 1708256608}
   doorKey: {fileID: 384691352}
   rotateAmount: 90
@@ -26602,6 +26633,7 @@ MonoBehaviour:
   promptMessage: 
   door: {fileID: 2137815481}
   doorLocked: 1
+  doorOpen: 0
   firstPersonControls: {fileID: 1708256608}
   doorKey: {fileID: 384691352}
   rotateAmount: 90
@@ -37059,10 +37091,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7848094714704925764, guid: 2763be5cfa0f17f4db717d9f0218bae7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -7029948723529949830, guid: 2763be5cfa0f17f4db717d9f0218bae7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -6642723558554618466, guid: 2763be5cfa0f17f4db717d9f0218bae7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2763be5cfa0f17f4db717d9f0218bae7,
         type: 3}
       propertyPath: m_Name
       value: Fireplace
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2763be5cfa0f17f4db717d9f0218bae7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148817236446094103, guid: 2763be5cfa0f17f4db717d9f0218bae7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -42422,6 +42479,7 @@ MonoBehaviour:
   promptMessage: 
   door: {fileID: 1680659233}
   doorLocked: 1
+  doorOpen: 0
   firstPersonControls: {fileID: 1708256608}
   doorKey: {fileID: 384691352}
   rotateAmount: 90
@@ -43352,6 +43410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   danceFloorController: {fileID: 1766581941}
+  danceLightsController: {fileID: 1766581945}
   isDancing: 0
   isDanceFloorOn: 0
 --- !u!1001 &1712636449
@@ -45096,6 +45155,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1766581941}
+    - targetCorrespondingSourceObject: {fileID: -4632868227979353284, guid: 3c02ac4f3cc2ba348b124737e6d44434,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1766581945}
     - targetCorrespondingSourceObject: {fileID: -4347877846097144389, guid: 3c02ac4f3cc2ba348b124737e6d44434,
         type: 3}
       insertIndex: -1
@@ -45148,6 +45211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e221dc1bc92bca145b9229250bc8ee69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  danceLightsController: {fileID: 1766581945}
   isPuzzleOneDone: 0
   isPuzzleTwoDone: 0
   isPuzzleThree_OneDone: 0
@@ -45159,6 +45223,27 @@ MonoBehaviour:
   sequenceFour: 6587
   sequenceFive: 45
   currentDance: 
+--- !u!114 &1766581945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766581938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c281f56a2f365ba4db494b90e59f5f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light1: {fileID: 420785521}
+  light2: {fileID: 580549684}
+  light3: {fileID: 67160024}
+  light4: {fileID: 581059563}
+  light5: {fileID: 255234175}
+  light6: {fileID: 449286006}
+  light7: {fileID: 962850032}
+  light8: {fileID: 10859404}
+  light9: {fileID: 1030029362}
 --- !u!4 &1771344023 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8213308854177988865, guid: 7faa5908b955e774e90fb4b23ec36ee1,
@@ -48496,6 +48581,7 @@ MonoBehaviour:
   promptMessage: 
   door: {fileID: 1680659233}
   doorLocked: 1
+  doorOpen: 0
   firstPersonControls: {fileID: 1708256608}
   doorKey: {fileID: 384691352}
   rotateAmount: 90
@@ -49934,7 +50020,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2066658380
 Transform:
@@ -52190,6 +52276,7 @@ MonoBehaviour:
   promptMessage: 
   door: {fileID: 2137815481}
   doorLocked: 1
+  doorOpen: 0
   firstPersonControls: {fileID: 1708256608}
   doorKey: {fileID: 384691352}
   rotateAmount: 90
@@ -52230,6 +52317,7 @@ MonoBehaviour:
   promptMessage: Open Door
   door: {fileID: 2137815481}
   doorLocked: 1
+  doorOpen: 0
   firstPersonControls: {fileID: 1708256608}
   doorKey: {fileID: 384691352}
   rotateAmount: 80

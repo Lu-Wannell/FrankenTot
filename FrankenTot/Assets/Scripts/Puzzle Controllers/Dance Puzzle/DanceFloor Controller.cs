@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DanceFloorController : MonoBehaviour
 {
+    [SerializeField]
+    private DanceLightsController danceLightsController;
 
     public bool isPuzzleOneDone = false;
     public bool isPuzzleTwoDone = false;
@@ -28,7 +30,11 @@ public class DanceFloorController : MonoBehaviour
             if (currentDance == sequenceOne)
             {
                 isPuzzleOneDone = true;
+                currentDance = "";
+                danceLightsController.CompletePuzzleLights();
             }
+            else
+                return;
         }
 
         // check second sequence
@@ -37,7 +43,11 @@ public class DanceFloorController : MonoBehaviour
             if (currentDance == sequenceTwo)
             {
                 isPuzzleTwoDone = true;
+                currentDance = "";
+                danceLightsController.CompletePuzzleLights();
             }
+            else
+                return;
         }
 
         // check third Sequence
@@ -47,7 +57,10 @@ public class DanceFloorController : MonoBehaviour
             {
                 isPuzzleThree_OneDone = true;
                 currentDance = "";
+                danceLightsController.PuzzleThree_PartOne();
             }
+            else
+                return;
         }
 
         // check fourth Sequence
@@ -57,7 +70,10 @@ public class DanceFloorController : MonoBehaviour
             {
                 isPuzzleThree_TwoDone = true;
                 currentDance = "";
+                danceLightsController.PuzzleThree_PartTwo();
             }
+            else
+                return;
         }
 
         // check fifth Sequence
@@ -66,7 +82,10 @@ public class DanceFloorController : MonoBehaviour
             if (currentDance == sequenceFive)
             {
                 isPuzzleThree_ThreeDone = true;
-            }    
+                danceLightsController.CompletePuzzleLights();
+            }
+            else
+                return;
         }
     }
 }

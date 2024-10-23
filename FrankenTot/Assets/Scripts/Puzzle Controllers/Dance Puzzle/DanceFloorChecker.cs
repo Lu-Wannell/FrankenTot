@@ -7,6 +7,8 @@ public class DanceFloorChecker : MonoBehaviour
 {
     [SerializeField]
     private DanceFloorController danceFloorController;
+    [SerializeField] 
+    private DanceLightsController danceLightsController;    
     [SerializeField]
     private bool isDancing;
     public bool isDanceFloorOn = false;
@@ -23,8 +25,9 @@ public class DanceFloorChecker : MonoBehaviour
             }
 
             if (isDancing)
-            {  
-                collider.gameObject.GetComponent<Light>().enabled = true;
+            {
+
+                collider.gameObject.GetComponentInChildren < Light>(true).enabled = true;
 
                 // add current dance step to current dance
                 string currentStep = collider.name;
@@ -47,6 +50,10 @@ public class DanceFloorChecker : MonoBehaviour
         {
             danceFloorController.currentDance = "" ;
             isDancing = false ;
+            danceLightsController.DisableLights();
+            danceFloorController.isPuzzleThree_OneDone = false;
+            danceFloorController.isPuzzleThree_TwoDone = false;
+
         }
             
     }

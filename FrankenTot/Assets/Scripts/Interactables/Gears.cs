@@ -29,21 +29,16 @@ public class Gears : Interactable
     public Transform gearTargetOne;
     public Transform gearTargetTwo;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     protected override void Interact()
     {
-        jukeBoxController.hasAllGears = true;
+        hasGearOne = true;
+        hasGearTwo = true;
+        if (hasGearOne && hasGearTwo)
+        {
+            jukeBoxController.hasAllGears = true;
+        }
+        
     }
 }
 
