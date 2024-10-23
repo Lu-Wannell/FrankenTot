@@ -6,6 +6,15 @@ public class Record : Interactable
 {
     [SerializeField]
     private GameObject hintRecord;
+
+    [SerializeField]
+    private Animator record;
+
+    [SerializeField]
+    private GameObject GramophoneTop;
+    [SerializeField]
+    private Animator gramophone;
+
     [SerializeField]
     private Transform recordTarget;
 
@@ -14,7 +23,6 @@ public class Record : Interactable
     //public GramophoneController gramophoneController;
     public FirstPersonControls firstPersonControls;
     private bool isPlaying = false;
-
 
 
 
@@ -55,10 +63,11 @@ public class Record : Interactable
                 isPlaying = true;
                 promptMessage = "Play Record";
                 
+
             }
             else
             {
-                promptMessage = "";
+                promptMessage = "Playing";
             }
 
         }

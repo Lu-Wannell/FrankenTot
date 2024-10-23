@@ -6322,7 +6322,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5fd6ec0ae18a98343955d05b3b874ec0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -6333,9 +6333,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 54.87178
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -6343,23 +6343,68 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.018224305
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: -54.89372
+      outSlope: -54.89372
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.02693094
+      value: 0.6472473
+      inSlope: -13.72343
+      outSlope: -13.72343
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.065756105
+      value: 0.3972473
+      inSlope: -3.4308574
+      outSlope: -3.4308574
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.12913947
+      value: 0.21965027
+      inSlope: -0.85771435
+      outSlope: -0.85771435
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.23210248
+      value: 0.14315796
+      inSlope: -0.21442859
+      outSlope: -0.21442859
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.44992274
+      value: 0.09436035
+      inSlope: -0.053607147
+      outSlope: -0.053607147
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      value: 0.018224305
+      inSlope: -0.01823157
+      outSlope: -0.01823157
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -6368,7 +6413,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -6408,6 +6453,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &257413169
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257413154}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fee4b506b975ad348ac8e4e72938ca5f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &264323591
 GameObject:
   m_ObjectHideFlags: 0
@@ -10878,7 +10944,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1f170bc17b35efc45b5b3281aed01da5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 123.37001
+      value: 123.37
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f170bc17b35efc45b5b3281aed01da5,
         type: 3}
@@ -10888,7 +10954,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1f170bc17b35efc45b5b3281aed01da5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -52.749996
+      value: -52.75
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f170bc17b35efc45b5b3281aed01da5,
         type: 3}
@@ -10961,6 +11027,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 460127180}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1f170bc17b35efc45b5b3281aed01da5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 460127186}
   m_SourcePrefab: {fileID: 100100000, guid: 1f170bc17b35efc45b5b3281aed01da5, type: 3}
 --- !u!1 &460127177 stripped
 GameObject:
@@ -11035,6 +11105,27 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 460127176}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &460127186
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460127177}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1ee9b966a21a41a4bb2efc3970d752f5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &462423306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14801,6 +14892,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   promptMessage: 
   hintRecord: {fileID: 460127177}
+  GramophoneTop: {fileID: 0}
   recordTarget: {fileID: 581305752}
   firstPersonControls: {fileID: 1708256608}
 --- !u!1 &585964569
@@ -43301,7 +43393,7 @@ Transform:
   m_GameObject: {fileID: 1708256603}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.9722961, z: -0, w: 0.23375255}
-  m_LocalPosition: {x: -1.93, y: 1.13, z: 18.87}
+  m_LocalPosition: {x: 116.57, y: 1.13, z: 11.03}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -43565,6 +43657,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 257413165}
+    - targetCorrespondingSourceObject: {fileID: 9047769385084398358, guid: 5b48f1736493f2744a08365313c7d131,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 257413169}
   m_SourcePrefab: {fileID: 100100000, guid: 5b48f1736493f2744a08365313c7d131, type: 3}
 --- !u!4 &1712636450 stripped
 Transform:
@@ -48088,6 +48184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   promptMessage: Place Record
   hintRecord: {fileID: 460127177}
+  GramophoneTop: {fileID: 0}
   recordTarget: {fileID: 581305752}
   firstPersonControls: {fileID: 1708256608}
 --- !u!1 &1927708886
