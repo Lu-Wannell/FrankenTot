@@ -25,6 +25,18 @@ public class Record : Interactable
     private bool isPlaying = false;
 
 
+    [Header("Audio Parameters")]
+    [Space(7)]
+    [SerializeField]
+    private AudioSource gramophoneAudio;
+    private float audioLength;
+
+
+    public void Start()
+    {
+        audioLength = gramophoneAudio.clip.length;
+    }
+
 
     protected override void Interact()
     {
@@ -61,8 +73,10 @@ public class Record : Interactable
             if (isPlaying == false)
             {
                 isPlaying = true;
-                promptMessage = "Play Record";
-                
+                promptMessage = "Playing";
+                gramophone.GetComponent<Animator>().SetBool("isPlaying", true);
+                StartCoroutine(PlayAudio() );
+
 
             }
             else
@@ -71,6 +85,23 @@ public class Record : Interactable
             }
 
         }
+
+    }
+
+    private IEnumerator PlayAudio()
+    {
+        yield return new WaitForSecondsRealtime(3f);
+        gramophoneAudio.Play();
+
+        yield return new WaitForSecondsRealtime(audioLength);
+
+        record.GetComponent<Animator>().SetBool("isSpinning", false);
+        gramophone.GetComponent<Animator>().SetBool("isPlaying", false);
+
+        yield return new WaitForSecondsRealtime(2f);
+
+        isPlaying = false;
+        promptMessage = "Play Record";
 
     }
 }

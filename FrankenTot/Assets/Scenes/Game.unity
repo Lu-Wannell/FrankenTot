@@ -6463,7 +6463,7 @@ Animator:
   m_GameObject: {fileID: 257413154}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fee4b506b975ad348ac8e4e72938ca5f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5af2783cc8025e643a216781532e2a17, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6474,6 +6474,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &257413173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257413154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e19b70e050b94478389a1fb9e8d811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  record: {fileID: 460127186}
 --- !u!1 &264323591
 GameObject:
   m_ObjectHideFlags: 0
@@ -11115,7 +11128,7 @@ Animator:
   m_GameObject: {fileID: 460127177}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1ee9b966a21a41a4bb2efc3970d752f5, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4e27b651fd5648342a4e426eafd66aab, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -14855,8 +14868,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 581305752}
-  - component: {fileID: 581305753}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Placed Record Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14878,23 +14890,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1712636450}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &581305753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581305751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d48f76e9afcce347aaabad2b8e10926, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  promptMessage: 
-  hintRecord: {fileID: 460127177}
-  GramophoneTop: {fileID: 0}
-  recordTarget: {fileID: 581305752}
-  firstPersonControls: {fileID: 1708256608}
 --- !u!1 &585964569
 GameObject:
   m_ObjectHideFlags: 0
@@ -43661,6 +43656,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 257413169}
+    - targetCorrespondingSourceObject: {fileID: 9047769385084398358, guid: 5b48f1736493f2744a08365313c7d131,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 257413173}
   m_SourcePrefab: {fileID: 100100000, guid: 5b48f1736493f2744a08365313c7d131, type: 3}
 --- !u!4 &1712636450 stripped
 Transform:
@@ -48184,9 +48183,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   promptMessage: Place Record
   hintRecord: {fileID: 460127177}
-  GramophoneTop: {fileID: 0}
+  record: {fileID: 460127186}
+  GramophoneTop: {fileID: 257413154}
+  gramophone: {fileID: 257413169}
   recordTarget: {fileID: 581305752}
   firstPersonControls: {fileID: 1708256608}
+  gramophoneAudio: {fileID: 257413165}
 --- !u!1 &1927708886
 GameObject:
   m_ObjectHideFlags: 0
