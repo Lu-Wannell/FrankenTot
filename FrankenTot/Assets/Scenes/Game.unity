@@ -5365,6 +5365,37 @@ Transform:
   - {fileID: 689595208}
   m_Father: {fileID: 881130875}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &213163678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 213163679}
+  m_Layer: 0
+  m_Name: Bedazzled Key
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &213163679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213163678}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 514.6598, y: -5.488734, z: 87.24136}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &214690421
 GameObject:
   m_ObjectHideFlags: 0
@@ -36023,6 +36054,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1365374747}
+    - targetCorrespondingSourceObject: {fileID: 4447909708070721744, guid: 11a6cc82969f6234992cab4fb78e695e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1452506445}
     - targetCorrespondingSourceObject: {fileID: 7916169564874137874, guid: 11a6cc82969f6234992cab4fb78e695e,
         type: 3}
       insertIndex: -1
@@ -37580,6 +37615,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1444050396}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1452506445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365374744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe289da1563d0442ae59c881c290c25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptMessage: A Hatch
+  interactPrompt: A Hatch
+  changedBoolPrompt: 
+  myBool: 0
 --- !u!1 &1459951790 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c4d282ef06c97c4a8cb26dd549fd852,
@@ -39612,6 +39663,7 @@ GameObject:
   - component: {fileID: 1544450475}
   - component: {fileID: 1544450474}
   - component: {fileID: 1544450473}
+  - component: {fileID: 1544450476}
   m_Layer: 7
   m_Name: Lock2
   m_TagString: Untagged
@@ -39707,6 +39759,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544450471}
   m_Mesh: {fileID: 1368061016302227357, guid: c1d3c998cad115d46b1c0e5ae0088098, type: 3}
+--- !u!114 &1544450476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544450471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe289da1563d0442ae59c881c290c25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptMessage: Open Door
+  interactPrompt: It is blocked from the other side
+  changedBoolPrompt: 
+  myBool: 0
 --- !u!4 &1545764613 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5514470243178305652, guid: 3e67cf6f28c2dbf4199bfce302aecfe0,
@@ -43980,7 +44048,7 @@ Transform:
   m_GameObject: {fileID: 1708256603}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.9722961, z: -0, w: 0.23375255}
-  m_LocalPosition: {x: 45.16, y: 1.13, z: 53.49}
+  m_LocalPosition: {x: -9.68, y: 1.13, z: 7.83}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -53014,7 +53082,7 @@ MonoBehaviour:
   doorLocked: 1
   doorOpen: 0
   firstPersonControls: {fileID: 1708256608}
-  doorKey: {fileID: 384691352}
+  doorKey: {fileID: 213163678}
   rotateAmount: 80
   rotationSpeed: 30
 --- !u!65 &2137815485
@@ -54398,3 +54466,4 @@ SceneRoots:
   - {fileID: 1688930974}
   - {fileID: 1222313331}
   - {fileID: 1467050945}
+  - {fileID: 213163679}
