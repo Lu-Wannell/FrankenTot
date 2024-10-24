@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class DanceFloorController : MonoBehaviour
 {
     [SerializeField]
     private DanceLightsController danceLightsController;
+
+    [SerializeField]
+    private RotatorScript hingeRotator;
 
     public bool isPuzzleOneDone = false;
     public bool isPuzzleTwoDone = false;
@@ -45,6 +49,7 @@ public class DanceFloorController : MonoBehaviour
                 isPuzzleTwoDone = true;
                 currentDance = "";
                 danceLightsController.CompletePuzzleLights();
+                hingeRotator.RotateObject();
             }
             else
                 return;
