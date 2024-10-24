@@ -1,0 +1,374 @@
+fileFormatVersion: 2
+guid: b9b1cb48a1631c445a2e719e736eda86
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book
+    second: {fileID: 2100000, guid: fff1842a1ee69cd4b943d3c7154ca886, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book 1
+    second: {fileID: 2100000, guid: 243b04a98610bde42ba2fc7e0d8d3093, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book 10
+    second: {fileID: 2100000, guid: 4d5e9b3fe0d0a144b81b0077c135a628, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book 11
+    second: {fileID: 2100000, guid: 75cc24ff7d944f446b9282d333a9d9b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book 12
+    second: {fileID: 2100000, guid: aa4125eaf6da1b047abfc6dc2f1c6b61, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book 13
+    second: {fileID: 2100000, guid: 5fc30040ad962fa478da2ec1c94d99a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book 14
+    second: {fileID: 2100000, guid: 805074954ddadc746ac1e30f092d7f0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book 15
+    second: {fileID: 2100000, guid: c6dbe6cbe772ef4419f01275bace53a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book 16
+    second: {fileID: 2100000, guid: 31060e3797281414798835395c20ab4e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book 17
+    second: {fileID: 2100000, guid: f709ed33432f3554982cf24f14010721, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book 18
+    second: {fileID: 2100000, guid: 5e2f85a9c928ab44cab17d4642c11bc1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book 19
+    second: {fileID: 2100000, guid: d93f1418f96cb374e8e7ef319fc13e01, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book 2
+    second: {fileID: 2100000, guid: c935363cfebfc9546b658a9057a7a4ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book 20
+    second: {fileID: 2100000, guid: f1f56613d6bafda44bd85c2997d6a695, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book 21
+    second: {fileID: 2100000, guid: cd4dbdafff6832f4e9d972384e4300d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book 22
+    second: {fileID: 2100000, guid: fa37b2c2836919d49854e8ee28e12693, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book 23
+    second: {fileID: 2100000, guid: e5586f4eef3cf6f4bba8b83c19b36725, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book 24
+    second: {fileID: 2100000, guid: 558cf421183a45c44811bdbdae40a8ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book 25
+    second: {fileID: 2100000, guid: 83559ab1a142a164d866396a74c045c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book 26
+    second: {fileID: 2100000, guid: 70c3c9e73b9253c4b98e8316c2a90865, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book 3
+    second: {fileID: 2100000, guid: 9f68abf8176433441b59c7d7736fc1bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book 4
+    second: {fileID: 2100000, guid: 7b48d5d20fb7c274b833afd92690de03, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book 5
+    second: {fileID: 2100000, guid: bcef1b5504823c74093d072c792d92a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book 6
+    second: {fileID: 2100000, guid: f3a0787255327c64eb38fc142dccc52d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book 7
+    second: {fileID: 2100000, guid: e6aa2bac446e80448a1253510b70fbf0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book 8
+    second: {fileID: 2100000, guid: e42d75800eba12a4e970d4628593f20d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book 9
+    second: {fileID: 2100000, guid: fbb383615fefda74c877d0261327fd2e, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DEATH AND LIFE
+    second: {fileID: 2800000, guid: 1676c577c6c8cf045a8e9b36bd4dcdee, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: FEEL HIDING
+    second: {fileID: 2800000, guid: 23a91de3c026e8049bbe96f62fc6011a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: after death book
+    second: {fileID: 2800000, guid: 097313ab3bc227740803d6fc74b9aa2a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: anatomies book
+    second: {fileID: 2800000, guid: 30e71ee6cd480d141b735a3f04d814cb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: anger
+    second: {fileID: 2800000, guid: 022d58be083244a4b9fb90af3cf85fc9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: arnold
+    second: {fileID: 2800000, guid: b313f4e202b86694aa4ddba51c382a86, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: beige book
+    second: {fileID: 2800000, guid: 14c91c92d14595b43a3fce4a48123557, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: candide
+    second: {fileID: 2800000, guid: 02b4ecca459e26940a2fad40b8301823, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cold meat
+    second: {fileID: 2800000, guid: 4de4c95b0df7e304b9fb0fa30191ac2c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: corpse language
+    second: {fileID: 2800000, guid: 4a72f5871d0b5934fa1371d9ea247e12, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: dante
+    second: {fileID: 2800000, guid: 6cee32b81403ef248970b4b59596f24a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: emergenceies
+    second: {fileID: 2800000, guid: 0fc47ace49f1d3d439ea18e01924d038, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: good n evil
+    second: {fileID: 2800000, guid: 77d3512664d13f246b8ed9e5b92d84e9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: happiness
+    second: {fileID: 2800000, guid: a47fa181328ca584597810e4371157f5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: hate poems
+    second: {fileID: 2800000, guid: 12621b0f3d0302a478b8c431b8cc1da8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: insane
+    second: {fileID: 2800000, guid: b7c22800f4267fc45ad2e6cedf2e9795, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: life and death love
+    second: {fileID: 2800000, guid: c63f7bdc6e543004fb2f73ddfa49fb1b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: long run
+    second: {fileID: 2800000, guid: d92bede38221fa04f98b55820aa31249, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: love spirit
+    second: {fileID: 2800000, guid: fd4d8e22dc6c71543bc206e5289a22fa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: needlework
+    second: {fileID: 2800000, guid: 1230896a68e044a489ec3be2bae230ea, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: normal
+    second: {fileID: 2800000, guid: 9ffd1b54133ade344be8f2b0bf661766, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: scarab
+    second: {fileID: 2800000, guid: f62f4cc1a0b0a5b40993cf9c977642c2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: skull book
+    second: {fileID: 2800000, guid: 41e2c02b523aa954fa591e746ec23d35, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: solitude
+    second: {fileID: 2800000, guid: e6c136bb3f4717f45a1aece0cbd73df4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: speak to dead
+    second: {fileID: 2800000, guid: dde82ca438a78604f9f24d592fc00d14, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: woods
+    second: {fileID: 2800000, guid: e68d04025a122474385b5e953a677b87, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
