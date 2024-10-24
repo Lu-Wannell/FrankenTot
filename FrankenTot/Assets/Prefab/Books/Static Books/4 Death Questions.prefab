@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7212854977550215138}
   - component: {fileID: 8996996329642147534}
   m_Layer: 0
-  m_Name: Death Questions 4
+  m_Name: 4 Death Questions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
