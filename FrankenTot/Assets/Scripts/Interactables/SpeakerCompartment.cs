@@ -32,6 +32,7 @@ public class SpeakerCompartment : Interactable
                 
                 rigidBody.isKinematic = false;
                 promptMessage = "B";
+                isClosed = false;
 
             }
             else

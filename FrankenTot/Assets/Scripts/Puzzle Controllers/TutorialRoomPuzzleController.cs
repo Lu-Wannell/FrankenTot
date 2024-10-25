@@ -48,35 +48,6 @@ public class TutorialRoomPuzzleController : MonoBehaviour
         else
         {
             
-        }
-
-
-
-        /* if (movingFrame.transform.position != startPos)
-         {
-             if (!isFTotFrameCorrect || !isDegreeFrameCorrect)
-             {
-                // StartCoroutine(MoveFrame(endPos, startPos, moveTime));
-                 Debug.Log("Frame Moved back");
-             }
-         }
-         else
-         {
-             if (isFTotFrameCorrect && isDegreeFrameCorrect)
-             {
-                // StartCoroutine(MoveFrame(startPos, endPos, moveTime));
-                 Debug.Log("Frame Moved");
-             }
-         }*/
-
-    }
-
-   /* IEnumerator MoveFrame(Vector3 startPos, Vector3 endPos, float time)
-    {
-        for(float t = 0; t < 1; t += Time.deltaTime / time)
-        {
-            movingFrame.transform.position = Vector3.Lerp(startPos, endPos, t);
-            yield return null;
-        }
-    }*/
+        }       
+    }  
 }
