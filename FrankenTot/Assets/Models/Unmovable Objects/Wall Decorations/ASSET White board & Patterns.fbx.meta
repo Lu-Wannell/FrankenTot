@@ -1,24 +1,9 @@
 fileFormatVersion: 2
-guid: 23aec52774bc6694b8a735822b73eece
+guid: 84d6033c95a076e49aac63d4c08962e0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Chrome
-    second: {fileID: 2100000, guid: af08bc072e698f44c83b3c08a03f8de9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Core
-    second: {fileID: 2100000, guid: a79aa39ba3fa6fd4a9227868a19093a7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Tiles
-    second: {fileID: 2100000, guid: fa1a6f4b4b6b2564b925dc8b29f516f3, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
