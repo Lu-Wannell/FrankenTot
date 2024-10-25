@@ -78,6 +78,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Speakers
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dff39601b12288b4ea61fb8f23917c58,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dff39601b12288b4ea61fb8f23917c58,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9135068955873665425, guid: dff39601b12288b4ea61fb8f23917c58,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -85,7 +100,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dff39601b12288b4ea61fb8f23917c58,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3456698728118560389}
+      addedObject: {fileID: 2175057795707331775}
   m_SourcePrefab: {fileID: 100100000, guid: dff39601b12288b4ea61fb8f23917c58, type: 3}
 --- !u!1 &2483005058341627626 stripped
 GameObject:
@@ -93,8 +108,8 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3365330352322010043}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &3456698728118560389
-BoxCollider:
+--- !u!64 &2175057795707331775
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -111,6 +126,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.16262694, y: 0.69212914, z: 0.13654357}
-  m_Center: {x: -0.000033907672, y: 0.0017906129, z: -0.00274048}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5671553213947314611, guid: dff39601b12288b4ea61fb8f23917c58, type: 3}

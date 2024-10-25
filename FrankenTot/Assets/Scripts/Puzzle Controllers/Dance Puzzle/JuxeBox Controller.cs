@@ -15,6 +15,13 @@ public class JuxeBoxController : Interactable
     [SerializeField]
     public bool hasAllGears = false;
 
+    public void Update()
+    {
+        if (hasAllGears)
+        {
+            promptMessage = "Play Music";
+        }
+    }
 
     protected override void Interact()
     {
@@ -25,7 +32,8 @@ public class JuxeBoxController : Interactable
 
         }
         else
-        { 
+        {
+            promptMessage = "It Won't Start";
             isJukeboxOn = false;
             danceFloorChecker.isDanceFloorOn = false;
         }
