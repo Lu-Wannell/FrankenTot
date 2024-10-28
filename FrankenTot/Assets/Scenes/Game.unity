@@ -4582,7 +4582,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1213885190}
     m_Modifications:
     - target: {fileID: -8816467832259128250, guid: bd247422bc5c24945af870bd40a82f96,
         type: 3}
@@ -4607,17 +4607,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: bd247422bc5c24945af870bd40a82f96,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.86
+      value: 27.264927
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bd247422bc5c24945af870bd40a82f96,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.88929796
+      value: -13.85489
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bd247422bc5c24945af870bd40a82f96,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 85.12
+      value: -11.975349
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bd247422bc5c24945af870bd40a82f96,
         type: 3}
@@ -4627,17 +4627,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: bd247422bc5c24945af870bd40a82f96,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bd247422bc5c24945af870bd40a82f96,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bd247422bc5c24945af870bd40a82f96,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bd247422bc5c24945af870bd40a82f96,
         type: 3}
@@ -21612,6 +21612,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 770946418}
+  - component: {fileID: 770946419}
   m_Layer: 0
   m_Name: SkullPuzzleController
   m_TagString: Untagged
@@ -21634,6 +21635,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 24397023}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &770946419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770946417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09efb8a4280a2ea459fa48180c6a647f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSkullOneCorrect: 0
+  isSkullTwoCorrect: 0
+  isSkullThreeCorrect: 0
+  draw: {fileID: 0}
 --- !u!1001 &778134570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23343,6 +23360,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1213885190}
   - {fileID: 661192674}
   - {fileID: 706644401}
   - {fileID: 847792065}
@@ -26977,6 +26995,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1076965301}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1082098981 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bd247422bc5c24945af870bd40a82f96,
+    type: 3}
+  m_PrefabInstance: {fileID: 162531545}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1085479490
 GameObject:
   m_ObjectHideFlags: 0
@@ -30084,15 +30108,17 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1213885189}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.404928, y: 12.965591, z: 97.09535}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -19.494928, y: 13.685592, z: -0.17464447}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1082098981}
+  - {fileID: 543450652963887244}
   - {fileID: 3598113196765502413}
   - {fileID: 3327049030625629179}
   - {fileID: 5952913950308378528}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 864910517}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1218244743
 GameObject:
@@ -57058,7 +57084,7 @@ Transform:
   m_GameObject: {fileID: 919132148691993142}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -13.71, y: 10.47, z: 94.72}
+  m_LocalPosition: {x: -2.3050709, y: -2.4955912, z: -2.375351}
   m_LocalScale: {x: 0.38482, y: 0.38482, z: 0.38482}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -57067,7 +57093,7 @@ Transform:
   - {fileID: 936431651}
   - {fileID: 1428095104}
   - {fileID: 7225506980827667241}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1213885190}
   m_LocalEulerAnglesHint: {x: -90, y: -90, z: 0}
 --- !u!4 &543450653138336243
 Transform:
@@ -57419,7 +57445,9 @@ GameObject:
   - component: {fileID: 4829839710429960377}
   - component: {fileID: 3096449571690804851}
   - component: {fileID: 183736177}
-  m_Layer: 0
+  - component: {fileID: 4829839710429960379}
+  - component: {fileID: 4829839710429960378}
+  m_Layer: 7
   m_Name: Skull Plate 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57571,7 +57599,8 @@ GameObject:
   - component: {fileID: 9215572035023606451}
   - component: {fileID: 1604881538}
   - component: {fileID: 9215572035023606452}
-  m_Layer: 0
+  - component: {fileID: 9215572035023606453}
+  m_Layer: 7
   m_Name: Skull Plate 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59153,6 +59182,43 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 798723717375769695}
   m_Mesh: {fileID: -597694991478916015, guid: 16ef862fb6312f244ba68ecf4fac34e2, type: 3}
+--- !u!114 &4829839710429960378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798723717375769695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be28f0b1d69327249a07f37d84974d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptMessage: 
+  firstPersonControls: {fileID: 1708256608}
+  skullRotator: {fileID: 4829839710429960379}
+  skullPlaced: 0
+  SkullOne: {fileID: 0}
+  SkullTwo: {fileID: 0}
+  skullTarget: {fileID: 0}
+--- !u!114 &4829839710429960379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798723717375769695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b934282272fe334b95c7ab61495c54b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 798723717375769695}
+  isRotating: 0
+  rotationSpeed: 10
+  angleX: 0
+  angleY: 0
+  angleZ: 0
 --- !u!1001 &4869974137716437287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59926,7 +59992,9 @@ GameObject:
   - component: {fileID: 7836430572753164860}
   - component: {fileID: 3974716453503023956}
   - component: {fileID: 603905569}
-  m_Layer: 0
+  - component: {fileID: 7836430572753164862}
+  - component: {fileID: 7836430572753164861}
+  m_Layer: 7
   m_Name: Skull Plate 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60910,6 +60978,43 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6051398651522878841}
   m_Mesh: {fileID: -5127701266358137732, guid: 16ef862fb6312f244ba68ecf4fac34e2, type: 3}
+--- !u!114 &7836430572753164861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6051398651522878841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be28f0b1d69327249a07f37d84974d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptMessage: 
+  firstPersonControls: {fileID: 1708256608}
+  skullRotator: {fileID: 7836430572753164862}
+  skullPlaced: 0
+  SkullOne: {fileID: 838292442}
+  SkullTwo: {fileID: 0}
+  skullTarget: {fileID: 0}
+--- !u!114 &7836430572753164862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6051398651522878841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b934282272fe334b95c7ab61495c54b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 6051398651522878841}
+  isRotating: 0
+  rotationSpeed: 10
+  angleX: 0
+  angleY: 0
+  angleZ: 0
 --- !u!1 &7884577684575396023
 GameObject:
   m_ObjectHideFlags: 0
@@ -61623,11 +61728,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   promptMessage: 
   firstPersonControls: {fileID: 1708256608}
-  skullRotator: {fileID: 0}
+  skullRotator: {fileID: 9215572035023606453}
   skullPlaced: 0
   SkullOne: {fileID: 0}
   SkullTwo: {fileID: 0}
   skullTarget: {fileID: 0}
+--- !u!114 &9215572035023606453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247402386965416786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b934282272fe334b95c7ab61495c54b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 1247402386965416786}
+  isRotating: 0
+  rotationSpeed: 10
+  angleX: 0
+  angleY: 0
+  angleZ: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -61644,9 +61767,6 @@ SceneRoots:
   - {fileID: 20347317}
   - {fileID: 908726433}
   - {fileID: 213163679}
-  - {fileID: 543450652963887244}
   - {fileID: 359649116}
-  - {fileID: 1213885190}
   - {fileID: 1686063789}
   - {fileID: 543450653138336243}
-  - {fileID: 162531545}
