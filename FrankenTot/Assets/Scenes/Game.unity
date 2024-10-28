@@ -3454,9 +3454,9 @@ MonoBehaviour:
   isPieceTwoCorrect: 0
   isPieceThreeCorrect: 0
   isPieceFourCorrect: 0
-  movingBookCase: {fileID: 0}
   isAtOrigin: 0
   startPos: {x: 0, y: 0, z: 0}
+  draw: {fileID: 1135361024}
 --- !u!4 &112990662
 Transform:
   m_ObjectHideFlags: 0
@@ -20699,7 +20699,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1178452752418804156, guid: 13b871c84f2ab0247b6dcfd222d02d6e,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1135361026}
+      addedObject: {fileID: 1135361031}
   m_SourcePrefab: {fileID: 100100000, guid: 13b871c84f2ab0247b6dcfd222d02d6e, type: 3}
 --- !u!1001 &735149606
 PrefabInstance:
@@ -27805,20 +27805,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 724230072}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1135361026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135361024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71abda51819c39949b9181cb107227c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  promptMessage: Open Draw
-  draw: {fileID: 1135361024}
 --- !u!64 &1135361027
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27862,6 +27848,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1135361031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135361024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe289da1563d0442ae59c881c290c25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptMessage: Open Draw
+  interactPrompt: It Won't Budge
+  changedBoolPrompt: 
+  myBool: 0
 --- !u!1001 &1135590049
 PrefabInstance:
   m_ObjectHideFlags: 0

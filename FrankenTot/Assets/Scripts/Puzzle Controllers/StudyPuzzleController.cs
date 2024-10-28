@@ -9,15 +9,17 @@ public class StudyPuzzleController : MonoBehaviour
     public bool isPieceThreeCorrect = false;
     public bool isPieceFourCorrect = false;
 
-    public GameObject movingBookCase;
-
     public bool isAtOrigin; //Tracks if the frame is at it's starting point
    
     public Vector3 startPos;
 
+    [SerializeField]
+    public GameObject draw;
+    private bool drawOpen;
+
     public void Start()
     {
-        startPos = movingBookCase.transform.position;
+        
     }
 
     public void StudyPuzzleChecker()
@@ -25,26 +27,20 @@ public class StudyPuzzleController : MonoBehaviour
         // checks if both frames are placed in the correct target position then the puzzle frame moves to reveal a key
         if (isPieceOneCorrect && isPieceTwoCorrect && isPieceThreeCorrect && isPieceFourCorrect)
         {
-            isAtOrigin = false;
-            movingBookCase.GetComponent<Animator>().SetBool("isAtOrigin", isAtOrigin);
+            drawOpen=true;
+            draw.GetComponent<Animator>().SetBool("drawOpen", drawOpen);
 
         }
 
         
-        if (movingBookCase.transform.position != startPos)
-        {
-            if (!isPieceOneCorrect || !isPieceTwoCorrect || !isPieceThreeCorrect || !isPieceFourCorrect)
+        
+           if (!isPieceOneCorrect || !isPieceTwoCorrect || !isPieceThreeCorrect || !isPieceFourCorrect)
             {
-                isAtOrigin = true;
-                movingBookCase.GetComponent<Animator>().SetBool("isAtOrigin", isAtOrigin);
+                drawOpen = false;
+                draw.GetComponent<Animator>().SetBool("drawOpen", drawOpen);
                 // StartCoroutine(MoveFrame(endPos, startPos, moveTime));
                 Debug.Log("Frame Moved back");
             }
 
-        }
-        else
-        {
-
-        }
     }
 }
