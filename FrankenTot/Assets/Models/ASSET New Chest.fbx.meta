@@ -3,7 +3,37 @@ guid: bd247422bc5c24945af870bd40a82f96
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bronze
+    second: {fileID: 2100000, guid: 644b554ee62d936449cbcfc874109855, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lock
+    second: {fileID: 2100000, guid: e79fee09ce581ee40a66ab9aa9fc0db0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood
+    second: {fileID: 2100000, guid: 14e4f78557e45294db5599d665f1e350, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Fine wood texture standard
+    second: {fileID: 2800000, guid: 5b03ac1d73acb754c8b20b73ae77846f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Hatch Mat
+    second: {fileID: 2800000, guid: b46c3b4523787644ea0ce5e7b6c6aac6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: gold metal
+    second: {fileID: 2800000, guid: 0ed17f9d8f043ef4cb9c9b0460e151cb, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

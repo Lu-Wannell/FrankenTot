@@ -8,7 +8,7 @@ public class RotatorScript : MonoBehaviour
     public GameObject gameObject;
 
     [SerializeField]
-    private bool isRotating;
+    public bool isRotating;
 
     [SerializeField] 
     private float rotationSpeed;
@@ -25,6 +25,14 @@ public class RotatorScript : MonoBehaviour
         if (!isRotating) // Prevent triggering multiple rotations simultaneously
         {
             StartCoroutine(RotateObjectCoroutine(gameObject, angleX, angleY, angleZ));
+        }
+    }
+
+    public void RotateBack()
+    {
+        if (!isRotating)
+        {
+            StartCoroutine(RotateObjectCoroutine(gameObject, -angleX, -angleY, -angleZ));
         }
     }
 
@@ -51,7 +59,7 @@ public class RotatorScript : MonoBehaviour
             {
                 angle = angleZ;
             }
-            rotationProgress += Time.deltaTime * (rotationSpeed / angle); // Normalize the rotation speed based on angle
+            rotationProgress += Time.deltaTime * (rotationSpeed / Mathf.Abs(angle)); // Normalize the rotation speed based on angle
             objectToRotate.transform.rotation = Quaternion.Lerp(startRotation,
             endRotation, rotationProgress); // Smoothly interpolate rotation
             yield return null;
