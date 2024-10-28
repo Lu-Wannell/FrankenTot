@@ -8,8 +8,6 @@ public class StudyPuzzleController : MonoBehaviour
     public bool isPieceTwoCorrect = false;
     public bool isPieceThreeCorrect = false;
     public bool isPieceFourCorrect = false;
-
-    public bool isAtOrigin; //Tracks if the frame is at it's starting point
    
     public Vector3 startPos;
 

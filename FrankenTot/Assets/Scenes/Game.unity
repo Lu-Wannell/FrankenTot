@@ -3454,7 +3454,6 @@ MonoBehaviour:
   isPieceTwoCorrect: 0
   isPieceThreeCorrect: 0
   isPieceFourCorrect: 0
-  isAtOrigin: 0
   startPos: {x: 0, y: 0, z: 0}
   draw: {fileID: 1135361024}
 --- !u!4 &112990662
@@ -28124,6 +28123,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1143457256}
   m_CullTransparentMesh: 1
+--- !u!1 &1144632988
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1144632989}
+  m_Layer: 0
+  m_Name: Skull Plates
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1144632989
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144632988}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6033892425331796199}
+  - {fileID: 2350931820525436345}
+  - {fileID: 5847507408000149264}
+  m_Father: {fileID: 543450653138336243}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1145320211
 GameObject:
   m_ObjectHideFlags: 0
@@ -57013,9 +57046,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 377318507406610335}
-  - {fileID: 6033892425331796199}
-  - {fileID: 2350931820525436345}
-  - {fileID: 5847507408000149264}
+  - {fileID: 1144632989}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -89.57, z: 0}
 --- !u!4 &543450653387106464
@@ -57352,7 +57383,7 @@ GameObject:
   - component: {fileID: 3096449571690804851}
   - component: {fileID: 183736177}
   m_Layer: 0
-  m_Name: Skull Plate.001
+  m_Name: Skull Plate 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57503,7 +57534,7 @@ GameObject:
   - component: {fileID: 9215572035023606451}
   - component: {fileID: 1604881538}
   m_Layer: 0
-  m_Name: Skull Plate.002
+  m_Name: Skull Plate 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58199,12 +58230,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 798723717375769695}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6314926, y: 4.8702884, z: -0.50504446}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.6314919, y: 4.8702884, z: -0.50504535}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450653138336243}
+  m_Father: {fileID: 1144632989}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2380238325733677776
 Transform:
@@ -59625,12 +59656,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1247402386965416786}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.433721, y: 4.8702884, z: -0.50504446}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.4337225, y: 4.8702884, z: -0.5050448}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450653138336243}
+  m_Father: {fileID: 1144632989}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &5861312891412563059 stripped
 Transform:
@@ -59838,12 +59869,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6051398651522878841}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.050475, y: 4.8702884, z: -0.50504446}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.0504746, y: 4.8702884, z: -0.5050446}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450653138336243}
+  m_Father: {fileID: 1144632989}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6051398651522878841
 GameObject:
@@ -59858,7 +59889,7 @@ GameObject:
   - component: {fileID: 3974716453503023956}
   - component: {fileID: 603905569}
   m_Layer: 0
-  m_Name: Skull Plate
+  m_Name: Skull Plate 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
