@@ -7,7 +7,7 @@ public class Chest : Interactable
     [SerializeField]
     private GameObject chest;
     [SerializeField]
-    private bool chestLocked = true;
+    public bool chestLocked = true;
     [SerializeField]
     private bool chestOpen;
     public FirstPersonControls firstPersonControls;
@@ -41,22 +41,11 @@ public class Chest : Interactable
         //You can only open the chest if it is locked while holding the key
         else
         {
-             if (firstPersonControls.heldObject != null && firstPersonControls.heldObject == chestKey)
-             {
-                chestOpen = !chestOpen;
-                chestRotator.RotateObject();
-
-                //Chest is unlocked
-                chestLocked = false;
-                promptMessage = "Close Chest";
-
-             }
-            else
-            {
+           
                 //chest remains locked
                 chestLocked = true;
-                promptMessage = "Key Needed";
-            }
+                promptMessage = "It's Locked";
+            
         }
 
     }
