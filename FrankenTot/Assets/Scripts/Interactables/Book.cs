@@ -30,7 +30,12 @@ public class Book : Interactable
 
     protected override void Interact() // interacting with book moves a bookshelf
     {
-        
+        if (bookShelfMover.isMoving || shelfMover.isMoving)
+        {
+            return;
+        }
+
+
         if (!isBookPlaced)
         {
             //Checks if player is holding a book
@@ -48,7 +53,7 @@ public class Book : Interactable
                 if (placedBook == correctBook)
                 {
                     isCorrectBook = true;
-                    PlacedCorrectBook();
+                    StartCoroutine(PlacedCorrectBook());
                     Debug.Log("placedBook");
 
                 }
@@ -73,7 +78,7 @@ public class Book : Interactable
             {
                 if (placedBook == correctBook)
                 {
-                    RemovedCorrectBook();
+                    StartCoroutine(RemovedCorrectBook());
                 }
                     
 
@@ -111,7 +116,7 @@ public class Book : Interactable
     private IEnumerator RemovedCorrectBook()
     {
         bookShelfMover.MoveBack();
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(3f);
         shelfMover.MoveBack();
     }
 }
