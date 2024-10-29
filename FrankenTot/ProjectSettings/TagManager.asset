@@ -9,6 +9,7 @@ TagManager:
   - PickUp
   - Grabbable
   - Flashlight
+  - Book
   layers:
   - Default
   - TransparentFX

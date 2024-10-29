@@ -6,9 +6,6 @@ public class Book : Interactable
 {
 
     [SerializeField]
-    private GameObject bookShelf;
-
-    [SerializeField]
     private FirstPersonControls firstPersonControls;
 
     [SerializeField]
@@ -36,22 +33,25 @@ public class Book : Interactable
         
         if (!isBookPlaced)
         {
-            //Checks if player is holding one of two frames
+            //Checks if player is holding a book
             if (firstPersonControls.heldObject != null && firstPersonControls.heldObject.tag == "Book")
-            {
-                //if placing the Ftot Frame at the 1962 plaque sets the bool to true
-                if (firstPersonControls.heldObject == correctBook)
-                {
-                    isCorrectBook = true;
-
-                    
-                }                              
+            {                          
 
                 firstPersonControls.heldObject.GetComponent<Rigidbody>().isKinematic = true; //disable physics
                                                                                              // Attach the object to the target position
                 firstPersonControls.heldObject.transform.position = bookTarget.position;
                 firstPersonControls.heldObject.transform.rotation = (bookTarget.rotation);
                 firstPersonControls.heldObject.transform.parent = bookTarget;
+
+                placedBook = firstPersonControls.heldObject;
+
+                if (placedBook == correctBook)
+                {
+                    isCorrectBook = true;
+                    PlacedCorrectBook();
+                    Debug.Log("placedBook");
+
+                }
 
                 firstPersonControls.heldObject = null; // The player is no longer holding the frame
 
@@ -66,16 +66,15 @@ public class Book : Interactable
             }
         }
 
-        //If the player Interacts with a placed frame and are not holding anything they can then take the frame
+        //If the player Interacts with a placed book and are not holding anything they can then take the frame
         else
         {
             if (firstPersonControls.heldObject == null)
             {
                 if (placedBook == correctBook)
                 {
-                    
+                    RemovedCorrectBook();
                 }
-                else
                     
 
                 // set new held Object
@@ -86,7 +85,7 @@ public class Book : Interactable
                 placedBook.transform.parent = firstPersonControls.holdPosition;
                 placedBook = null;
 
-                //frame is no longer placed
+                //book is no longer placed
                 isBookPlaced = false;
 
                 promptMessage = "Place Book";
@@ -104,11 +103,15 @@ public class Book : Interactable
 
     private IEnumerator PlacedCorrectBook()
     {
+        shelfMover.MoveObject();
         yield return new WaitForSecondsRealtime(1f);
+        bookShelfMover.MoveObject();
     }
 
     private IEnumerator RemovedCorrectBook()
     {
+        bookShelfMover.MoveBack();
         yield return new WaitForSecondsRealtime(1f);
+        shelfMover.MoveBack();
     }
 }

@@ -62,7 +62,7 @@ public class PlayerInteract : MonoBehaviour
                 Interactable interactable = hitInfo.collider.GetComponent<Interactable>();
           
                 
-                if(hitInfo.collider.tag == "PickUp" || hitInfo.collider.tag == "Flashlight")
+                if(hitInfo.collider.tag == "PickUp" || hitInfo.collider.tag == "Flashlight" || hitInfo.collider.tag == "Book")
                 {
                     if(firstPersonControls.heldObject == null) //player must not be holding anything in order to pickup an object
                     {
