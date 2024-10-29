@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings.SplashScreen;
 
 public class SkullPuzzleController : MonoBehaviour
 {
@@ -13,21 +14,28 @@ public class SkullPuzzleController : MonoBehaviour
 
     [SerializeField]
     public GameObject draw;
-    private bool drawOpen;
+    private bool allSkullsCorrect = false;
+
+    [SerializeField]
+    private MoverScript drawMover;
 
 
     public void SkullChecker()
     {
         if (pedastalOne.isSkullCorrect && pedastalTwo.isSkullCorrect && pedastalThree.isSkullCorrect)
         {
-            drawOpen = true;
-            draw.GetComponent<Animator>().SetBool("drawOpen", drawOpen);
+            drawMover.MoveObject();
+            allSkullsCorrect = true;
         }
 
         else
         {
-            drawOpen = false;
-            draw.GetComponent<Animator>().SetBool("drawOpen", drawOpen);
+            if (allSkullsCorrect == true)
+            {
+                drawMover.MoveBack();
+                allSkullsCorrect = false;
+            }
+            
         }
     }
 }

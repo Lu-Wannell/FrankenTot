@@ -73,12 +73,12 @@ public class SkullPedastal : Interactable
             }
             if (skullAngle == skullTargetAngle)
             {
-                isSkullCorrect = true;
+                isSkullCorrect = true;                
                 skullPuzzleController.SkullChecker();
             }
             else
             { 
-                isSkullCorrect = false;
+                isSkullCorrect = false;               
                 skullPuzzleController.SkullChecker();
             }
 
