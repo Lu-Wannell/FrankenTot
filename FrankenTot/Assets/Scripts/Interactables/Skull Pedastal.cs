@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UIElements;
 using UnityEngine;
 
 public class SkullPedastal : Interactable
@@ -33,7 +34,11 @@ public class SkullPedastal : Interactable
                 firstPersonControls.heldObject.transform.rotation = (skullTarget.rotation);
                 firstPersonControls.heldObject.transform.parent = skullTarget;
 
+                firstPersonControls.heldObject.layer = 0;
+
                 firstPersonControls.heldObject = null;
+                
+
 
                 skullPlaced = true;
                 promptMessage = "Rotate Skull";
@@ -45,7 +50,9 @@ public class SkullPedastal : Interactable
         }
         else
         {
+            promptMessage = "Rotate Skull";
             skullRotator.RotateObject();
+
         }
         
     }
