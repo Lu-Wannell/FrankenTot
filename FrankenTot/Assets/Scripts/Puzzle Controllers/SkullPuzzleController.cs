@@ -5,20 +5,20 @@ using UnityEngine;
 public class SkullPuzzleController : MonoBehaviour
 {
     [SerializeField]
-    private bool isSkullOneCorrect = false;
+    private SkullPedastal pedastalOne;
     [SerializeField]
-    private bool isSkullTwoCorrect = false;
+    private SkullPedastal pedastalTwo;
     [SerializeField]
-    private bool isSkullThreeCorrect = false;
+    private SkullPedastal pedastalThree;
 
     [SerializeField]
     public GameObject draw;
     private bool drawOpen;
 
 
-    private void SkullChecker()
+    public void SkullChecker()
     {
-        if (isSkullOneCorrect && isSkullTwoCorrect && isSkullThreeCorrect)
+        if (pedastalOne.isSkullCorrect && pedastalTwo.isSkullCorrect && pedastalThree.isSkullCorrect)
         {
             drawOpen = true;
             draw.GetComponent<Animator>().SetBool("drawOpen", drawOpen);

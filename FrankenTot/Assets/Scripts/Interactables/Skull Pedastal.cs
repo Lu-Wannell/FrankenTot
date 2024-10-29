@@ -9,6 +9,9 @@ public class SkullPedastal : Interactable
     private FirstPersonControls firstPersonControls;
 
     [SerializeField]
+    private SkullPuzzleController skullPuzzleController;
+
+    [SerializeField]
     private RotatorScript skullRotator;
 
     [SerializeField]
@@ -22,9 +25,20 @@ public class SkullPedastal : Interactable
     [SerializeField]
     private Transform skullTarget;
 
+    [SerializeField]
+    private int skullAngle = 0;
+
+    [SerializeField]
+    private int skullTargetAngle;
+
+    [SerializeField]
+    public bool isSkullCorrect = false;
+
 
     protected override void Interact()
     {
+        if(skullRotator.isRotating) { return; }
+
         if (!skullPlaced) {
             if (firstPersonControls.heldObject != null && firstPersonControls.heldObject == (SkullOne || SkullTwo))
             {
@@ -52,6 +66,21 @@ public class SkullPedastal : Interactable
         {
             promptMessage = "Rotate Skull";
             skullRotator.RotateObject();
+            skullAngle = skullAngle + 45;
+            if (skullAngle == 360)
+            {
+                skullAngle = 0;
+            }
+            if (skullAngle == skullTargetAngle)
+            {
+                isSkullCorrect = true;
+                skullPuzzleController.SkullChecker();
+            }
+            else
+            { 
+                isSkullCorrect = false;
+                skullPuzzleController.SkullChecker();
+            }
 
         }
         
