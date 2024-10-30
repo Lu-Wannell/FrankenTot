@@ -22561,7 +22561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c2cbbb162fb56a41b08f70f48a6a750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameObject: {fileID: 773125302}
+  movedObject: {fileID: 773125302}
   isMoving: 0
   moveSpeed: 2
   X: 7
@@ -28477,7 +28477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c2cbbb162fb56a41b08f70f48a6a750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameObject: {fileID: 1089943820}
+  movedObject: {fileID: 1089943820}
   isMoving: 0
   moveSpeed: 3
   X: 0
@@ -40087,7 +40087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b934282272fe334b95c7ab61495c54b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameObject: {fileID: 1365374743}
+  rotatedObject: {fileID: 1365374743}
   isRotating: 0
   rotationSpeed: 25
   angleX: 115
@@ -47061,7 +47061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b934282272fe334b95c7ab61495c54b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameObject: {fileID: 1635834032}
+  rotatedObject: {fileID: 1635834032}
   isRotating: 0
   rotationSpeed: 27
   angleX: -40
@@ -61933,7 +61933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b934282272fe334b95c7ab61495c54b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameObject: {fileID: 798723717375769695}
+  rotatedObject: {fileID: 798723717375769695}
   isRotating: 0
   rotationSpeed: 35
   angleX: 0
@@ -63812,7 +63812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b934282272fe334b95c7ab61495c54b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameObject: {fileID: 6051398651522878841}
+  rotatedObject: {fileID: 6051398651522878841}
   isRotating: 0
   rotationSpeed: 35
   angleX: 0
@@ -64569,7 +64569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c2cbbb162fb56a41b08f70f48a6a750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameObject: {fileID: 7933060017700810725}
+  movedObject: {fileID: 0}
   isMoving: 0
   moveSpeed: 1.5
   X: -2
@@ -64788,7 +64788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b934282272fe334b95c7ab61495c54b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameObject: {fileID: 1247402386965416786}
+  rotatedObject: {fileID: 1247402386965416786}
   isRotating: 0
   rotationSpeed: 35
   angleX: 0

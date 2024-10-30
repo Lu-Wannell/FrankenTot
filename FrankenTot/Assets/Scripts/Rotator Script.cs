@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class RotatorScript : MonoBehaviour
 {
-
-    public GameObject gameObject;
+    [SerializeField]
+    private GameObject rotatedObject;
 
     [SerializeField]
     public bool isRotating;
@@ -24,7 +24,7 @@ public class RotatorScript : MonoBehaviour
     {
         if (!isRotating) // Prevent triggering multiple rotations simultaneously
         {
-            StartCoroutine(RotateObjectCoroutine(gameObject, angleX, angleY, angleZ));
+            StartCoroutine(RotateObjectCoroutine(rotatedObject, angleX, angleY, angleZ));
         }
     }
 
@@ -32,7 +32,7 @@ public class RotatorScript : MonoBehaviour
     {
         if (!isRotating)
         {
-            StartCoroutine(RotateObjectCoroutine(gameObject, -angleX, -angleY, -angleZ));
+            StartCoroutine(RotateObjectCoroutine(rotatedObject, -angleX, -angleY, -angleZ));
         }
     }
 

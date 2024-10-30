@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoverScript : MonoBehaviour
 {
 
-    public GameObject gameObject;
+    public GameObject movedObject;
 
     [SerializeField]
     public bool isMoving;
@@ -24,7 +24,7 @@ public class MoverScript : MonoBehaviour
     {
         if (!isMoving) // Prevent triggering multiple rotations simultaneously
         {
-            StartCoroutine(MoveObjectCoroutine(gameObject, X, Y, Z));
+            StartCoroutine(MoveObjectCoroutine(movedObject, X, Y, Z));
         }
     }
 
@@ -32,7 +32,7 @@ public class MoverScript : MonoBehaviour
     {
         if (!isMoving)
         {
-            StartCoroutine(MoveObjectCoroutine(gameObject, -X, -Y, -Z));
+            StartCoroutine(MoveObjectCoroutine(movedObject, -X, -Y, -Z));
         }
     }
 
