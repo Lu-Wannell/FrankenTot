@@ -2948,8 +2948,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.60918677, y: 0.31574506, z: 0.13526042}
-  m_Center: {x: -0.020330455, y: -0.024664605, z: -0.016096642}
+  m_Size: {x: 0.6880844, y: 0.39099464, z: 0.13526042}
+  m_Center: {x: -0.0026707037, y: -0.062289547, z: -0.016096642}
 --- !u!1 &73652849
 GameObject:
   m_ObjectHideFlags: 0
@@ -6937,8 +6937,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10.378003, y: 2.2804835, z: 18.04791}
-  m_Center: {x: 1.557368, y: -0.6402411, z: 4.2651033}
+  m_Size: {x: 11.682607, y: 2.2804835, z: 18.288235}
+  m_Center: {x: 2.2096684, y: -0.6402411, z: 4.1449475}
 --- !u!114 &241702882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26210,7 +26210,8 @@ Transform:
   m_LocalPosition: {x: -3.620007, y: 6.009999, z: -4.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5906455315705393900}
   m_Father: {fileID: 543450652963887244}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &936431652
@@ -26225,7 +26226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e35b1d50e13575349bf6b618b38b14c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptMessage: Portrait Piece Needed
+  promptMessage: Take Portrait Piece
   portraitTarget1: {fileID: 241702879}
   portraitTarget2: {fileID: 1894201016}
   portraitTarget3: {fileID: 936431650}
@@ -26235,7 +26236,7 @@ MonoBehaviour:
   portraitPiece3: {fileID: 4923331947013628048}
   portraitPiece4: {fileID: 1796317319772072854}
   placedPortrait: {fileID: 0}
-  portraitPlaced: 0
+  portraitPlaced: 1
   studyPuzzleController: {fileID: 112990661}
   firstPersonControls: {fileID: 1708256608}
 --- !u!65 &936431653
@@ -41666,8 +41667,7 @@ Transform:
   m_LocalPosition: {x: 3.639992, y: 5.98, z: -4.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5906455315705393900}
+  m_Children: []
   m_Father: {fileID: 543450652963887244}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!65 &1428095105
@@ -41703,7 +41703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e35b1d50e13575349bf6b618b38b14c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptMessage: Take Portrait Piece
+  promptMessage: Portrait Piece Needed
   portraitTarget1: {fileID: 241702879}
   portraitTarget2: {fileID: 1894201016}
   portraitTarget3: {fileID: 936431650}
@@ -41713,7 +41713,7 @@ MonoBehaviour:
   portraitPiece3: {fileID: 4923331947013628048}
   portraitPiece4: {fileID: 1796317319772072854}
   placedPortrait: {fileID: 1514251469890595823}
-  portraitPlaced: 1
+  portraitPlaced: 0
   studyPuzzleController: {fileID: 112990661}
   firstPersonControls: {fileID: 1708256608}
 --- !u!1 &1428282405 stripped
@@ -49022,7 +49022,7 @@ Transform:
   m_GameObject: {fileID: 1708256603}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.9722961, z: -0, w: 0.23375255}
-  m_LocalPosition: {x: -0.54, y: 1.13, z: 85.7}
+  m_LocalPosition: {x: 5.7, y: 1.13, z: 73.46}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -62665,12 +62665,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514251469890595823}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.03, y: 0.029998302, z: 0}
   m_LocalScale: {x: 1, y: 0.10000002, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1428095104}
+  m_Father: {fileID: 936431651}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &5906455315705393901
 Rigidbody:
