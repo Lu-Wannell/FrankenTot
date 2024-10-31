@@ -47,6 +47,9 @@ public class PlayerInteract : MonoBehaviour
         playerUI.UpdateText(string.Empty);
         playerUI.UpdateUItoEmpty();
 
+        
+
+
         //creates ray at the center of the camera, shooting forwards.
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
         Debug.DrawRay(cam.transform.position, cam.transform.forward * interactRange, Color.blue);
@@ -106,7 +109,16 @@ public class PlayerInteract : MonoBehaviour
 
                 if(firstPersonControls.playerActions.Interact.triggered)
                 {
+                    
                     interactable.BaseInteract();
+                    if(firstPersonControls.heldObject == null)
+                    {  
+                        playerUI.PutDownObjectUI();
+                    }
+                    else
+                    {
+                        playerUI.PickUpObjectUI();  
+                    }
                 }
             }
         }

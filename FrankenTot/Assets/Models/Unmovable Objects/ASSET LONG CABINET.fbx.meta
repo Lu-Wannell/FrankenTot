@@ -3,7 +3,27 @@ guid: 16ef862fb6312f244ba68ecf4fac34e2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dark Wood
+    second: {fileID: 2100000, guid: 6d8bbc6f4b66473408b89538bc0d4fec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skull Plate
+    second: {fileID: 2100000, guid: a3509ace8be2f3249b2dbd3ae6d3b8cd, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: dark wood black super fine
+    second: {fileID: 2800000, guid: 9cd5de45d54637d4293bb22bab6d73f6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: gold metal
+    second: {fileID: 2800000, guid: 63c74eb4ad11942488ed06ebd3497c71, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

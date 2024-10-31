@@ -22,24 +22,24 @@ public class SpeakerCompartment : Interactable
     {
         if (isClosed == false)
         {
-            promptMessage = "A";
+            promptMessage = "A Speaker";
         }
         else
         {
             //if the player is holding the crowbar  then they can open the vent
-            if (firstPersonControls.heldObject != null && firstPersonControls.heldObject.name == "Crusty Crowbar")
-            {
+           // if (firstPersonControls.heldObject != null && firstPersonControls.heldObject.name == "Crusty Crowbar")
+            //{
                 
                 rigidBody.isKinematic = false;
-                promptMessage = "B";
+                promptMessage = "A Speaker";
                 isClosed = false;
 
-            }
+            /*}
             else
             {
                  //vent remains closed if you dont have the crowbar
                 promptMessage = "It looks like it can be pryed open";
-            }
+            }*/
         }
     }
            
