@@ -137,6 +137,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8867566914328050118}
   m_SourcePrefab: {fileID: 100100000, guid: 388efd3dc3196eb4b9a0b85d3bc250f6, type: 3}
+--- !u!23 &65250030187203167 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 9124010360782884667, guid: 388efd3dc3196eb4b9a0b85d3bc250f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 9113367666002150756}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4789771538704740498 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4323878188814136822, guid: 388efd3dc3196eb4b9a0b85d3bc250f6,
@@ -155,6 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5eaf7b1487a3254390432354ce1169b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rend: {fileID: 65250030187203167}
   maxWobble: 0.03
   wobbleSpeed: 1
   recovery: 1

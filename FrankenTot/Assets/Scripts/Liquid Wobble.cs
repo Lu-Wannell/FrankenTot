@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class LiquidWobble : MonoBehaviour
 {
-    Renderer rend;
+    [SerializeField]
+    public Renderer rend;
 
     Vector3 lastPos;
     Vector3 velocity;
