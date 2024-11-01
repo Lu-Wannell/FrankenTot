@@ -10,7 +10,7 @@ Material:
   m_Name: Purple Liquid
   m_Shader: {fileID: -6465566751694194690, guid: 1c8d989bd6c3dde40bf5a39abb05f516,
     type: 3}
-  m_Parent: {fileID: 0}
+  m_Parent: {fileID: 2100000, guid: c2b4299b19a899f48a84830ac5fa49fa, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -23,29 +23,13 @@ Material:
   m_LockedProperties: _TopColour
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs:
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+    m_TexEnvs: []
     m_Ints: []
     m_Floats:
     - _Fill: 0.4
-    - _QueueControl: 0
-    - _QueueOffset: 0
-    - _WobbleX: 0
-    - _WobbleZ: 0
     m_Colors:
-    - _SideColour: {r: 0.18754448, g: 0, b: 0.2603773, a: 1}
-    - _TopColour: {r: 0.11678247, g: 0, b: 0.18490559, a: 1}
+    - _SideColour: {r: 0.1677652, g: 0.0013029355, b: 0.23018861, a: 1}
+    - _TopColour: {r: 0.23347224, g: 0.012851499, b: 0.3584906, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &8041306819015112638
 MonoBehaviour:
