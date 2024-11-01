@@ -96,6 +96,9 @@ public class FirstPersonControls : MonoBehaviour
     [SerializeField]
     private float InspectIntensity;
 
+    [SerializeField]
+    private AudioSource flashlightAudio;
+
     [Header("Pause SETTINGS")]
     [Space(7)]
     public bool isPaused;
@@ -535,6 +538,10 @@ public class FirstPersonControls : MonoBehaviour
 
     public void ToggleFlashlight()
     {
+        //FindObjectOfType<AudioManager>().PlaySound("Torch Click");
+        flashlightAudio.Play();
+        PlayAudio(1);
+
         if (isFlashlightOn) 
         {
             myLight.intensity = 0;
@@ -612,4 +619,10 @@ public class FirstPersonControls : MonoBehaviour
          }
      }
 
+    private IEnumerator PlayAudio(int seconds)
+    {
+        yield return new WaitForSecondsRealtime(seconds);
+        //audioSource.Play();
+        
+    }
 }

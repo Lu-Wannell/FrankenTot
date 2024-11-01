@@ -41,9 +41,11 @@ Material:
     - _Fill: 0.4
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _WobbleX: 0
+    - _WobbleZ: 0
     m_Colors:
-    - _SideColour: {r: 0.40321735, g: 0, b: 0.5622641, a: 1}
-    - _TopColour: {r: 0.62570065, g: 0, b: 0.9924528, a: 1}
+    - _SideColour: {r: 0.18754448, g: 0, b: 0.2603773, a: 1}
+    - _TopColour: {r: 0.11678247, g: 0, b: 0.18490559, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &8041306819015112638
 MonoBehaviour:
