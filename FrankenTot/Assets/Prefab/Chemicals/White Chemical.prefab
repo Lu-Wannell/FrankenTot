@@ -26,17 +26,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 388efd3dc3196eb4b9a0b85d3bc250f6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 114.51419
+      value: -1.5899963
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 388efd3dc3196eb4b9a0b85d3bc250f6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -60.90899
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 388efd3dc3196eb4b9a0b85d3bc250f6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 58.18008
+      value: -1.789999
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 388efd3dc3196eb4b9a0b85d3bc250f6,
         type: 3}
@@ -162,9 +162,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 65250030187203167}
-  maxWobble: 0.03
-  wobbleSpeed: 1
-  recovery: 1
+  maxWobble: 0.01
+  wobbleSpeed: 0.5
+  recovery: 0.5
 --- !u!1 &8266434401351235637 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 388efd3dc3196eb4b9a0b85d3bc250f6,
