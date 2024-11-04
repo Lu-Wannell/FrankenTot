@@ -10,28 +10,29 @@ public class ChemicalSpawner : Interactable
     private GameObject spawnedPotion;
 
     [SerializeField]
-    public GameObject instance;
+    public GameObject instanceOne;
+
 
     protected override void Interact()
     {
         if (firstPersonControls.heldObject == null) 
         {
-            if (instance != null)
+            if (instanceOne != null)
             {
-                Destroy(instance);                
+                Destroy(instanceOne);                
             }
 
-            instance = Instantiate(spawnedPotion);
+            instanceOne = Instantiate(spawnedPotion);
 
             // set new held Object
-            firstPersonControls.heldObject = instance;
+            firstPersonControls.heldObject = instanceOne;
             Debug.Log(firstPersonControls.heldObject.name);
             // Attach the frame to the hold position
-            instance.transform.position = firstPersonControls.holdPosition.position;
+            instanceOne.transform.position = firstPersonControls.holdPosition.position;
             //heldObject.transform.rotation = holdPosition.rotation;
-            instance.transform.parent = firstPersonControls.holdPosition;
+            instanceOne.transform.parent = firstPersonControls.holdPosition;
 
-            instance.GetComponent<Rigidbody>().isKinematic = true; // Disable physics of Spawned potion
+            instanceOne.GetComponent<Rigidbody>().isKinematic = true; // Disable physics of Spawned potion
 
         }
     }
