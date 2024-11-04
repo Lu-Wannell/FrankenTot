@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 5618191667208915472}
   m_Layer: 7
   m_Name: Orange Chemical
-  m_TagString: PickUp
+  m_TagString: Chemical
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

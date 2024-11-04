@@ -332,7 +332,7 @@ public class FirstPersonControls : MonoBehaviour
         if (Physics.Raycast(ray, out hit, pickUpRange))
         {
             // Check if the hit object has the tag "PickUp"
-            if (hit.collider.CompareTag("PickUp") || hit.collider.CompareTag("Book"))
+            if (hit.collider.CompareTag("PickUp") || hit.collider.CompareTag("Book") || hit.collider.CompareTag("Chemical"))
             {
                 // Pick up the object
                 heldObject = hit.collider.gameObject;

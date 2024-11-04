@@ -21,18 +21,18 @@ public class ChemicalSpawner : Interactable
                 Destroy(instance);                
             }
 
-            Instantiate(spawnedPotion);
+            instance = Instantiate(spawnedPotion);
 
             // set new held Object
-            firstPersonControls.heldObject = spawnedPotion;
+            firstPersonControls.heldObject = instance;
+            Debug.Log(firstPersonControls.heldObject.name);
             // Attach the frame to the hold position
-            spawnedPotion.transform.position = firstPersonControls.holdPosition.position;
+            instance.transform.position = firstPersonControls.holdPosition.position;
             //heldObject.transform.rotation = holdPosition.rotation;
-            spawnedPotion.transform.parent = firstPersonControls.holdPosition;
-            
+            instance.transform.parent = firstPersonControls.holdPosition;
 
+            instance.GetComponent<Rigidbody>().isKinematic = true; // Disable physics of Spawned potion
 
-            instance = spawnedPotion;
         }
     }
 }

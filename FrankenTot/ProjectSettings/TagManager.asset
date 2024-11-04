@@ -10,6 +10,7 @@ TagManager:
   - Grabbable
   - Flashlight
   - Book
+  - Chemical
   layers:
   - Default
   - TransparentFX
