@@ -3,6 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+// Code developed using Two videos
+
+// Title: Unity Navmesh AI Tutorial : Flee from Enemy
+// Author: Jayanam
+// Date: 5 November 2024
+// 1.0
+// Availability: https://www.youtube.com/watch?v=Zjlg9F3FRJs
+
+// Title: FULL 3D ENEMY AI in 6 MINUTES! || Unity Tutorial
+// Author: Dave / GameDevelopment
+// Date: 5 November 2024
+// 1.0
+// Availability: https://www.youtube.com/watch?v=UjkSFoLxesw
+
+
 public class MouseAI : MonoBehaviour
 {
     public NavMeshAgent mouse;

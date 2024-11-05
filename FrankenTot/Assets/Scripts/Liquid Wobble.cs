@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Title: Unity Shader Graph - Liquid Effect Tutorial
+// Author: Gabriel Aguiar Prod.
+// Date: 1 November 2024
+// 1.1
+// Availability: https://www.youtube.com/watch?v=tI3USKIbnh0
+
 public class LiquidWobble : MonoBehaviour
 {
     [SerializeField]

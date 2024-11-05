@@ -46,6 +46,7 @@ public class FirstPersonControls : MonoBehaviour
     public float pickUpRange = 3f; // Range within which objects can be picked up
     public GameObject heldObject; // Reference to the currently held object
     private bool holdingGun = false;
+    public GameObject runningMouse;
 
 
     [Header("CROUCH SETTINGS")]
@@ -315,6 +316,13 @@ public class FirstPersonControls : MonoBehaviour
            // heldObject.transform.position = player.position;
             heldObject.transform.parent = null;
             //holdingGun = false;
+
+            if (heldObject.name == "Mouse(Clone)")
+            {
+                Destroy(heldObject);
+                runningMouse.SetActive(true);
+            }
+
             heldObject = null;
             controls.Player.Inspect.Disable(); // Disables Inspect action as the player can't Inspect when not holding an Object.
             playerUI.PutDownObjectUI();//Sets UI to not show holding UI
