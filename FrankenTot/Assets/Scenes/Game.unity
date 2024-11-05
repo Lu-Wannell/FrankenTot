@@ -50258,7 +50258,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 71e8fa9a5cd8b5343b16582fa341d5c7,
         type: 3}
       propertyPath: m_TagString
-      value: PickUp
+      value: Book
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
