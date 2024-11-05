@@ -12,7 +12,7 @@ public class DanceRoomDoorController : Interactable
     private DanceRoomDoorController danceRoomDoorController;
 
     [SerializeField]
-    private Door door;
+    private Door door;    
 
 
     // Start is called before the first frame update

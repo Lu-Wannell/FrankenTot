@@ -19,6 +19,9 @@ public class Door : Interactable
     private float rotationSpeed;
     private bool isRotating;
 
+    [SerializeField]
+    private AudioSource doorAudio;
+
 
     public void Start()
     {
@@ -81,15 +84,15 @@ public class Door : Interactable
 
     public void OpenDoor()
     {
-        
-            StartCoroutine(RotateDoorOpen(door, rotateAmount));
+        doorAudio.Play();
+        StartCoroutine(RotateDoorOpen(door, rotateAmount));
         
     }
 
     public void CloseDoor()
     {
-        
-            StartCoroutine(RotateDoorClosed(door, rotateAmount));
+        doorAudio.Play();
+        StartCoroutine(RotateDoorClosed(door, rotateAmount));
         
     }
 

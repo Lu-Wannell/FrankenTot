@@ -18,12 +18,16 @@ public class SkullPuzzleController : MonoBehaviour
     [SerializeField]
     private MoverScript drawMover;
 
+    [SerializeField]
+    private AudioSource longDrawAudio;
+
 
     public void SkullChecker()
     {
         if (pedastalOne.isSkullCorrect && pedastalTwo.isSkullCorrect && pedastalThree.isSkullCorrect)
         {
             drawMover.MoveObject();
+            longDrawAudio.Play();
             allSkullsCorrect = true;
         }
 
@@ -32,6 +36,7 @@ public class SkullPuzzleController : MonoBehaviour
             if (allSkullsCorrect == true)
             {
                 drawMover.MoveBack();
+                longDrawAudio.Play();
                 allSkullsCorrect = false;
             }
             

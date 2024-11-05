@@ -14,31 +14,38 @@ public class StudyPuzzleController : MonoBehaviour
     [SerializeField]
     public GameObject draw;
     private bool drawOpen;
+    private bool framesCorrect = false;
 
-    public void Start()
-    {
-        
-    }
+    [SerializeField]
+    private AudioSource drawerAudio;
 
     public void StudyPuzzleChecker()
     {
-        // checks if both frames are placed in the correct target position then the puzzle frame moves to reveal a key
+        // checks if frames are placed in the correct target position then the puzzle frame moves to reveal a key
         if (isPieceOneCorrect && isPieceTwoCorrect && isPieceThreeCorrect && isPieceFourCorrect)
         {
             drawOpen=true;
             draw.GetComponent<Animator>().SetBool("drawOpen", drawOpen);
+            drawerAudio.Play();
+            framesCorrect=true;
 
         }
 
         
         
-           if (!isPieceOneCorrect || !isPieceTwoCorrect || !isPieceThreeCorrect || !isPieceFourCorrect)
+        if (!isPieceOneCorrect || !isPieceTwoCorrect || !isPieceThreeCorrect || !isPieceFourCorrect)
+        {
+            drawOpen = false;
+            draw.GetComponent<Animator>().SetBool("drawOpen", drawOpen);
+
+            if (framesCorrect) 
             {
-                drawOpen = false;
-                draw.GetComponent<Animator>().SetBool("drawOpen", drawOpen);
-                // StartCoroutine(MoveFrame(endPos, startPos, moveTime));
-                Debug.Log("Frame Moved back");
+                drawerAudio.Play();
+                framesCorrect = false;
             }
+            // StartCoroutine(MoveFrame(endPos, startPos, moveTime));
+            Debug.Log("Frame Moved back");
+        }
 
     }
 }

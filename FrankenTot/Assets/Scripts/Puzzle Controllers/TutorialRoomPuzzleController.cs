@@ -10,6 +10,8 @@ public class TutorialRoomPuzzleController : MonoBehaviour
 
     public bool isAtOrigin; //Tracks if the frame is at it's starting point
 
+    [SerializeField]
+    private AudioSource frameAudio;
 
     //public GameObject target;
     public Vector3 startPos;
@@ -29,6 +31,7 @@ public class TutorialRoomPuzzleController : MonoBehaviour
         {
             isAtOrigin = false; 
             movingFrame.GetComponent<Animator>().SetBool("isAtOrigin", isAtOrigin);
+            frameAudio.Play();
 
             Debug.Log("Frame Moved");
         }

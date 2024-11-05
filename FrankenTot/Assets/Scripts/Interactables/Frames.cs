@@ -23,8 +23,6 @@ public class Frames : Interactable
     public TutorialRoomPuzzleController tutorialRoomPuzzleController;
     public FirstPersonControls firstPersonControls;
 
-   
-    
 
     protected override void Interact()
     {

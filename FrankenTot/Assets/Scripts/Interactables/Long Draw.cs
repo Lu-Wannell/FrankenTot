@@ -15,6 +15,9 @@ public class LongDraw : Interactable
     [SerializeField]
     private bool hasMoved = true;
 
+    [SerializeField]
+    private AudioSource longDrawAudio;
+
     protected override void Interact()
     {
         if (hasMoved == false)
@@ -43,6 +46,8 @@ public class LongDraw : Interactable
         Vector3 endPosition = startPosition + new Vector3(moveAmount, 0, 0);
 
         float moveProgress = 0f;
+
+        longDrawAudio.Play();
 
         while (moveProgress < 1f)
         {

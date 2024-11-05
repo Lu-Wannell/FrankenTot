@@ -16,6 +16,9 @@ public class Keypad : Interactable
     [SerializeField]
     private Light mylight2;
 
+    [SerializeField]
+    private AudioSource correctBuzzerAudio;
+
     public void Start()
     {
         keypadLight.SetActive(false);
@@ -29,6 +32,7 @@ public class Keypad : Interactable
             {
                 keypadController.MoveWall();
                 keypadLight.SetActive(true);
+                correctBuzzerAudio.Play();
                 mylight.color = Color.green;
                 mylight2.color = Color.green;
 
