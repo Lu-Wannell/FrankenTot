@@ -5126,6 +5126,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pot plant Twig
       objectReference: {fileID: 0}
+    - target: {fileID: 7485330681233264992, guid: c10349974fbe6704ea5426bf5b4c5d37,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7485330681233264992, guid: c10349974fbe6704ea5426bf5b4c5d37,
+        type: 3}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
     - target: {fileID: 8734367202240662387, guid: c10349974fbe6704ea5426bf5b4c5d37,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7098,6 +7108,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pot plant Twigs
+      objectReference: {fileID: 0}
+    - target: {fileID: 7485330681233264992, guid: c10349974fbe6704ea5426bf5b4c5d37,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7485330681233264992, guid: c10349974fbe6704ea5426bf5b4c5d37,
+        type: 3}
+      propertyPath: m_TagString
+      value: PickUp
       objectReference: {fileID: 0}
     - target: {fileID: 8734367202240662387, guid: c10349974fbe6704ea5426bf5b4c5d37,
         type: 3}
@@ -56670,7 +56690,7 @@ Transform:
   m_GameObject: {fileID: 1708256603}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.9722961, z: -0, w: 0.23375255}
-  m_LocalPosition: {x: -9.3, y: 1.14, z: 7.15}
+  m_LocalPosition: {x: -8.01, y: 1.14, z: 29.25}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
