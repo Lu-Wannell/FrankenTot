@@ -3,7 +3,97 @@ guid: 74e840175812e1c4da3c6b980017c163
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plant Sprout
+    second: {fileID: 2100000, guid: 55b185cb23c1bdb4e820e8769ed42766, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pot
+    second: {fileID: 2100000, guid: 83e99a7b3f9bff2469601c9c70dfe42c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eye
+    second: {fileID: 2100000, guid: 8b1e4fe16d660384a90c33a7ba53e0a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eye2
+    second: {fileID: 2100000, guid: 27e73311c6956cb4895d9156b6fe2f95, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plant
+    second: {fileID: 2100000, guid: 99997a8905e1921459ff8881da64748e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plant 2
+    second: {fileID: 2100000, guid: 415af29c466408d489d7e8474170cb55, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plant 3
+    second: {fileID: 2100000, guid: c3470f7b615fc44469da98b776429e9c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plant 4
+    second: {fileID: 2100000, guid: 6540905ebe123064fb8c2a720379f2b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pot
+    second: {fileID: 2100000, guid: 486a74a905f908e489b0f2241224c1f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pot 3
+    second: {fileID: 2100000, guid: 6b1719ef745b55b408a086ae3021ea32, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pot 4
+    second: {fileID: 2100000, guid: 24086039498a08c4689c08dc87dafad3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pot 5
+    second: {fileID: 2100000, guid: 984a3742c1975a946abb25fa3135f27b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pot2
+    second: {fileID: 2100000, guid: 607eef9756db32946beae59e2187374a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: potatoe
+    second: {fileID: 2100000, guid: 73809caa335334841b9e484241fea5a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: twig
+    second: {fileID: 2100000, guid: f8f6089107b11a943aa3f3ff977a02d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: twig 2
+    second: {fileID: 2100000, guid: e2126d476e348304ba6f4e07de176484, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: twig 3
+    second: {fileID: 2100000, guid: 7ccd3b155d60afd4aab2f7d26dac6e77, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: twig 4
+    second: {fileID: 2100000, guid: 13666fb04824ad14eb5ea72b2e7bbcee, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

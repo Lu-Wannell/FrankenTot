@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: 13f2e9bcfa4970d4f9a6838a253b06ee
+guid: 0e1c57ebf12417f478f5a0c15770a993
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black Metal
+    second: {fileID: 2100000, guid: 6c40a967c1345cb498f0bb55a1109f09, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light Lens
+    second: {fileID: 2100000, guid: da582dfc9bca75145b32d17ad8b342fe, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
