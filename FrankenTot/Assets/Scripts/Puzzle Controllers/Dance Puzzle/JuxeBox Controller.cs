@@ -11,6 +11,11 @@ public class JuxeBoxController : Interactable
     private DanceFloorChecker danceFloorChecker;
 
     [SerializeField]
+    private GameObject danceOnSign;
+    [SerializeField] 
+    private GameObject danceOffSign;
+
+    [SerializeField]
     public bool isJukeboxOn = false;
     [SerializeField]
     public bool hasAllGears = false;
@@ -28,6 +33,8 @@ public class JuxeBoxController : Interactable
         if (hasAllGears)
         {
             isJukeboxOn = true;
+            danceOnSign.SetActive(true);
+            danceOffSign.SetActive(false);
             danceFloorChecker.isDanceFloorOn = true;
 
         }
