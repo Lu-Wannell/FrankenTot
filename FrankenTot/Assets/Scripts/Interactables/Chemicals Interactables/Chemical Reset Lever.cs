@@ -7,6 +7,9 @@ public class ChemicalResetLever : Interactable
     [SerializeField]
     ChemicalMixer chemicalMixer;
 
+    [SerializeField]
+    private RotatorScript leverRotatorScript;
+
     private float resetfillAmount;
 
     public void Awake()
@@ -16,6 +19,21 @@ public class ChemicalResetLever : Interactable
 
     protected override void Interact()
     {
+        if (leverRotatorScript.isRotating) 
+        {
+            return;
+        }
+
+        leverRotatorScript.RotateObject();
+
+        int wait = 0;
+        while (leverRotatorScript.isRotating)
+        {
+            wait++;
+        }
+
+        leverRotatorScript.RotateBack();
+
         chemicalMixer.firstChemicalColor = Color.magenta;
         chemicalMixer.secondChemicalColor = Color.magenta;
         chemicalMixer.thirdChemicalColor = Color.magenta;
