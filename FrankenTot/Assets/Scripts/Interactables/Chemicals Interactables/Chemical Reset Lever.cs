@@ -12,6 +12,9 @@ public class ChemicalResetLever : Interactable
 
     private float resetfillAmount;
 
+    private bool isRotating = false;
+    
+
     public void Awake()
     {
         resetfillAmount = chemicalMixer.mixerFillAmount;
@@ -19,20 +22,16 @@ public class ChemicalResetLever : Interactable
 
     protected override void Interact()
     {
-        if (leverRotatorScript.isRotating) 
+        if (isRotating || leverRotatorScript.isRotating) 
         {
             return;
         }
 
+        isRotating = true;
+
         leverRotatorScript.RotateObject();
+        StartCoroutine(WaitTwoSeconds());
 
-        int wait = 0;
-        while (leverRotatorScript.isRotating)
-        {
-            wait++;
-        }
-
-        leverRotatorScript.RotateBack();
 
         chemicalMixer.firstChemicalColor = Color.magenta;
         chemicalMixer.secondChemicalColor = Color.magenta;
@@ -44,4 +43,12 @@ public class ChemicalResetLever : Interactable
         chemicalMixer.material.SetColor("_TopColour", chemicalMixer.invisible);
 
     }
+
+    private IEnumerator WaitTwoSeconds()
+    { 
+        yield return new WaitForSecondsRealtime(2f);
+        leverRotatorScript.RotateBack();
+        isRotating = false;
+    }
+
 }

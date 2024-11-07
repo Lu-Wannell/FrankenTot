@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Diagnostics.Tracing;
+using Unity.VisualScripting;
 
 public class PlayerUI : MonoBehaviour
 {
@@ -60,8 +61,10 @@ public class PlayerUI : MonoBehaviour
     public Sprite Crouching;
     [SerializeField]
     public Sprite Standing;
-    //[SerializeField]
-   // public Sprite Sprinting;
+    [SerializeField]
+    public Sprite Walking;
+    [SerializeField]
+    public Sprite Sprinting;
 
 
 
@@ -131,6 +134,16 @@ public class PlayerUI : MonoBehaviour
     public void UpdateFStateStand()
     {
         frankentotStateImage.sprite = Standing;
+    }
+
+    public void UpdateFStateWalk()
+    {
+        frankentotStateImage.sprite = Walking;
+    }
+
+    public void UpdateFStateSprint()
+    {
+        frankentotStateImage.sprite = Sprinting;
     }
 
 

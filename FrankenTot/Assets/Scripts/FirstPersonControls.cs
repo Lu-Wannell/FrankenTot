@@ -32,6 +32,7 @@ public class FirstPersonControls : MonoBehaviour
     private float verticalLookRotation = 0f; // Keeps track of vertical camera rotation for clamping
     private Vector3 velocity; // Velocity of the player
     private CharacterController characterController; // Reference to the CharacterController component
+    private bool isMoving = false;
 
    /* [Header("SHOOTING SETTINGS")]
     [Space(7)]
@@ -135,8 +136,8 @@ public class FirstPersonControls : MonoBehaviour
 
 
         // Subscribe to the movement input events
-        controls.Player.Movement.performed += ctx => moveInput = ctx.ReadValue<Vector2>(); // Update moveInput when movement input is performed
-        controls.Player.Movement.canceled += ctx => moveInput = Vector2.zero; // Reset moveInput when movement input is canceled
+        controls.Player.Movement.performed += ctx => { moveInput = ctx.ReadValue<Vector2>(); isMoving = true; }; // Update moveInput when movement input is performed
+        controls.Player.Movement.canceled += ctx => EndMovement();  // Reset moveInput when movement input is canceled
 
         // Subscribe to the look input events
         controls.Player.LookAround.performed += ctx => lookInput = ctx.ReadValue<Vector2>(); // Update lookInput when look input is performed
@@ -194,10 +195,11 @@ public class FirstPersonControls : MonoBehaviour
             RotateObject();
         }
 
-        if(isGrabbing)
+        if(!isMoving)
         {
-            
+            playerUI.UpdateFStateStand();
         }
+       
     }
 
     public void Move()
@@ -223,16 +225,25 @@ public class FirstPersonControls : MonoBehaviour
         else if(isSprinting)
         {
             currentSpeed = sprintSpeed;
+            playerUI.UpdateFStateSprint();
         }
         else
         {
             currentSpeed = moveSpeed;
-            playerUI.UpdateFStateStand();
+            playerUI.UpdateFStateWalk();
         }
 
         // Move the character controller based on the movement vector and speed
         characterController.Move(move * currentSpeed * Time.deltaTime);
+        
     }
+
+    public void EndMovement()
+    {
+        moveInput = Vector2.zero; 
+        isMoving = false;
+    }
+
 
     public void LookAround()
     {

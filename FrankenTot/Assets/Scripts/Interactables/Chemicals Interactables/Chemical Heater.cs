@@ -28,11 +28,24 @@ public class ChemicalHeater : Interactable
     private bool isChemicalPlaced;
     private bool isHeating;
 
+    private void Update()
+    {
+        if(heatedChemical == null)
+        {
+            promptMessage = "Place Chemical";
+        }
+
+        if(isHeating )
+        {
+            promptMessage = "It is too Hot to hold";
+        }
+
+    }
+
     protected override void Interact()
     {
         if(isHeating)
         {
-            promptMessage = "It's too hot to hold";
             return;
         }
         else
@@ -88,7 +101,7 @@ public class ChemicalHeater : Interactable
     private IEnumerator HeatTimer()
     {
         
-        yield return new WaitForSecondsRealtime(3f);
+        yield return new WaitForSecondsRealtime(5f);
         isHeating = false;
         HeatChemical();
     }
