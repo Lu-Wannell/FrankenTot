@@ -29,6 +29,7 @@ public class MouseAI : MonoBehaviour
 
     //Patrolling
     public Vector3 walkPoint;
+    [SerializeField]
     private bool walkPointSet;
     public float walkPointRange;
 
@@ -47,7 +48,7 @@ public class MouseAI : MonoBehaviour
 
         if (playerInDetectionRange )
         {
-            RunningAway();
+            RunningAway(); 
         }
         if (!playerInDetectionRange )
         {
@@ -57,12 +58,9 @@ public class MouseAI : MonoBehaviour
 
     private void Patroling()
     { 
-        if (!walkPointSet) { SearchWalkPoint(); }
-
-        if (walkPointSet)
-        {
-            mouse.SetDestination(walkPoint);
-        }
+        if (!walkPointSet) SearchWalkPoint(); 
+        
+        if (walkPointSet) mouse.SetDestination(walkPoint);       
 
         Vector3 distanceToWalkPoint = mouse.transform.position - walkPoint;
 
@@ -81,17 +79,29 @@ public class MouseAI : MonoBehaviour
         walkPoint = new Vector3(mouse.transform.position.x + randomX, mouse.transform.position.y, mouse.transform.position.z + randomZ);
 
         if (Physics.Raycast(walkPoint, -mouse.transform.up, 2f, whatIsGround))
-        { walkPointSet = true; }
+        walkPointSet = true; 
     }
 
 
     private void RunningAway()
     {
-        Vector3 dirToPlayer = transform.position - player.transform.position;
+         float random = Random.Range(1f, 20f);
 
-        Vector3 newPos = transform.position + dirToPlayer;
+        if (9f < random && random < 10f)
+        {
+            Patroling();
+        }
+        else
+        {
+            Vector3 dirToPlayer = transform.position - player.transform.position;
 
-        mouse.SetDestination(newPos);
-        walkPointSet = false;
+            walkPoint = transform.position + dirToPlayer;
+
+            
+
+            mouse.SetDestination(walkPoint);
+            walkPointSet = false;
+        }
+
     }
 }

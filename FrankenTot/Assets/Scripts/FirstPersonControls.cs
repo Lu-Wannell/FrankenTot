@@ -12,7 +12,7 @@ using TMPro;
 public class FirstPersonControls : MonoBehaviour
 {
 
-    private Controls controls;
+    public Controls controls;
     public Controls.PlayerActions playerActions;
 
     [SerializeField]
@@ -190,6 +190,11 @@ public class FirstPersonControls : MonoBehaviour
         LookAround();
         ApplyGravity();
 
+        if(heldObject == null)
+        {
+            controls.Player.Inspect.Disable();
+        }
+
         if (rotateAllowed)     
         {
             RotateObject();
@@ -328,7 +333,7 @@ public class FirstPersonControls : MonoBehaviour
             heldObject.transform.parent = null;
             //holdingGun = false;
 
-            if (heldObject.name == "Mouse(Clone)")
+            if (heldObject.name == "Wriggling Mouse(Clone)")
             {
                 Destroy(heldObject);
                 runningMouse.SetActive(true);

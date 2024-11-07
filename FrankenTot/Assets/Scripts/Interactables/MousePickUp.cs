@@ -32,7 +32,7 @@ public class MousePickUp : Interactable
             heldMouseInstance.transform.parent = firstPersonControls.holdPosition;
 
             heldMouseInstance.GetComponent<Rigidbody>().isKinematic = true; // Disable physics of Spawned potion
-
+            firstPersonControls.controls.Player.Inspect.Enable();
         }
         else { promptMessage = "Drop held Item"; }
     }
