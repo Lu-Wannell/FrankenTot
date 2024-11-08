@@ -9,6 +9,9 @@ using Unity.VisualScripting;
 public class PlayerUI : MonoBehaviour
 {
     [SerializeField]
+    FirstPersonControls firstPersonControls;
+
+    [SerializeField]
     private TextMeshProUGUI promptText;
 
     [SerializeField]
@@ -16,6 +19,9 @@ public class PlayerUI : MonoBehaviour
 
     [SerializeField]
     public GameObject PauseMenuUI;
+
+    [SerializeField]
+    public GameObject PauseUI;
 
     [SerializeField]
     public GameObject interactingUI;
@@ -66,9 +72,27 @@ public class PlayerUI : MonoBehaviour
     [SerializeField]
     public Sprite Sprinting;
 
+    [Header("End Game UI")]
+    [Space(7)]
+    [SerializeField]
+    public bool isEndScene = false;
 
+    public static PlayerUI instance;
 
-    // Start is called before the first frame update
+    void Awake()
+    {
+        if (instance == null)
+        { instance = this; }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
+
+        // Start is called before the first frame update
     void Start()
     {
         InspectingUI.SetActive(false);
@@ -83,6 +107,9 @@ public class PlayerUI : MonoBehaviour
 
     public void Update()
     {
+        if (isEndScene)
+        { return; }
+
         if (hasFlashlight)
         {
             FlashLightUI.SetActive(true);
@@ -184,16 +211,44 @@ public class PlayerUI : MonoBehaviour
 
     public void PauseGame()
     {
-        GameUI.SetActive(false);
-        PauseMenuUI.SetActive(true);
+        if(!isEndScene) 
+        {
+            GameUI.SetActive(false);
+            PauseMenuUI.SetActive(true);           
+        }
+        else
+        {
+            PauseMenuUI.SetActive(true);
+            PauseUI.SetActive(false);
+        }
+
         Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void UnpauseGame()
     {
+        if (!isEndScene)
+        {
+            
+            GameUI.SetActive(true);
+            PauseMenuUI.SetActive(false);
+        }
+        else
+        {
+            PauseMenuUI.SetActive(false);
+            PauseUI.SetActive(true);
+        }
         Cursor.lockState = CursorLockMode.Locked;
-        GameUI.SetActive(true);
-        PauseMenuUI.SetActive(false);
+    }
+
+    public void EndScreenActive()
+    {
+        InspectingUI.SetActive(false);
+        HoldingUI.SetActive(false);
+        frankentotState.SetActive(false);
+        FlashLightUI.SetActive(false);
+        interactingUI.SetActive(false);
+        firstPersonControls.isEndScreen = true;
     }
 
 }

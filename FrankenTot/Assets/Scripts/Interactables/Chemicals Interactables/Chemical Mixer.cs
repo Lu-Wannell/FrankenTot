@@ -189,9 +189,9 @@ public class ChemicalMixer : Interactable
                 }
                 else if(isPurpleProcess)
                 {
-                    if (firstPersonControls.heldObject.name == "Orange Chemical(Clone)")
+                    if (firstPersonControls.heldObject.name == "White Chemical(Clone)")
                     {                      
-                        potionChangeColor = orange;
+                        potionChangeColor = white;
                     }
                 }
 
@@ -216,7 +216,7 @@ public class ChemicalMixer : Interactable
 
                 if (isPurpleProcess)
                 {
-                    if (firstPersonControls.heldObject.name == "White Chemical(Clone)")
+                    if (firstPersonControls.heldObject.name == "Orange Chemical(Clone)")
                     {
                         isPurpleProcess = false;
                         potionPuzzleController.isPurpleChemicalMade = true;

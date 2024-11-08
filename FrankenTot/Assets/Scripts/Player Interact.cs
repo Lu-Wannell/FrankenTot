@@ -22,7 +22,9 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField]
     private LayerMask mask;
 
+    [SerializeField]
     private PlayerUI playerUI;
+    [SerializeField]
     private FirstPersonControls firstPersonControls;
 
 
@@ -31,8 +33,6 @@ public class PlayerInteract : MonoBehaviour
     void Start()
     {
         cam = cam.GetComponent<Camera>();
-        playerUI = GetComponent<PlayerUI>();
-        firstPersonControls = GetComponent<FirstPersonControls>();
     }
 
     // Update is called once per frame

@@ -11,7 +11,7 @@ using TMPro;
 
 public class FirstPersonControls : MonoBehaviour
 {
-
+    public FirstPersonControls instance;
     public Controls controls;
     public Controls.PlayerActions playerActions;
 
@@ -104,6 +104,7 @@ public class FirstPersonControls : MonoBehaviour
     [Header("Pause SETTINGS")]
     [Space(7)]
     public bool isPaused;
+    public bool isEndScreen = false;
 
     // [Header("UI Settings")]
     // [space(7)]
@@ -122,6 +123,16 @@ public class FirstPersonControls : MonoBehaviour
         // Start with Flashlight being off
         myLight = flashlight.GetComponent<Light>();
         myLight.intensity = 0;
+
+        if (instance == null)
+        { instance = this; }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
     }
 
     private void OnEnable()
@@ -640,6 +651,20 @@ public class FirstPersonControls : MonoBehaviour
 
              
 
+         }
+
+         if (isEndScreen)
+         {
+            controls.Player.Movement.Disable();
+            controls.Player.LookAround.Disable();
+            controls.Player.Sprint.Disable();
+            controls.Player.Jump.Disable();
+            controls.Player.Crouch.Disable();
+            controls.Player.PickUp.Disable();
+            controls.Player.GrabObject.Disable();
+            controls.Player.RotateObject.Disable();
+            controls.Player.FlashLight.Disable();
+            controls.Player.Inspect.Disable();
          }
      }
 
