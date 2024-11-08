@@ -200,7 +200,7 @@ public class FirstPersonControls : MonoBehaviour
             RotateObject();
         }
 
-        if(!isMoving)
+        if(!isMoving && !isCrouching)
         {
             playerUI.UpdateFStateStand();
         }

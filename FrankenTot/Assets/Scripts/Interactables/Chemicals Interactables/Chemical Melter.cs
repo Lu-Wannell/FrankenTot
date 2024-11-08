@@ -20,7 +20,7 @@ public class ChemicalMelter : Interactable
 
     public void Awake()
     {
-        startingObject.SetActive(false);
+        meltedObject.SetActive(false);
     }
 
     protected override void Interact()
@@ -31,20 +31,23 @@ public class ChemicalMelter : Interactable
             return;
         }
 
+        promptMessage = "It is stuck in place";
+
         if (firstPersonControls.heldObject.name == "Pink Chemical(Clone)")
         {
-            StartCoroutine(GrowPlant());
+            StartCoroutine(MeltObject());
         }
 
     }
 
-    private IEnumerator GrowPlant()
-    {
+    private IEnumerator MeltObject()
+    { 
         Destroy(firstPersonControls.heldObject);
         firstPersonControls.heldObject = null;
         startingObject.SetActive(false);
-        meltedObject.SetActive(true);
+        //meltedObject.SetActive(true);
         
+        hasMelted = true;
         yield return null;
     }
 }

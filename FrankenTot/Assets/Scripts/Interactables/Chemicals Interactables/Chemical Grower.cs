@@ -50,6 +50,7 @@ public class ChemicalGrower : Interactable
         firstPersonControls.heldObject = null;
         startingPlant.SetActive(false);
         grownPlant.SetActive(true);
+        hasGrown = true;
 
         player.position = grownPlayerTarget.position;
         yield return null;
