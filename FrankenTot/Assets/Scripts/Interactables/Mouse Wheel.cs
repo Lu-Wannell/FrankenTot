@@ -9,6 +9,9 @@ public class MouseWheel : Interactable
     FirstPersonControls firstPersonControls;
 
     [SerializeField]
+    BombPuzzleController bombPuzzleController;
+
+    [SerializeField]
     GameObject mouseWheel;
 
     [SerializeField]
@@ -34,6 +37,8 @@ public class MouseWheel : Interactable
                 firstPersonControls.heldObject = null;
                 mouseWheel.GetComponent<Animator>().SetBool("RatPlaced", true);
                 mouse.SetActive(true);
+                bombPuzzleController.isMousePlaced = true;
+                bombPuzzleController.BombChecker();
             }
         }
         else
