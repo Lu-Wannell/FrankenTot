@@ -34,10 +34,10 @@ public class MouseWheel : Interactable
             if (firstPersonControls.heldObject.name == "Wriggling Mouse(Clone)")
             {
                 Destroy(firstPersonControls.heldObject);
+                bombPuzzleController.isMousePlaced = true;
                 firstPersonControls.heldObject = null;
                 mouseWheel.GetComponent<Animator>().SetBool("RatPlaced", true);
                 mouse.SetActive(true);
-                bombPuzzleController.isMousePlaced = true;
                 bombPuzzleController.BombChecker();
             }
         }
