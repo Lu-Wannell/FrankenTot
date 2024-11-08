@@ -37,7 +37,8 @@ public class ChemicalResetLever : Interactable
         chemicalMixer.secondChemicalColor = Color.magenta;
         chemicalMixer.thirdChemicalColor = Color.magenta;
         chemicalMixer.mixerFillAmount = resetfillAmount;
-        chemicalMixer.material.SetFloat("_Fill", resetfillAmount);
+        chemicalMixer.mixer.transform.position = chemicalMixer.chemMixerStartingPos;
+        //chemicalMixer.material.SetFloat("_Fill", resetfillAmount);
         chemicalMixer.chemicalCount = 0;
         chemicalMixer.promptMessage = "chemical Needed";
         chemicalMixer.material.SetColor("_TopColour", chemicalMixer.invisible);

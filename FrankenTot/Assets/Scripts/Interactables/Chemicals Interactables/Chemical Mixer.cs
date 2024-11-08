@@ -13,6 +13,11 @@ public class ChemicalMixer : Interactable
 
     [SerializeField]
     GameObject placedChemical;
+    [SerializeField]
+     public GameObject mixer;
+
+    [SerializeField]
+    public Vector3 chemMixerStartingPos;
 
     [Header("Colour SETTINGS")]
     [Space(7)]
@@ -55,6 +60,7 @@ public class ChemicalMixer : Interactable
 
     private void Start()
     {
+        chemMixerStartingPos = mixer.transform.position;
         Renderer renderer = GetComponent<Renderer>();
         material = renderer.material;
         potionColor = material.GetColor("_TopColour");
@@ -91,8 +97,8 @@ public class ChemicalMixer : Interactable
                 {
                     isPurpleProcess= true;                   
                 }
-                
 
+                promptMessage = "Place Chemical";
                 ChemicalPlaced(potionColor, potionChangeColor);
 
             }
@@ -153,6 +159,7 @@ public class ChemicalMixer : Interactable
                     }
                     
                 }
+                promptMessage = "Place Chemical";
                 ChemicalPlaced(potionColor, potionChangeColor);
             }
 
@@ -188,7 +195,7 @@ public class ChemicalMixer : Interactable
                     }
                 }
 
-
+                promptMessage = "Place Chemical";
                 ChemicalPlaced(potionColor, potionChangeColor);
             }
 
@@ -216,7 +223,7 @@ public class ChemicalMixer : Interactable
                         potionChangeColor = purple;
                     }
                 }
-
+                promptMessage = "Place Chemical";
                 ChemicalPlaced(potionColor, potionChangeColor);
             }
 
@@ -237,9 +244,10 @@ public class ChemicalMixer : Interactable
     {
         chemicalCount++;
         placedChemical = firstPersonControls.heldObject;
-        mixerFillAmount = mixerFillAmount + 0.05f;
+        mixer.transform.position = mixer.transform.position + new Vector3(0,mixerFillAmount,0);
+        //mixerFillAmount = mixerFillAmount + 0.05f;
 
-        material.SetFloat("_Fill", mixerFillAmount);
+        //material.SetFloat("_Fill", mixerFillAmount);
         material.SetColor("_TopColour", changeColour);
         //UpdateColor(startColour, changeColour);
         Destroy(firstPersonControls.heldObject);

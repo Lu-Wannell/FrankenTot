@@ -16,6 +16,9 @@ public class LongDraw : Interactable
     private bool hasMoved = true;
 
     [SerializeField]
+    private bool isXAxis = true;
+
+    [SerializeField]
     private AudioSource longDrawAudio;
 
     protected override void Interact()
@@ -43,7 +46,17 @@ public class LongDraw : Interactable
     {
         hasMoved = false;
         Vector3 startPosition = draw.transform.position; // Initial  position
-        Vector3 endPosition = startPosition + new Vector3(moveAmount, 0, 0);
+        Vector3 endPosition = new Vector3(0, 0, 0);
+
+        if (isXAxis) 
+        { 
+            endPosition = startPosition + new Vector3(moveAmount, 0, 0); 
+        }
+        else
+        {
+            endPosition = startPosition + new Vector3(0, 0, moveAmount);
+        }
+        
 
         float moveProgress = 0f;
 

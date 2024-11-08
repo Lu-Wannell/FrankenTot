@@ -53,6 +53,7 @@ public class ChemicalGrower : Interactable
         hasGrown = true;
 
         player.position = grownPlayerTarget.position;
+        promptMessage = grownPrompt;
         yield return null;
     }
 }
