@@ -90,6 +90,9 @@ public class PlayerUI : MonoBehaviour
     private float fadeTime;
 
     [SerializeField]
+    private GameObject fader;
+
+    [SerializeField]
     private Image fadeToBlack;
 
     [SerializeField]
@@ -143,7 +146,9 @@ public class PlayerUI : MonoBehaviour
             SceneManager.LoadScene(EndScene);
             firstPersonControls.isEndScreen = true;
             InitialEndText();
+            Cursor.lockState = CursorLockMode.Confined;
             StartCoroutine(Fade(1f, 0f, 3f, fadeNumber));
+            StartCoroutine(TurnOffFader());
         }
     }
 
@@ -267,6 +272,7 @@ public class PlayerUI : MonoBehaviour
         }
         else
         {
+            Cursor.lockState = CursorLockMode.Confined;
             PauseMenuUI.SetActive(false);
             PauseUI.SetActive(true);
             endGameUI.SetActive(true);
@@ -287,7 +293,7 @@ public class PlayerUI : MonoBehaviour
     public void InitialEndText()
     {
         endGameUI.SetActive(true );
-        endScreenText.text = "Well done, You've Completed the Game: Frankentot \r\n\r\nThe bomb timer goes off, Frankentot grabs the rat, and finds itself running up the stairs, it's mind replaying memories of it's life. The joy of being created, the initial familial love of it's father, Dr. Frankenstein...and then the abandonment. The cycle of ignoring and being forgotten. That is not love, it is not warm, but cold...";
+        endScreenText.text = "Well done, You've Completed the Game: Frankentot \r\n\r\nThe bomb timer goes off, Frankentot grabs the rat, and finds itself running up the stairs, it's mind replaying memories of it's life. The joy of being created, the initial familial love of it's father, Dr. Frankenstein...and then the abandonment. The cycle of ignoring and being forgotten. That is not love, it is not warm, but cold...\r\n\r\nClick To Contine";
 
     }
 
@@ -315,5 +321,9 @@ public class PlayerUI : MonoBehaviour
         yield break;
     }
 
-
+    private IEnumerator TurnOffFader()
+    {
+        yield return new WaitForSecondsRealtime(4f);
+        fader.SetActive(false);
+    }
 }
