@@ -9,6 +9,9 @@ public class DanceFloorController : MonoBehaviour
     private DanceLightsController danceLightsController;
 
     [SerializeField]
+    private AudioSource correctSound; 
+
+    [SerializeField]
     private RotatorScript hingeRotator;
 
     public bool isPuzzleOneDone = false;
@@ -36,6 +39,7 @@ public class DanceFloorController : MonoBehaviour
                 isPuzzleOneDone = true;
                 currentDance = "";
                 danceLightsController.CompletePuzzleLights();
+                correctSound.Play();
             }
             else
                 return;
@@ -49,6 +53,7 @@ public class DanceFloorController : MonoBehaviour
                 isPuzzleTwoDone = true;
                 currentDance = "";
                 danceLightsController.CompletePuzzleLights();
+                correctSound.Play();
                 hingeRotator.RotateObject();
             }
             else
@@ -88,6 +93,7 @@ public class DanceFloorController : MonoBehaviour
             {
                 isPuzzleThree_ThreeDone = true;
                 danceLightsController.CompletePuzzleLights();
+                correctSound.Play();
             }
             else
                 return;

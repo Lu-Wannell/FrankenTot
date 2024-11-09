@@ -20,11 +20,25 @@ public class JuxeBoxController : Interactable
     [SerializeField]
     public bool hasAllGears = false;
 
+    [SerializeField]
+    private AudioSource danceAudio;
+
+    [SerializeField]
+    private bool isAudioPlaying = false;
+
     public void Update()
     {
         if (hasAllGears)
         {
-            promptMessage = "Play Music";
+            if (isAudioPlaying)
+            {
+                promptMessage = "Stop Music";
+            }
+            else
+            {
+                promptMessage = "Play Music";
+            }
+            
         }
     }
 
@@ -36,6 +50,16 @@ public class JuxeBoxController : Interactable
             danceOnSign.SetActive(true);
             danceOffSign.SetActive(false);
             danceFloorChecker.isDanceFloorOn = true;
+            if (!isAudioPlaying)
+            { 
+                danceAudio.Play();
+                isAudioPlaying = true;
+            }
+            else
+            {
+                danceAudio.Stop();
+                isAudioPlaying = false;
+            }
 
         }
         else

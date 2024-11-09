@@ -7,7 +7,6 @@ public class BombPuzzleController : MonoBehaviour
 {
     [SerializeField]
     PlayerUI playerUI;
-    public string EndScene;
 
     public bool isMousePlaced = false;
     public bool isPurpleChemPlaced = false;
@@ -26,8 +25,7 @@ public class BombPuzzleController : MonoBehaviour
 
         if (isEndingTriggered)
         {
-            playerUI.EndScreenActive();
-            SceneManager.LoadScene(EndScene);            
+            playerUI.EndScreenActive();                     
         }
     }
 
