@@ -42,6 +42,13 @@ public class Book : Interactable
             if (firstPersonControls.heldObject != null && firstPersonControls.heldObject.tag == "Book")
             {                          
 
+                if (firstPersonControls.heldObject.name != "Dorian Grey Special Book")
+                {
+                    promptMessage = "Different book needed";
+                    return;
+                }
+
+
                 firstPersonControls.heldObject.GetComponent<Rigidbody>().isKinematic = true; //disable physics
                                                                                              // Attach the object to the target position
                 firstPersonControls.heldObject.transform.position = bookTarget.position;
