@@ -24,6 +24,13 @@ public class ChemicalGrower : Interactable
     [SerializeField]
     private string grownPrompt;
 
+
+    [SerializeField]
+    private GameObject growParticles;
+
+    [SerializeField]
+    private Transform growParticlesTarget;
+
     public void Awake()
     {
         grownPlant.SetActive(false);
@@ -48,12 +55,17 @@ public class ChemicalGrower : Interactable
     {
         Destroy(firstPersonControls.heldObject);
         firstPersonControls.heldObject = null;
+        hasGrown = true;
+        Instantiate(growParticles, growParticlesTarget);
+
+        yield return new WaitForSecondsRealtime(1f);
         startingPlant.SetActive(false);
         grownPlant.SetActive(true);
-        hasGrown = true;
-
         player.position = grownPlayerTarget.position;
         promptMessage = grownPrompt;
-        yield return null;
+        
+        yield return new WaitForSecondsRealtime(1f);
+        Destroy(growParticles);
+
     }
 }
