@@ -18,6 +18,12 @@ public class ChemicalMelter : Interactable
     [SerializeField]
     private string meltedPrompt;
 
+    [SerializeField]
+    private GameObject meltParticles;
+
+    [SerializeField]
+    private Transform meltParticlesTarget;
+
     public void Awake()
     {
         meltedObject.SetActive(false);
@@ -44,10 +50,15 @@ public class ChemicalMelter : Interactable
     { 
         Destroy(firstPersonControls.heldObject);
         firstPersonControls.heldObject = null;
+        hasMelted = true;
+        Instantiate(meltParticles, meltParticlesTarget);
+
+        yield return new WaitForSecondsRealtime(1f);
         startingObject.SetActive(false);
         //meltedObject.SetActive(true);
         
         hasMelted = true;
-        yield return null;
+        yield return new WaitForSecondsRealtime(2f);
+        Destroy(meltParticles);
     }
 }
