@@ -65,7 +65,7 @@ public class ChemicalGrower : Interactable
         promptMessage = grownPrompt;
         
         yield return new WaitForSecondsRealtime(1f);
-        Destroy(growParticles);
+        //Destroy(growParticles);
 
     }
 }

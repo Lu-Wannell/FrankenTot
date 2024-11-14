@@ -59,6 +59,6 @@ public class ChemicalMelter : Interactable
         
         hasMelted = true;
         yield return new WaitForSecondsRealtime(2f);
-        Destroy(meltParticles);
+        //Destroy(meltParticles);
     }
 }
