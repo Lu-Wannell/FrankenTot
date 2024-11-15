@@ -32,7 +32,7 @@ public class FirstPersonControls : MonoBehaviour
     private float verticalLookRotation = 0f; // Keeps track of vertical camera rotation for clamping
     private Vector3 velocity; // Velocity of the player
     private CharacterController characterController; // Reference to the CharacterController component
-    private bool isMoving = false;
+    public bool isMoving = false;
 
    /* [Header("SHOOTING SETTINGS")]
     [Space(7)]
@@ -55,7 +55,7 @@ public class FirstPersonControls : MonoBehaviour
     public float crouchHeight = 1f; //make short
     public float standingHeight = 2f; //make normal
     public float crouchSpeed = 2.5f; //speed when crouching
-    private bool isCrouching = false; // check if player is crouching
+    public bool isCrouching = false; // check if player is crouching
     private bool CanUncrouch = false; // Checks if player can Uncrouch
     public float crouchCheck = 1f; // Range above head needed to Uncrouch
     public Transform player; // Player's transform
@@ -215,6 +215,11 @@ public class FirstPersonControls : MonoBehaviour
         {
             playerUI.UpdateFStateStand();
         }
+
+        if (isCrouching)
+        { controls.Player.Jump.Disable(); }
+        else 
+        { controls.Player.Jump.Enable(); }
        
     }
 
@@ -425,8 +430,9 @@ public class FirstPersonControls : MonoBehaviour
             //if player is crouching it needs to do an Uncrouch check
             if (CanUncrouch)
             {
-                characterController.height = standingHeight;
+                characterController.height = standingHeight;                
                 isCrouching = false;
+                controls.Player.Jump.Enable();
             }
             else
             { return; }

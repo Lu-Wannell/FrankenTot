@@ -48,7 +48,8 @@ public class PlayerInteract : MonoBehaviour
         playerUI.UpdateUItoEmpty();
 
         
-
+        if(!firstPersonControls.isMoving && !firstPersonControls.isCrouching)
+        { playerUI.UpdateFStateStand(); }
 
         //creates ray at the center of the camera, shooting forwards.
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);

@@ -292,7 +292,7 @@ public class PlayerUI : MonoBehaviour
 
     public void InitialEndText()
     {
-        endGameUI.SetActive(true );
+        endGameUI.SetActive(true);
         endScreenText.text = "Well done, You've Completed the Game: Frankentot \r\n\r\nThe bomb timer goes off, Frankentot grabs the rat, and finds itself running up the stairs, it's mind replaying memories of it's life. The joy of being created, the initial familial love of it's father, Dr. Frankenstein...and then the abandonment. The cycle of ignoring and being forgotten. That is not love, it is not warm, but cold...\r\n\r\nClick To Contine";
 
     }
