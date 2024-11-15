@@ -19,6 +19,14 @@ public class Keypad : Interactable
     [SerializeField]
     private AudioSource correctBuzzerAudio;
 
+    [SerializeField]
+    private AudioSource incorrectBuzzerAudio;
+
+    [SerializeField]
+    private AudioSource wallMovingAudio;
+
+    private bool hasWallMoved = false;
+
     public void Start()
     {
         keypadLight.SetActive(false);
@@ -32,9 +40,15 @@ public class Keypad : Interactable
             {
                 keypadController.MoveWall();
                 keypadLight.SetActive(true);
-                correctBuzzerAudio.Play();
+                correctBuzzerAudio.Play();                
                 mylight.color = Color.green;
                 mylight2.color = Color.green;
+
+                if (!hasWallMoved) 
+                {
+                    wallMovingAudio.Play();
+                    hasWallMoved = true;
+                }
 
             }
             else
@@ -42,6 +56,7 @@ public class Keypad : Interactable
                 keypadLight.SetActive(true);
                 mylight.color = Color.red;
                 mylight2.color = Color.red;
+                incorrectBuzzerAudio.Play();
             }
 
         }

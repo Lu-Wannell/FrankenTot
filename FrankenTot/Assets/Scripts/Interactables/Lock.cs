@@ -11,6 +11,9 @@ public class Lock : Interactable
     [SerializeField]
     private Chest chest;
 
+    [SerializeField]
+    private AudioSource unlockSound;
+
     public void Awake()
     {
         gameObject.GetComponent<Rigidbody>().isKinematic = true; //disable physics
@@ -32,9 +35,10 @@ public class Lock : Interactable
             {
 
                 //Chest is unlocked
+                unlockSound.Play();
                 chest.chestLocked = false;
                 promptMessage = "A Lock";
-                gameObject.GetComponent<Rigidbody>().isKinematic = false; //disable physics
+                gameObject.GetComponent<Rigidbody>().isKinematic = false; //disable physics               
 
             }
             else

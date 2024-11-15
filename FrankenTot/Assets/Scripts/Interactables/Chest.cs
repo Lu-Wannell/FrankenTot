@@ -15,6 +15,8 @@ public class Chest : Interactable
     [SerializeField]
     private GameObject chestKey;
 
+    [SerializeField]
+    private AudioSource chestSound;
     protected override void Interact()
     {
         if (chestRotator.isRotating == true)
@@ -36,6 +38,7 @@ public class Chest : Interactable
                 chestRotator.RotateBack();
                 promptMessage = "Open Chest";
              }
+             chestSound.Play();
         }
 
         //You can only open the chest if it is locked while holding the key
