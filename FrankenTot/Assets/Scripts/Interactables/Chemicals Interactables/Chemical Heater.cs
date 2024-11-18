@@ -28,6 +28,9 @@ public class ChemicalHeater : Interactable
     private bool isChemicalPlaced;
     private bool isHeating;
 
+    [SerializeField]
+    private AudioSource chemicalBubblingAudio;
+
     private void Update()
     {
         if(heatedChemical == null)
@@ -60,6 +63,7 @@ public class ChemicalHeater : Interactable
 
             if(isChemicalPlaced)
             {
+                chemicalBubblingAudio.Stop();
                 // set new held Object
                 firstPersonControls.heldObject = heatedChemical;
                 // Attach the frame to the hold position
@@ -79,6 +83,7 @@ public class ChemicalHeater : Interactable
                     return; 
                 }
 
+                chemicalBubblingAudio.Play();
                 isHeating = true;
                 firstPersonControls.heldObject.GetComponent<Rigidbody>().isKinematic = true; //disable physics
                                                                                              // Attach the object to the target position

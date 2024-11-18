@@ -13,6 +13,9 @@ public class ChemicalResetLever : Interactable
     private float resetfillAmount;
 
     private bool isRotating = false;
+
+    [SerializeField]
+    private AudioSource chemicalFlushAudio;
     
 
     public void Awake()
@@ -30,6 +33,7 @@ public class ChemicalResetLever : Interactable
         isRotating = true;
 
         leverRotatorScript.RotateObject();
+        chemicalFlushAudio.Play();
         StartCoroutine(WaitTwoSeconds());
 
 

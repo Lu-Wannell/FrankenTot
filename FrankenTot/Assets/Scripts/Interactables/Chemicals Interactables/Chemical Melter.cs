@@ -24,6 +24,9 @@ public class ChemicalMelter : Interactable
     [SerializeField]
     private Transform meltParticlesTarget;
 
+    [SerializeField]
+    private AudioSource meltAudio;
+
     public void Awake()
     {
         meltedObject.SetActive(false);
@@ -48,6 +51,7 @@ public class ChemicalMelter : Interactable
 
     private IEnumerator MeltObject()
     { 
+        meltAudio.Play();
         Destroy(firstPersonControls.heldObject);
         firstPersonControls.heldObject = null;
         hasMelted = true;
@@ -58,7 +62,7 @@ public class ChemicalMelter : Interactable
         //meltedObject.SetActive(true);
         
         hasMelted = true;
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(1f);       
         //Destroy(meltParticles);
     }
 }

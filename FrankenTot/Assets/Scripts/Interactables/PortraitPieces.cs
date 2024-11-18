@@ -32,7 +32,8 @@ public class PortraitPieces : Interactable
     public StudyPuzzleController studyPuzzleController;
     public FirstPersonControls firstPersonControls;
 
-
+    [SerializeField]
+    private AudioSource portraitPlacementAudio;
 
 
     protected override void Interact()
@@ -73,6 +74,8 @@ public class PortraitPieces : Interactable
                 {
                     placedPortrait = firstPersonControls.heldObject;
                 }
+
+                portraitPlacementAudio.Play();
 
                 firstPersonControls.heldObject.GetComponent<Rigidbody>().isKinematic = true; //disable physics
                                                                                              // Attach the object to the target position

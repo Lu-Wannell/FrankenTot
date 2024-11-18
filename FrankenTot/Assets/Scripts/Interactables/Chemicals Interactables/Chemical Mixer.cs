@@ -58,6 +58,9 @@ public class ChemicalMixer : Interactable
     private bool isGreenProcess = false;
     private bool isPurpleProcess = false;
 
+    [SerializeField]
+    private AudioSource chemicalMixingAudio;
+
     private void Start()
     {
         chemMixerStartingPos = mixer.transform.position;
@@ -245,6 +248,7 @@ public class ChemicalMixer : Interactable
         chemicalCount++;
         placedChemical = firstPersonControls.heldObject;
         mixer.transform.position = mixer.transform.position + new Vector3(0,mixerFillAmount,0);
+        chemicalMixingAudio.Play();
         //mixerFillAmount = mixerFillAmount + 0.05f;
 
         //material.SetFloat("_Fill", mixerFillAmount);

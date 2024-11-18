@@ -58,9 +58,13 @@ public class MouseAI : MonoBehaviour
 
     private void Patroling()
     { 
-        if (!walkPointSet) SearchWalkPoint(); 
-        
-        if (walkPointSet) mouse.SetDestination(walkPoint);       
+        if (!walkPointSet) SearchWalkPoint();
+
+        if (walkPointSet) 
+        { 
+            mouse.SetDestination(walkPoint);
+           // StartCoroutine(resetWalkPoint());
+        }       
 
         Vector3 distanceToWalkPoint = mouse.transform.position - walkPoint;
 
@@ -103,5 +107,11 @@ public class MouseAI : MonoBehaviour
             walkPointSet = false;
         }
 
+    }
+
+    private IEnumerator resetWalkPoint()
+    {
+        yield return new WaitForSecondsRealtime(7f);
+        walkPointSet = false;
     }
 }

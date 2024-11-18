@@ -36,6 +36,9 @@ public class SkullPedastal : Interactable
     [SerializeField]
     private AudioSource skullPedastalAudioSource;
 
+    [SerializeField]
+    private AudioSource skullPlacementAudio;
+
 
     protected override void Interact()
     {
@@ -44,6 +47,7 @@ public class SkullPedastal : Interactable
         if (!skullPlaced) {
             if (firstPersonControls.heldObject != null && firstPersonControls.heldObject == (SkullOne || SkullTwo))
             {
+                skullPlacementAudio.Play();
                 firstPersonControls.heldObject.GetComponent<Rigidbody>().isKinematic = true; //disable physics
                                                                                              // Attach the object to the target position
                 firstPersonControls.heldObject.transform.position = skullTarget.position;

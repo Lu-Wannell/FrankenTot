@@ -23,6 +23,9 @@ public class Frames : Interactable
     public TutorialRoomPuzzleController tutorialRoomPuzzleController;
     public FirstPersonControls firstPersonControls;
 
+    [SerializeField]
+    private AudioSource framePlacementAudio;
+
 
     protected override void Interact()
     {
@@ -54,6 +57,8 @@ public class Frames : Interactable
                 {
                     placedFrame = harvardFrame;
                 }
+
+                framePlacementAudio.Play();
 
                 firstPersonControls.heldObject.GetComponent<Rigidbody>().isKinematic = true; //disable physics
                // Attach the object to the target position
