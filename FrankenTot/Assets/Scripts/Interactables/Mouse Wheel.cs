@@ -17,6 +17,9 @@ public class MouseWheel : Interactable
     [SerializeField]
     GameObject mouse;
 
+    [SerializeField]
+    private AudioSource mouseWheelAudio;
+
     private bool isMousePlaced = false;
 
     public void Start()
@@ -33,6 +36,7 @@ public class MouseWheel : Interactable
 
             if (firstPersonControls.heldObject.name == "Wriggling Mouse(Clone)")
             {
+                mouseWheelAudio.Play();
                 Destroy(firstPersonControls.heldObject);
                 bombPuzzleController.isMousePlaced = true;
                 firstPersonControls.heldObject = null;

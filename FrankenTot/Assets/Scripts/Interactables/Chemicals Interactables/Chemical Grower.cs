@@ -31,6 +31,9 @@ public class ChemicalGrower : Interactable
     [SerializeField]
     private Transform growParticlesTarget;
 
+    [SerializeField]
+    private AudioSource growAudio;
+
     public void Awake()
     {
         grownPlant.SetActive(false);
@@ -53,6 +56,7 @@ public class ChemicalGrower : Interactable
 
     private IEnumerator GrowPlant()
     {
+        growAudio.Play();
         Destroy(firstPersonControls.heldObject);
         firstPersonControls.heldObject = null;
         hasGrown = true;

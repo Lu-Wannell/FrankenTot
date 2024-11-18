@@ -61,6 +61,9 @@ public class ChemicalMixer : Interactable
     [SerializeField]
     private AudioSource chemicalMixingAudio;
 
+    [SerializeField]
+    private AudioSource correctChemicalAudio;
+
     private void Start()
     {
         chemMixerStartingPos = mixer.transform.position;
@@ -128,6 +131,7 @@ public class ChemicalMixer : Interactable
                     {
                         potionPuzzleController.isPinkChemicalMade = true;
                         potionChangeColor = pink;
+                        correctChemicalAudio.Play();
                         
                     }
                     //Further Blue Process
@@ -146,6 +150,7 @@ public class ChemicalMixer : Interactable
                     {
                         potionPuzzleController.isGreenChemicalMade = true;
                         potionChangeColor = green;
+                        correctChemicalAudio.Play();
                     }
 
                     isGreenProcess = false;
@@ -188,6 +193,7 @@ public class ChemicalMixer : Interactable
                         isBlueProcess = false;
                         potionPuzzleController.isBlueChemicalMade = true;
                         potionChangeColor = blue;
+                        correctChemicalAudio.Play();
                     }                    
                 }
                 else if(isPurpleProcess)
@@ -224,6 +230,7 @@ public class ChemicalMixer : Interactable
                         isPurpleProcess = false;
                         potionPuzzleController.isPurpleChemicalMade = true;
                         potionChangeColor = purple;
+                        correctChemicalAudio.Play();
                     }
                 }
                 promptMessage = "Place Chemical";

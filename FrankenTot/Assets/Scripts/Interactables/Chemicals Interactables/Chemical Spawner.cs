@@ -12,6 +12,8 @@ public class ChemicalSpawner : Interactable
     [SerializeField]
     public GameObject instanceOne;
 
+    [SerializeField]
+    private AudioSource grabChemicalAudio;
 
     protected override void Interact()
     {
@@ -22,6 +24,7 @@ public class ChemicalSpawner : Interactable
                 Destroy(instanceOne);                
             }
 
+            grabChemicalAudio.Play();
             instanceOne = Instantiate(spawnedPotion);
 
             // set new held Object
