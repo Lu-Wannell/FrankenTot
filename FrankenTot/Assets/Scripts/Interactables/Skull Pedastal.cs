@@ -33,6 +33,9 @@ public class SkullPedastal : Interactable
     [SerializeField]
     public bool isSkullCorrect = false;
 
+    [SerializeField]
+    private AudioSource skullPedastalAudioSource;
+
 
     protected override void Interact()
     {
@@ -65,6 +68,7 @@ public class SkullPedastal : Interactable
         {
             promptMessage = "Rotate Skull";
             skullRotator.RotateObject();
+            skullPedastalAudioSource.Play();
             skullAngle = skullAngle + 45;
             if (skullAngle == 360)
             {

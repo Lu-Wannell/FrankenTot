@@ -37,7 +37,7 @@ public class ChemicalHeater : Interactable
 
         if(isHeating )
         {
-            promptMessage = "It is too Hot to hold";
+            promptMessage = "It is still heating";
         }
 
     }
