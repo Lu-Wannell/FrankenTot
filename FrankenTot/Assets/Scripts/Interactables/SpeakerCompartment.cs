@@ -13,6 +13,8 @@ public class SpeakerCompartment : Interactable
     [SerializeField]
     private Rigidbody rigidBody;
 
+    [SerializeField]
+    private AudioSource speakerCompartmentAudio;
     public void Awake()
     {
         rigidBody = gameObject.GetComponent<Rigidbody>();
@@ -31,6 +33,7 @@ public class SpeakerCompartment : Interactable
             //{
                 
                 rigidBody.isKinematic = false;
+                speakerCompartmentAudio.Play();
                 promptMessage = "A Speaker";
                 isClosed = false;
 
