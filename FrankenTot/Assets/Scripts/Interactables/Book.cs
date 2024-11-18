@@ -27,6 +27,9 @@ public class Book : Interactable
     [SerializeField]
     private Transform bookTarget;
 
+    [SerializeField]
+    private AudioSource movingBookShelfAudio;
+
 
     protected override void Interact() // interacting with book moves a bookshelf
     {
@@ -118,11 +121,13 @@ public class Book : Interactable
         shelfMover.MoveObject();
         yield return new WaitForSecondsRealtime(1f);
         bookShelfMover.MoveObject();
+        movingBookShelfAudio.Play();
     }
 
     private IEnumerator RemovedCorrectBook()
     {
         bookShelfMover.MoveBack();
+        movingBookShelfAudio.Play();
         yield return new WaitForSecondsRealtime(3f);
         shelfMover.MoveBack();
     }

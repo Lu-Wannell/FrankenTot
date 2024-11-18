@@ -15,7 +15,11 @@ public class Vent : Interactable
     private float moveSpeed;
     private bool isMoving;
 
+    [SerializeField]
+    private AudioSource ventAudio;
 
+    [SerializeField]
+    private AudioSource ventAudio2;
 
     protected override void Interact()
     {
@@ -35,6 +39,8 @@ public class Vent : Interactable
                     ventClosed = false;
                     OpenVent();
                     promptMessage = "";
+                    ventAudio.Play();
+                    ventAudio2.Play();
 
                 }
                 else

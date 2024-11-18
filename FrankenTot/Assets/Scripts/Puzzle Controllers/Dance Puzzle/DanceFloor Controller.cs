@@ -9,7 +9,10 @@ public class DanceFloorController : MonoBehaviour
     private DanceLightsController danceLightsController;
 
     [SerializeField]
-    private AudioSource correctSound; 
+    private AudioSource correctSound;
+
+    [SerializeField] 
+    private AudioSource hatchSound;
 
     [SerializeField]
     private RotatorScript hingeRotator;
@@ -54,6 +57,7 @@ public class DanceFloorController : MonoBehaviour
                 currentDance = "";
                 danceLightsController.CompletePuzzleLights();
                 correctSound.Play();
+                hatchSound.Play();
                 hingeRotator.RotateObject();
             }
             else

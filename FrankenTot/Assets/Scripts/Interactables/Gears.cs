@@ -44,6 +44,13 @@ public class Gears : Interactable
     public Transform gearTargetTwo;
     public Transform gearTargetThree;
 
+    [SerializeField]
+    private AudioSource panelAudio;
+
+    [SerializeField]
+    private AudioSource gearAudio;
+
+    private bool hasPlayedCloseAudio = false;
 
     protected override void Interact()
     {
@@ -58,6 +65,7 @@ public class Gears : Interactable
             panel.GetComponent<Animator>().SetBool("panelOpen", true);
             promptMessage = "Place Gear";
             isPanelOpen = true;
+            panelAudio.Play();
             return;
         }
 
@@ -71,16 +79,19 @@ public class Gears : Interactable
                 {
                     hasGearOne = true;
                     PlaceGear(gearTargetOne);
+                    gearAudio.Play();
                 }
                 else if(firstPersonControls.heldObject == gearTwo)
                 {
                     hasGearTwo = true;
                     PlaceGear(gearTargetTwo);
+                    gearAudio.Play();
                 }
                 else if(firstPersonControls.heldObject == gearThree)
                 {
                     hasGearThree = true;
                     PlaceGear(gearTargetThree);
+                    gearAudio.Play();
                 }
                 else
                 {
@@ -95,6 +106,12 @@ public class Gears : Interactable
             jukeBoxController.hasAllGears = true;
             panel.GetComponent<Animator>().SetBool("panelOpen", false);
             promptMessage = "Jukebox Panel";
+
+            if (!hasPlayedCloseAudio)
+            { 
+                panelAudio.Play();
+                hasPlayedCloseAudio = true;
+            }
         }
         
     }
