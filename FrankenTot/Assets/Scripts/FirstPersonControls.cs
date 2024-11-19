@@ -48,6 +48,9 @@ public class FirstPersonControls : MonoBehaviour
     public GameObject heldObject; // Reference to the currently held object
     private bool holdingGun = false;
     public GameObject runningMouse;
+    public GameObject rightHand;
+    public GameObject leftHand;
+    public GameObject Torch;
 
 
     [Header("CROUCH SETTINGS")]
@@ -97,6 +100,7 @@ public class FirstPersonControls : MonoBehaviour
     private float lightIntensity;
     [SerializeField]
     private float InspectIntensity;
+    private bool turnedOn = false;
 
     [SerializeField]
     private AudioSource flashlightAudio;
@@ -204,7 +208,9 @@ public class FirstPersonControls : MonoBehaviour
         if(heldObject == null)
         {
             controls.Player.Inspect.Disable();
+            rightHand.GetComponent<Animator>().SetBool("isHolding", false);
         }
+        else { rightHand.GetComponent<Animator>().SetBool("isHolding", true); }
 
         if (rotateAllowed)     
         {
@@ -344,6 +350,7 @@ public class FirstPersonControls : MonoBehaviour
         //Drops object if holding object
         if (heldObject != null)
         {
+            rightHand.GetComponent<Animator>().SetBool("isHolding", false);
             heldObject.GetComponent<Rigidbody>().isKinematic = false; // Enable physics
            // heldObject.transform.position = player.position;
             heldObject.transform.parent = null;
@@ -374,6 +381,7 @@ public class FirstPersonControls : MonoBehaviour
             // Check if the hit object has the tag "PickUp"
             if (hit.collider.CompareTag("PickUp") || hit.collider.CompareTag("Book") || hit.collider.CompareTag("Chemical"))
             {
+                rightHand.GetComponent<Animator>().SetBool("isHolding", true);
                 // Pick up the object
                 heldObject = hit.collider.gameObject;
                 Debug.Log(heldObject.name);
@@ -400,7 +408,9 @@ public class FirstPersonControls : MonoBehaviour
             }*/
             else if (hit.collider.CompareTag("Flashlight"))
             {
-               Destroy(hit.collider.gameObject);
+                leftHand.GetComponent<Animator>().SetBool("hasGrabbedTorch", true);
+                Torch.GetComponent<Animator>().SetBool("hasGrabbedTorch", true);
+                Destroy(hit.collider.gameObject);
                 controls.Player.FlashLight.Enable();
                 playerUI.hasFlashlight = true;  
             }
@@ -677,7 +687,7 @@ public class FirstPersonControls : MonoBehaviour
     private IEnumerator PlayAudio(int seconds)
     {
         yield return new WaitForSecondsRealtime(seconds);
-        //audioSource.Play();
+         turnedOn = true;
         
     }
 }
