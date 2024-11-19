@@ -11,7 +11,7 @@ public class GeneralInteractable : Interactable
     private string changedBoolPrompt;
 
     [SerializeField]
-    private bool myBool = false;
+    public bool myBool = false;
 
     protected override void Interact()
     {

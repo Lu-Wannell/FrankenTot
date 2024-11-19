@@ -19,7 +19,7 @@ public class ChemicalGrower : Interactable
     Transform grownPlayerTarget;
 
     [SerializeField]
-    private bool hasGrown = false;
+    public bool hasGrown = false;
 
     [SerializeField]
     private string grownPrompt;
