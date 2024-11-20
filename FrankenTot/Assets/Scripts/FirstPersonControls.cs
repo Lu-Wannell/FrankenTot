@@ -483,6 +483,7 @@ public class FirstPersonControls : MonoBehaviour
             controls.Player.PickUp.Enable();
             controls.Player.Shoot.Enable();
             controls.Player.GrabObject.Enable();
+            controls.Player.PauseMenubutton.Enable();
 
             //Return Object to Holding Position
             heldObject.transform.position = holdPosition.position;
@@ -513,6 +514,7 @@ public class FirstPersonControls : MonoBehaviour
             controls.Player.PickUp.Disable();
             controls.Player.Shoot.Disable();
             controls.Player.GrabObject.Disable();
+            controls.Player.PauseMenubutton.Disable();
 
             isInspecting = true;
 

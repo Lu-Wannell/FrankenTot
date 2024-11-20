@@ -215,7 +215,7 @@ public class PlayerUI : MonoBehaviour
     public void EnterInspectUI()
     {
         InspectingUI.SetActive(true);
-       
+        PauseUI.SetActive(false);
 
         HoldingUI.SetActive(false);
 
@@ -227,6 +227,7 @@ public class PlayerUI : MonoBehaviour
     public void ExitInspectUI()
     {
         InspectingUI.SetActive(false);
+        PauseUI.SetActive(true);
 
         HoldingUI.SetActive(true);
 
