@@ -299,7 +299,7 @@ public class PlayerUI : MonoBehaviour
 
     public void SecondPartEndText()
     {
-        endScreenText.text = "Frankentot stops, gingerly he runs to grab the picture of his birth and the drawing he did of his \"Family\".  With a final look at the fireplace, he tosses both in. The flames burning away what remains.\r\n\r\nFrankentot leaves to the sound of police sirens. The house explodes - and Frankentots journeys deep into the forest. \r\n\r\n\"We accept the Love, we think we deserve\" - Stephen Chbosky\r\n\r\nThe End.";
+        endScreenText.text = "Frankentot stops, gingerly runs to grab the picture of its birth and the drawing of its \"Family\".  With a final look at the fireplace, it tosses both in. The flames burning away what remains.\r\n\r\nFrankentot leaves to the sound of police sirens. The house explodes - and Frankentot journeys deep into the forest. \r\n\r\n\"We accept the Love, we think we deserve\" - Stephen Chbosky\r\n\r\nThe End.";
     }
 
     public void FinalEndScreen()
