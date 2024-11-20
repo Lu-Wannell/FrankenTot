@@ -1269,7 +1269,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.795, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.5399933, y: 6}
+  m_AnchoredPosition: {x: 0.5399933, y: 8.9}
   m_SizeDelta: {x: 0.5220032, y: -0.11999893}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &26519883
@@ -7175,8 +7175,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.795, y: 1}
-  m_AnchoredPosition: {x: -0.14790344, y: -0.021335602}
-  m_SizeDelta: {x: 0.4119, y: -0.042633}
+  m_AnchoredPosition: {x: -0.14290619, y: 2.8049994}
+  m_SizeDelta: {x: 0.4219012, y: -0.05263323}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &162729259
 MonoBehaviour:
@@ -7226,8 +7226,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 38
+  m_fontSizeBase: 38
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -44213,7 +44213,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1238990344}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &872354753
+--- !u!114 &872354756
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44222,10 +44222,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 872354745}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad2e5573ca866cf43bbd275238ad72e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 9fe289da1563d0442ae59c881c290c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptMessage: Pick-Up
+  promptMessage: Your Family!!!
+  interactPrompt: Your Family!!!
+  changedBoolPrompt: 
+  myBool: 0
 --- !u!1 &873294517
 GameObject:
   m_ObjectHideFlags: 0
@@ -64812,7 +64815,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a09156a958c2b914eb5ddbcf499acf03,
         type: 3}
       propertyPath: m_TagString
-      value: PickUp
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -64829,7 +64832,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a09156a958c2b914eb5ddbcf499acf03,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 872354753}
+      addedObject: {fileID: 872354756}
   m_SourcePrefab: {fileID: 100100000, guid: a09156a958c2b914eb5ddbcf499acf03, type: 3}
 --- !u!1 &1242316276 stripped
 GameObject:
